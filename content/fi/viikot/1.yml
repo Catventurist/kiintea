@@ -1,0 +1,37 @@
+viikko: 1
+kääre: Perusta
+suola: Foundations
+lähtö: 2026-11-06T07:00:00Z
+päätös: 2026-11-12T20:00:00Z
+tila: käynnissä
+päättely: enemmistö
+kuorum: 2
+tarkiste: PASTE_FROM_DEV_TOOL
+
+jutut:
+  - nimi: Aamukävely
+    miksi: Selvittää pää ennen töitä
+    kynnys: ok
+    paino: 2
+    väri: success
+    päivät:
+      - päivä: ma
+        hetki: 2026-11-06T06:45:00Z
+        muistiinpano: 20 min korttelin ympäri
+      - päivä: ti
+        muistiinpano: Satoi, kävelin silti
+      - päivä: to
+
+  - nimi: Lue 10 sivua
+    miksi: Vakiinnuttaa lukutottumus
+    kynnys: osittain
+    väri: info
+    päivät:
+      - päivä: ma
+      - päivä: ke
+        muistiinpano: Sain luettua vain 5 sivua
+
+  - nimi: Ei puhelinta klo 22 jälkeen
+    kynnys: ok
+    väri: warning
+

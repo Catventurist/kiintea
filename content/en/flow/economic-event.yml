@@ -1,0 +1,16 @@
+title: Economic event
+description: Something that actually happened to a resource
+entity: economic-event
+layer: observation
+example: Ten chairs were delivered to the community hall
+operations: [create, update]
+params:
+  inputOf: process
+  outputOf: process
+  satisfies: intent
+  fulfills: commitment
+  realizationOf: agreement
+  affects: economic-resource
+  inScopeOf: agent
+  provider: agent
+  receiver: agent

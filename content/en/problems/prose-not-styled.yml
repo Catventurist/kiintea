@@ -1,0 +1,20 @@
+slug: prose-not-styled
+problem: Prose components are not styled
+severity: warning
+tags: [content, config]
+cause: 'The @nuxt/content module is registered before @nuxt/ui, so the prose components are not available.'
+fix: 'Register @nuxt/content after @nuxt/ui in the modules array.'
+code:
+  lang: ts
+  file: nuxt.config.ts
+  content: |
+    export default defineNuxtConfig({
+      modules: [
+        '@nuxt/ui',
+        '@nuxt/content'
+      ]
+    })
+links:
+  - label: Content integration
+    to: https://ui.nuxt.com/docs/getting-started/integrations/content
+

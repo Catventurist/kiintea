@@ -1,0 +1,6 @@
+title: Unit
+description: A unit of measure for quantities
+entity: unit
+layer: knowledge
+example: Piece, kilogram or hour
+operations: [create, update, delete]

@@ -1,0 +1,13 @@
+title: Economic resource
+description: Something of value that the community can use or share
+entity: economic-resource
+layer: observation
+example: The community hall's folding chairs
+operations: [update]
+params:
+  contains: economic-resource
+  containedIn: economic-resource
+  conformsTo: resource-specification
+  affectedBy: economic-event
+  primaryAccountable: agent
+  

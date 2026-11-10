@@ -1,0 +1,6 @@
+title: Paikka
+description: Sijainti, jossa asioita tapahtuu tai säilytetään
+entity: spatial-thing
+layer: observation
+example: Yhteisötila Pääkadulla
+operations: [create, update, delete]

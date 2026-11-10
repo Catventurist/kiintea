@@ -1,0 +1,6 @@
+title: Yksikkö
+description: Määrien mittayksikkö
+entity: unit
+layer: knowledge
+example: Kappale, kilogramma tai tunti
+operations: [create, update, delete]

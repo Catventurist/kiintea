@@ -1,0 +1,17 @@
+title: Taloudellinen tapahtuma
+description: Jotain, mikä todella tapahtui resurssille
+entity: economic-event
+layer: observation
+example: Kymmenen tuolia toimitettiin yhteisötilaan
+operations: [create, update]
+params:
+  inputOf: process
+  outputOf: process
+  satisfies: intent
+  fulfills: commitment
+  realizationOf: agreement
+  affects: economic-resource
+  inScopeOf: agent
+  provider: agent
+  receiver: agent
+

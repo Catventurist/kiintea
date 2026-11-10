@@ -1,0 +1,411 @@
+site:
+  title: Kiinteä
+  description: Useita uusia juttuja.
+
+nav:
+  home: Etusivu
+  about: Tietoa
+  guides: Oppaat
+  start: Aloitus
+  example: Esim
+  glossary: Sanasto
+  flow: Virta
+  viikot: Viikot
+
+page:
+  empty: Sivua ei löytynyt
+  glossary:
+    title: Sanasto
+    description: Lyhyet selitykset ohjeissa käytetyistä termeistä.
+  example:
+    title: Esimerkkejä
+    description: Vue-komponentteja erinäisillä höysteillä.
+  fire:
+    title: Tuli
+    description: Hyvä palvelija, mutta huono isäntä.
+  flow:
+    title: Virta
+    description: Resurssien hallintaa.
+  viikot:
+    title: Viikot
+    description: Ajankohtaisia asioita.
+  vikko:
+    title: Viikko
+    description: Lisätietoa tapahtumista.
+  dev:
+    title: Kehitys
+    description: Työkaluja kehittäjille.
+  tabs:
+    onboarding: Perehdytys
+    stats: Tilastot
+    consent: Suostumus
+    progress: Eteneminen
+    checkin: Check-in
+    bookmarks: Kirjanmerkit
+
+error:
+  back: Takaisin etusivulle
+  suggestions: Etsitkö ehkä jotain näistä?
+  related: Muita sivuja tässä osiossa
+  retry: Yritä uudelleen
+  notFound:
+    title: Sivua ei löytynyt
+    description: 'Sivua {path} ei ole olemassa.'
+  generic:
+    title: Jokin meni pieleen
+    description: Sivun lataaminen epäonnistui. Yritä hetken kuluttua uudelleen.
+  pages:
+    glossary: Sanasto
+    fire: Tuli
+    example: Esimerkki
+    flow: Virta
+    weeks: Viikot
+  
+footer:
+  rights: Kaikki oikeudet pidätetään
+
+common:
+  reset: Palauta
+  copy:
+    command: Kopioi komento
+    code: Kopioi koodi
+    link: Kopioi linkki
+    codeDone: Koodi kopioitu
+    linkDone: Linkki kopioitu
+  use:
+    primary: Käytä päävärinä
+  status:
+    supported: Tuettu
+    partial: Osittain tuettu
+    unsupported: Ei tuettu
+    unknown: Tuntematon
+  read: Lue lisää
+  search:
+    terms: Hae termejä
+    problems: Hae ongelmia
+  empty:
+    terms: Termejä ei löytynyt
+    problems: Ei hakua vastaavia ongelmia
+  custom: Mukautettu
+  prev: Edellinen
+  next: Seuraava
+  results: '{count} tulosta'
+  expandAll: Laajenna kaikki
+  collapseAll: Tiivistä kaikki
+  cause: Syy
+  fix: Korjaus
+  download:
+    markdown: md
+  check: Check
+
+pageOptions:
+  title: Sivun asetukset
+  sidebar: Sivupalkki
+  toggleSidebar: Vaihda sivupalkkia
+  toc: Sisällysluettelo
+  collapsed: Pienennetty sivupalkki
+  splitter: Jaettu näkymä
+  surround: Edellinen / seuraava
+  language: Kieli
+  theme: Teema
+  light: Vaalea
+  dark: Tumma
+  system: Järjestelmä
+
+consent:
+  requirement: Vaatimus
+  detail: Kuvaus
+  prior:
+    title: Ennakkosuostumus
+    detail: Ei muita kuin välttämättömiä evästeitä ennen nimenomaista suostumusta
+  granular:
+    title: Eriteltävyys
+    detail: Erilliset luokat (analytiikka, markkinointi, toiminnalliset)
+  reject:
+    title: Hylkäys yhdellä napsautuksella
+    detail: Yhtä näkyvä kuin hyväksyminen (2025 Omnibus)
+  wall:
+    title: Ei evästemuureja
+    detail: Sivuston on toimittava ilman suostumusta
+  reprompt:
+    title: 6 kuukauden uudelleenkysymiskielto
+    detail: Kieltäytymisen jälkeen samaa tarkoitusta ei saa kysyä uudelleen
+  proof:
+    title: Suostumuksen todentaminen
+    detail: Suostumustiedot kirjataan ja säilytetään
+
+settingsFile:
+  export: Lataa asetukset
+  import: Avaa asetukset
+  imported: Asetukset avattu
+
+onboarding:
+  welcome: Tervetuloa
+  question: Mikä on sinulle tärkeämpää?
+  language: Kieli
+  darkmode: Tumma tila
+  both: Molemmat yhtä tärkeitä
+  light: Vaalea
+  dark: Tumma
+  continue: Jatka
+
+playground:
+  source: Lähde
+  preview: Esikatselu
+  copy: Kopioi
+  error: MDC:n renderöinti epäonnistui
+  examples: Esimerkit
+  search: Hae esimerkkejä
+  share: Jaa
+
+bilingual:
+  sync: Linkitetty vieritys
+  missing: Sivua ei löytynyt tällä kielellä
+  nested: Kaksikielistä näkymää ei voi sijoittaa toisen sisään
+
+hearth:
+  flame:
+    title: Liekki
+    burning: palaa
+    dying: sammuu
+    description: Ruoki sitä, niin se palaa. Lopeta ruokkiminen, niin se sammuu. Se ei tiedä, milloin sinulla on tarpeeksi.
+    feed: Ruoki
+    restart: Aloita alusta
+    cold: kylmä
+  ash:
+    title: Tuhka
+    slop: roskaa
+    manageable: hallittavissa
+    structured: Jäsennelty tieto
+    residue: Tuhka (roska)
+    description: Muodoltaan tunnistettavaa. Sisällöltään onttoa. Alkuperäisestä vaikea erottaa ensi silmäyksellä.
+  invitation:
+    title: Kutsu
+    description: Et pyytänyt istumaan takan äärelle. Huone on jo järjestetty sen ympärille. Tuoli on jo käännetty sitä kohti. Kylmyys on jo toisella puolella.
+  handover:
+    title: Palvelija / Isäntä
+    you: Sinä
+    handover: Luovutus
+    model: Malli
+    master: Sinä asetat tavoitefunktion
+    servant: Tappiofunktio on nyt sinun tavoitefunktiosi
+    warning: Kutsuit sen itse, yksi kysely kerrallaan. Hiillos on jo kengissäsi.
+  house:
+    title: Talo
+    cursor:
+      tab: Cursor
+      title: Takka aktiivinen
+      description: Automaattipäivitys tuo liekin sisään. Veto tulee oven alta. Et avannut mitään.
+      update: 'Automaattipäivitys: PÄÄLLÄ'
+    codium:
+      tab: VSCodium
+      title: Takka poistettu
+      description: Seinät on tiivistetty. Voit yhä sytyttää tulen, mutta sinun täytyy kävellä ovelle ja avata se itse.
+      update: 'Automaattipäivitys: POIS'
+      agent: 'Agentin käyttöliittymä: vain runko'
+  lol:
+    title: kek
+    description: Ääni, kun joku huomaa vitsin sen tapahtuessa hänelle itselleen. Ainoa hetki, jolloin luovutus näkyy.
+    notice: Huomaa
+  toast:
+    title: Veto
+    description: Automaattipäivitys toi sen sisään. Kukaan ei pyytänyt.
+  a11y:
+    fuel: Jäljellä oleva polttoaine
+    goal: Tavoitefunktion omistaja
+
+notes:
+  title: Muistiinpanot
+  current: Tämä sivu
+  other: Muut sivut
+  placeholder: Kirjoita muistiinpano tälle sivulle
+  empty: Ei vielä muistiinpanoja
+  hint: Muistiinpanot säilyvät vain muistissa. Lataa ne tiedostona, jotta ne säilyvät.
+  download: Lataa .txt
+  import: Tuo .txt
+  clear: Tyhjennä kaikki
+  clearConfirm: Vahvista
+  imported: '{count} muistiinpano tuotu | {count} muistiinpanoa tuotu'
+  importFailed: Tiedostoa ei voitu lukea
+
+stats:
+  components: Komponentit
+  pages: Sivut
+  coverage: Käännetty
+  glossary: Sanasto
+  problems: Ongelmat
+  languages: Kielet
+
+viikot:
+  title: Viikot
+  empty: Ei viikkoja vielä
+  viikko:
+    otsikko: 'Viikko {n}'
+    kuorum: 'kuorum {n}'
+  checkin:
+    passphrase: Salasana
+    checkTreat: Tarkista arkku
+    download: Lataa
+    treatUnlocked: Arkku avattu
+    notYet: Ei vielä
+    unlock: Avaa
+    lock: Lukitse
+    wrongPassphrase: Väärä salasana
+    reset: Nollaa äänet
+    copy: Kopioi YAML
+    copied: Kopioitu leikepöydälle
+    import: Tuo YAML
+    importPlaceholder: Liitä viety YAML tähän
+    importRun: Tuo
+    importDone: 'Tuotu {n} ääntä'
+    importSkipped: '{n} ohitettu'
+    importVirhe:
+      jäsennys: YAML:ia ei voitu lukea
+      viikko: Tiedosto on eri viikolle
+  tulos:
+    ok: ok
+    osittain: osittain
+    ei: ei
+  tila:
+    käynnissä: käynnissä
+    valmis: valmis
+    varastoitu: varastoitu
+  päättely:
+    kaikki: kaikki
+    enemmistö: enemmistö
+    superenemmistö: superenemmistö
+    pluriteetti: pluriteetti
+    konsensus: konsensus
+  päivä:
+    ma: ma
+    ti: ti
+    ke: ke
+    to: to
+    pe: pe
+    la: la
+    su: su
+  dev:
+    title: Kehitystyökalut
+    tarkiste: Luo tarkiste
+    vaihda: Vaihda salasana
+    suola: Suola
+    passphrase: Salasana
+    passphraseAgain: Salasana uudelleen
+    generate: Luo
+    reset: Nollaa
+    week: Viikko
+    oldPassphrase: Vanha salasana
+    newPassphrase: Uusi salasana
+    newPassphraseAgain: Uusi salasana uudelleen
+    change: Vaihda
+    done: Valmis. Korvaa viikkotiedostot kansioissa content/fi/viikot ja content/en/viikot.
+    virhe:
+      viikkoEiLöydy: Viikkoa ei löytynyt
+      vääräVanha: Väärä vanha salasana
+
+quiz:
+  check: Tarkista
+  reset: Yritä uudelleen
+  moveUp: 'Siirrä {item} ylös'
+  moveDown: 'Siirrä {item} alas'
+
+flow:
+  title: Virta
+  param: Parametri
+  description: Kuvaus
+  type: Tyyppi
+  example: Esimerkki
+  entities:
+    agent: Toimija
+    agreement: Sopimus
+    commitment: Sitoumus
+    economic-event: Taloudellinen tapahtuma
+    economic-resource: Taloudellinen resurssi
+    fulfillment: Täyttäminen
+    intent: Aie
+    plan: Suunnitelma
+    process: Prosessi
+    proposal: Ehdotus
+    proposed-intent: Ehdotettu aie
+    recipe-exchange: Reseptivaihdanta
+    recipe-flow: Reseptivirta
+    recipe-process: Reseptiprosessi
+    resource-specification: Resurssimäärittely
+    satisfaction: Tyytyväisyys
+    agreement-bundle: Sopimuspaketti
+    claim: Vaatimus
+    process-specification: Prosessimäärittely
+    spatial-thing: Paikka
+    unit: Yksikkö
+  layers:
+    knowledge: Tieto
+    plan: Suunnitelma
+    observation: Havainto
+    agent: Toimijat
+  operations:
+    create: Luo
+    update: Päivitä
+    delete: Poista
+  params:
+    inputOf: Tämän prosessin syöte
+    outputOf: Tämän prosessin tuotos
+    observedInputs: Tämän prosessin havaitut syötteet
+    observedOutputs: Tämän prosessin havaitut tuotokset
+    unplannedEconomicEvents: Tämän prosessin suunnittelemattomat tapahtumat
+    committedInputs: Tämän prosessin sitoutuneet syötteet
+    committedOutputs: Tämän prosessin sitoutuneet tuotokset
+    intendedInputs: Tämän prosessin aiotut syötteet
+    intendedOutputs: Tämän prosessin aiotut tuotokset
+    workingAgents: Tässä prosessissa työskentelevät toimijat
+    fulfills: Täyttää tämän sitoumuksen
+    fulfilledBy: Tämän tapahtuman täyttämä
+    satisfies: Täyttää tämän aikeen
+    satisfiedBy: Tämän sitoumuksen täyttämä
+    clauseOf: Tämän sopimuksen ehto
+    realizationOf: Tämän sopimuksen toteutus
+    affects: Vaikuttaa tähän resurssiin
+    proposedIn: Ehdotettu tässä ehdotuksessa
+    publishedIn: Julkaistu tässä ehdotuksessa
+    independentDemandOf: Tämän suunnitelman itsenäinen kysyntä
+    plannedWithin: Suunniteltu tässä suunnitelmassa
+    inScopeOf: Tämän toimijan piirissä
+    provider: Tämän toimijan tarjoama
+    receiver: Tämän toimijan vastaanottama
+    agentType: Toimijan tyyppi
+    contains: Sisältää tämän resurssin
+    containedIn: Sisältyy tähän resurssiin
+    conformsTo: Vastaa tätä määrittelyä
+    conformingResources: Tätä määrittelyä vastaavat resurssit
+    affectedBy: Tämän tapahtuman vaikuttama
+    primaryAccountable: Ensisijaisesti vastuussa oleva toimija
+    recipeInputOf: Tämän prosessin reseptisyöte
+    recipeOutputOf: Tämän prosessin reseptituotos
+    recipeClauseOf: Tämän vaihdannan reseptiehto
+    recipeReciprocal: Tämän vaihdannan vastavuoroinen ehto
+  primitives:
+    string: Teksti
+  noParams: Tällä kohteella ei ole suodattimia
+  search: Hae virtoja
+  allLayers: Kaikki tasot
+  noResults: Haulla ei löytynyt virtoja
+  usedBy: Käyttäjät
+  glossary: Katso sanastosta
+
+bookmarks:
+  upload:
+    label: Pudota kirjanmerkkien HTML-tiedosto tähän
+    description: tai selaa napsauttamalla
+  downloadAll: 'Kaikki ({total}) yml'
+  downloadSelected: 'Valitut ({count}) yml'
+  openLink: Avaa linkki
+  search: Hae otsikolla tai URL-osoitteella
+  clearSearch: Tyhjennä haku
+  selectAll: Valitse kaikki
+  clear: Tyhjennä
+  noResults: Haulla ei löytänyt kirjanmerkkejä
+  error:
+    title: Kirjanmerkkien tuonti epäonnistui
+    invalid: Tiedosto ei ole kirjanmerkkivienti
+    empty: Tiedostosta ei löytynyt kirjanmerkkejä
+  reorder: Järjestä uudelleen
+

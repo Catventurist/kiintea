@@ -1,0 +1,6 @@
+title: Recipe process
+description: A reusable pattern for a process
+entity: recipe-process
+layer: knowledge
+example: Baking bread
+operations: [create, update, delete]

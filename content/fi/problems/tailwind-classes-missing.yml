@@ -1,0 +1,14 @@
+slug: tailwind-classes-missing
+problem: Markdownin Tailwind-luokat puuttuvat
+severity: error
+tags: [tailwind, content]
+cause: Tailwind ei skannaa markdown-tiedostoja oletuksena.
+fix: 'Lisää sisältökansiolle @source-direktiivi päätyylitiedostoosi.'
+code:
+  lang: css
+  file: app/assets/css/main.css
+  content: |
+    @import "tailwindcss";
+    @import "@nuxt/ui";
+
+    @source "../../../content/**/*";

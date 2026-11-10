@@ -1,0 +1,9 @@
+title: Tyydytys
+description: Yhdistää sitoumuksen aikeeseen, jonka se täyttää
+entity: satisfaction
+layer: plan
+example: Annan lupaus täyttää tuolien tarpeen
+params:
+  satisfies: intent
+  satisfiedBy: commitment
+

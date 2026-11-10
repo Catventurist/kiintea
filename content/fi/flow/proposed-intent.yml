@@ -1,0 +1,7 @@
+title: Ehdotettu aie
+description: Aie, joka on julkaistu osana ehdotusta
+entity: proposed-intent
+layer: plan
+example: Kymmenen tuolia-aie tuoliehdotuksen sisällä
+params:
+  publishedIn: proposal

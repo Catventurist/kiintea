@@ -1,0 +1,15 @@
+slug: tailwind-classes-missing
+problem: Tailwind classes in markdown are missing
+severity: error
+tags: [tailwind, content]
+cause: Tailwind does not scan markdown files by default.
+fix: 'Add a @source directive for the content directory to your main CSS file.'
+code:
+  lang: css
+  file: app/assets/css/main.css
+  content: |
+    @import "tailwindcss";
+    @import "@nuxt/ui";
+
+    @source "../../../content/**/*";
+

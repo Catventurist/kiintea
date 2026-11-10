@@ -1,0 +1,6 @@
+title: Prosessimäärittely
+description: Kuvaus tietynlaisesta prosessista
+entity: process-specification
+layer: knowledge
+example: Yhteisen aterian valmistaminen
+operations: [create, update, delete]

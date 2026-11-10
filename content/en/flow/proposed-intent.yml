@@ -1,0 +1,7 @@
+title: Proposed intent
+description: An intent that is published as part of a proposal
+entity: proposed-intent
+layer: plan
+example: The ten chairs intent inside the chair proposal
+params:
+  publishedIn: proposal

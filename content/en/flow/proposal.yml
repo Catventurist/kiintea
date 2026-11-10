@@ -1,0 +1,8 @@
+title: Proposal
+description: An offer or request published to the community
+entity: proposal
+layer: plan
+example: Free chairs available for community events
+operations: [create, update, delete]
+params:
+  inScopeOf: agent

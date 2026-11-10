@@ -1,0 +1,17 @@
+title: Commitment
+description: A promise of a future economic event
+entity: commitment
+layer: plan
+example: Anna promises to bring ten chairs to Saturday's shared meal
+operations: [create, update, delete]
+params:
+  inputOf: process
+  outputOf: process
+  fulfilledBy: fulfillment
+  satisfies: satisfaction
+  clauseOf: agreement
+  independentDemandOf: plan
+  plannedWithin: plan
+  inScopeOf: agent
+  provider: agent
+  receiver: agent

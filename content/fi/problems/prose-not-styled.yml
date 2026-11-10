@@ -1,0 +1,19 @@
+slug: prose-not-styled
+problem: Prose-komponenteilla ei ole tyylejä
+severity: warning
+tags: [content, config]
+cause: 'Moduuli @nuxt/content on rekisteröity ennen moduulia @nuxt/ui, joten prose-komponentit eivät ole käytettävissä.'
+fix: 'Rekisteröi @nuxt/content moduulin @nuxt/ui jälkeen modules-taulukossa.'
+code:
+  lang: ts
+  file: nuxt.config.ts
+  content: |
+    export default defineNuxtConfig({
+      modules: [
+        '@nuxt/ui',
+        '@nuxt/content'
+      ]
+    })
+links:
+  - label: Content-integraatio
+    to: https://ui.nuxt.com/docs/getting-started/integrations/content

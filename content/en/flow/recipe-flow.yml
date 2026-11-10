@@ -1,0 +1,11 @@
+title: Recipe flow
+description: A reusable pattern for a resource moving in or out of a process
+entity: recipe-flow
+layer: knowledge
+example: Flour goes into the bread recipe
+operations: [create, update, delete]
+params:
+  recipeInputOf: recipe-process
+  recipeOutputOf: recipe-process
+  recipeClauseOf: recipe-exchange
+  recipeReciprocal: recipe-exchange

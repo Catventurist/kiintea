@@ -1,0 +1,6 @@
+title: Sopimuspaketti
+description: Joukko sopimuksia, jotka kuuluvat yhteen
+entity: agreement-bundle
+layer: plan
+example: Työkalukirjaston lainaussäännöt ja lahjoitusehdot
+operations: [create, update, delete]

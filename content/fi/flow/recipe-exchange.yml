@@ -1,0 +1,7 @@
+title: Reseptivaihdanta
+description: Uudelleenkäytettävä malli toimijoiden väliselle vaihdannalle
+entity: recipe-exchange
+layer: knowledge
+example: Lainaa työkalu ja palauta se
+operations: [create, update, delete]
+

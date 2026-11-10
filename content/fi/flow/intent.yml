@@ -1,0 +1,15 @@
+title: Aie
+description: Toive tai tarve, johon kukaan ei ole vielä sitoutunut
+entity: intent
+layer: plan
+example: Tarvitsemme kymmenen tuolia lauantaiksi
+operations: [create, update, delete]
+params:
+  inputOf: process
+  outputOf: process
+  satisfiedBy: satisfaction
+  proposedIn: proposed-intent
+  inScopeOf: agent
+  provider: agent
+  receiver: agent
+  publishedIn: proposed-intent

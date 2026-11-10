@@ -1,0 +1,18 @@
+title: Prosessi
+description: Jotain, mikä muuttaa syötteet tuotoksiksi
+entity: process
+layer: observation
+example: Yhteisen aterian valmistaminen
+operations: [create, update, delete]
+params:
+  observedInputs: economic-event
+  observedOutputs: economic-event
+  unplannedEconomicEvents: economic-event
+  committedInputs: commitment
+  committedOutputs: commitment
+  intendedInputs: intent
+  intendedOutputs: intent
+  workingAgents: agent
+  plannedWithin: plan
+  inScopeOf: agent
+

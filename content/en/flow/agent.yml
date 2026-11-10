@@ -1,0 +1,7 @@
+title: Agent
+description: A person or group that takes part in economic activity
+entity: agent
+layer: agent
+example: Anna, or the neighbourhood tool library
+params:
+  agentType: string

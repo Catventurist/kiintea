@@ -1,0 +1,8 @@
+title: Ehdotus
+description: Yhteisölle julkaistu tarjous tai pyyntö
+entity: proposal
+layer: plan
+example: Ilmaisia tuoleja yhteisön tapahtumiin
+operations: [create, update, delete]
+params:
+  inScopeOf: agent

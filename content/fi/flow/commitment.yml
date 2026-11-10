@@ -1,0 +1,17 @@
+title: Sitoumus
+description: Lupaus tulevasta taloudellisesta tapahtumasta
+entity: commitment
+layer: plan
+example: Anna lupaa tuoda kymmenen tuolia lauantain yhteiseen ateriaan
+operations: [create, update, delete]
+params:
+  inputOf: process
+  outputOf: process
+  fulfilledBy: fulfillment
+  satisfies: satisfaction
+  clauseOf: agreement
+  independentDemandOf: plan
+  plannedWithin: plan
+  inScopeOf: agent
+  provider: agent
+  receiver: agent

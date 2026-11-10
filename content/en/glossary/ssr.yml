@@ -1,0 +1,5 @@
+title: Server-side rendering
+text: Pages are rendered to HTML on the server.
+description: The server sends ready-made HTML, so the page shows content before the JavaScript has loaded.
+icon: i-lucide-server
+to: https://nuxt.com/docs/4.x/guide/concepts/rendering

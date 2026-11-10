@@ -1,0 +1,36 @@
+viikko: 1
+kääre: Foundations
+suola: Foundations
+lähtö: 2026-11-06T07:00:00Z
+päätös: 2026-11-12T20:00:00Z
+tila: käynnissä
+päättely: enemmistö
+kuorum: 2
+tarkiste: PASTE_FROM_DEV_TOOL
+
+jutut:
+  - nimi: Morning walk
+    miksi: Clear the head before work
+    kynnys: ok
+    paino: 2
+    väri: success
+    päivät:
+      - päivä: ma
+        hetki: 2026-11-06T06:45:00Z
+        muistiinpano: 20 min around the block
+      - päivä: ti
+        muistiinpano: Rained, walked anyway
+      - päivä: to
+
+  - nimi: Read 10 pages
+    miksi: Build a steady reading habit
+    kynnys: osittain
+    väri: info
+    päivät:
+      - päivä: ma
+      - päivä: ke
+        muistiinpano: Only managed 5 pages
+
+  - nimi: No phone after 22:00
+    kynnys: ok
+    väri: warning

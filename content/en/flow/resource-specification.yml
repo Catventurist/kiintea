@@ -1,0 +1,8 @@
+title: Resource specification
+description: A description of a kind of resource
+entity: resource-specification
+layer: knowledge
+example: Folding chair
+operations: [create, update, delete]
+params:
+  conformingResources: economic-resource

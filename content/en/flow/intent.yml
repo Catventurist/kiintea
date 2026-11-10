@@ -1,0 +1,15 @@
+title: Intent
+description: A wish or need that someone has not yet committed to
+entity: intent
+layer: plan
+example: We need ten chairs for Saturday
+operations: [create, update, delete]
+params:
+  inputOf: process
+  outputOf: process
+  satisfiedBy: satisfaction
+  proposedIn: proposed-intent
+  inScopeOf: agent
+  provider: agent
+  receiver: agent
+  publishedIn: proposed-intent

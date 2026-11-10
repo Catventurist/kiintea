@@ -1,0 +1,6 @@
+title: Place
+description: A location where things happen or are kept
+entity: spatial-thing
+layer: observation
+example: The community hall on Main Street
+operations: [create, update, delete]

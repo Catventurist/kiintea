@@ -1,0 +1,6 @@
+title: Claim
+description: A right to receive something in return for an event that already happened
+entity: claim
+layer: observation
+example: Anna helped with the move and can ask for help in return
+operations: [create, update, delete]

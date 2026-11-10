@@ -1,0 +1,8 @@
+title: Suunnitelma
+description: Joukko prosesseja ja sitoumuksia, jotka tähtäävät tavoitteeseen
+entity: plan
+layer: plan
+example: Lauantain yhteisen aterian järjestäminen
+operations: [create, update, delete]
+params:
+  inScopeOf: agent

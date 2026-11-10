@@ -1,0 +1,6 @@
+title: Sopimus
+description: Toimijoiden yhteinen ymmärrys siitä, mitä he vaihtavat
+entity: agreement
+layer: plan
+example: Työkalukirjasto lainaa poran viikoksi pientä lahjoitusta vastaan
+operations: [create, update, delete]

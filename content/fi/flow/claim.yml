@@ -1,0 +1,6 @@
+title: Vaade
+description: Oikeus saada jotain vastineeksi jo tapahtuneesta tapahtumasta
+entity: claim
+layer: observation
+example: Anna auttoi muutossa ja voi pyytää apua vastineeksi
+operations: [create, update, delete]

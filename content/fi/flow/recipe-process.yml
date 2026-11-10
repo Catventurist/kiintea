@@ -1,0 +1,6 @@
+title: Reseptiprosessi
+description: Uudelleenkäytettävä malli prosessille
+entity: recipe-process
+layer: knowledge
+example: Leivän leipominen
+operations: [create, update, delete]

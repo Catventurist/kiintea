@@ -1,0 +1,410 @@
+site:
+  title: Kiintea
+  description: Various new things.
+
+nav:
+  home: Home
+  about: About
+  guides: Guides
+  start: Start
+  example: Example
+  glossary: Glossary
+  flow: Flow
+  viikot: Weeks
+
+page:
+  empty: Page not found
+  glossary:
+    title: Glossary
+    description: Short definitions of the terms used in these docs.
+  example:
+    title: Examples
+    description: Vue components with twists and turns.
+  fire:
+    title: Fire
+    description: A good servant but a bad master.
+  flow:
+    title: Flow
+    description: Resource allocation.
+  viikot:
+    title: Weeks
+    description: Weekly things happening.
+  vikko:
+    title: Week
+    description: Additional week info.
+  dev:
+    title: Dev
+    description: Developing tools.
+  tabs:
+    onboarding: Onboarding
+    stats: Stats
+    consent: Consent
+    progress: Progress
+    checkin: Check-in
+    bookmarks: Bookmarks
+
+error:
+  back: Back to home
+  suggestions: Maybe you were looking for
+  notFound:
+    title: Page not found
+    description: 'The page {path} does not exist.'
+  pages:
+    glossary: Glossary
+    example: Example
+    flow: Flow
+    weeks: Weeks
+    guides: Guides
+  related: Related
+  retry: Try again
+  generic:
+    title: Something went wrong
+    description: We could not load this page. Please try again in a moment.
+
+footer:
+  rights: All rights reserved
+
+common:
+  reset: Reset
+  copy:
+    command: Copy command
+    code: Copy code
+    link: Copy link
+    codeDone: Code copied
+    linkDone: Link copied
+  use:
+    primary: Use as primary color
+  status:
+    supported: Supported
+    partial: Partial
+    unsupported: Unsupported
+    unknown: Unknown
+  read: Read more
+  search:
+    terms: Search terms
+    problems: Search problems
+  empty:
+    terms: No terms found
+    problems: No matching problems
+  custom: Custom
+  prev: Prev
+  next: Next
+  results: '{count} results'
+  expandAll: Expand all
+  collapseAll: Collapse all
+  cause: Cause
+  fix: Fix
+  download:
+    markdown: md
+  check: Check
+
+pageOptions:
+  title: Page options
+  sidebar: Sidebar
+  toggleSidebar: Toggle sidebar
+  toc: Table of contents
+  collapsed: Collapsed sidebar
+  splitter: Split view
+  surround: Prev / next links
+  language: Language
+  theme: Theme
+  light: Light
+  dark: Dark
+  system: System
+
+consent:
+  requirement: Requirement
+  detail: Detail
+  prior:
+    title: Prior consent
+    detail: No non-essential cookie before explicit opt-in
+  granular:
+    title: Granular
+    detail: Separate categories (analytics, marketing, functional)
+  reject:
+    title: Single-click reject
+    detail: Equal prominence to accept (2025 Omnibus)
+  wall:
+    title: No cookie walls
+    detail: Site must remain usable without consent
+  reprompt:
+    title: 6-month re-prompt ban
+    detail: After a refusal, same purpose cannot be re-requested
+  proof:
+    title: Proof of consent
+    detail: Log and retain the consent record
+
+settingsFile:
+  export: Download settings
+  import: Load settings
+  imported: Settings loaded
+
+onboarding:
+  welcome: Welcome
+  question: What matters more to you?
+  language: Language
+  darkmode: Dark mode
+  both: Both equally
+  light: Light
+  dark: Dark
+  continue: Continue
+
+playground:
+  source: Source
+  preview: Preview
+  copy: Copy
+  error: Could not render this MDC
+  examples: Examples
+  search: Search examples
+  share: Share
+
+bilingual:
+  sync: Linked scrolling
+  missing: No page found in this language
+  nested: A bilingual view can't be placed inside another one
+
+hearth:
+  flame:
+    title: The Flame
+    burning: burning
+    dying: dying
+    description: Feed it and it burns. Stop feeding and it dies. It doesn't know when you have enough.
+    feed: Feed
+    restart: Restart
+    cold: cold
+  ash:
+    title: The Ash
+    slop: slop
+    manageable: manageable
+    structured: Structured info
+    residue: Ash (slop)
+    description: Recognizable in shape. Hollow in substance. Hard to distinguish from the original at a glance.
+  invitation:
+    title: The Invitation
+    description: You didn't ask to sit near the hearth. The room is already arranged around it. The chair is already angled that way. The cold is already on the other side.
+  handover:
+    title: Servant / Master
+    you: You
+    handover: Handover
+    model: Model
+    master: You set the goal function
+    servant: The loss function is your goal function
+    warning: You invited it, one query at a time. The coal is already on your shoes.
+  house:
+    title: The House
+    cursor:
+      tab: Cursor
+      title: Hearth active
+      description: Auto-update carries the flame in. The draft is under the door. You didn't open anything.
+      update: 'Auto-update: ON'
+    codium:
+      tab: VSCodium
+      title: Hearth removed
+      description: The walls are sealed. You can still build a fire, but you have to walk to the door and open it yourself.
+      update: 'Auto-update: OFF'
+      agent: 'Agent UI: skeleton only'
+  lol:
+    title: lol
+    description: The sound of someone noticing the joke while it's happening to them. The only moment the handover is visible.
+    notice: Notice
+  toast:
+    title: The draft
+    description: The auto-update carried it in. No one asked.
+  a11y:
+    fuel: Fuel remaining
+    goal: Goal function owner
+
+notes:
+  title: Notes
+  current: This page
+  other: Other pages
+  placeholder: Write a note for this page
+  empty: No notes yet
+  hint: Notes are kept in memory only. Download them to keep them.
+  download: Download .txt
+  import: Import .txt
+  clear: Clear all
+  clearConfirm: Click again to clear
+  imported: '{count} note imported | {count} notes imported'
+  importFailed: Could not read the file
+
+stats:
+  components: Components
+  pages: Pages
+  coverage: Translated
+  glossary: Glossary terms
+  problems: Problems
+  languages: Languages
+
+viikot:
+  title: Weeks
+  empty: No weeks yet
+  viikko:
+    otsikko: 'Week {n}'
+    kuorum: 'quorum {n}'
+  checkin:
+    passphrase: Passphrase
+    checkTreat: Check treat
+    download: Download
+    treatUnlocked: Treat unlocked
+    notYet: Not yet
+    unlock: Unlock
+    lock: Lock
+    wrongPassphrase: Wrong passphrase
+    reset: Reset votes
+    copy: Copy YAML
+    copied: Copied to clipboard
+    import: Import YAML
+    importPlaceholder: Paste exported YAML here
+    importRun: Import
+    importDone: 'Imported {n} votes'
+    importSkipped: '{n} skipped'
+    importVirhe:
+      jäsennys: Could not read the YAML
+      viikko: This file is for a different week
+  tulos:
+    ok: ok
+    osittain: partly
+    ei: 'no'
+  tila:
+    käynnissä: in progress
+    valmis: done
+    varastoitu: archived
+  päättely:
+    kaikki: everyone
+    enemmistö: majority
+    superenemmistö: supermajority
+    pluriteetti: plurality
+    konsensus: consensus
+  päivä:
+    ma: Mon
+    ti: Tue
+    ke: Wed
+    to: Thu
+    pe: Fri
+    la: Sat
+    su: Sun
+  dev:
+    title: Dev tools
+    tarkiste: Generate tarkiste
+    vaihda: Change passphrase
+    suola: Salt
+    passphrase: Passphrase
+    passphraseAgain: Passphrase again
+    generate: Generate
+    reset: Reset
+    week: Week
+    oldPassphrase: Old passphrase
+    newPassphrase: New passphrase
+    newPassphraseAgain: New passphrase again
+    change: Change
+    done: Done. Replace the week files in content/fi/viikot and content/en/viikot.
+    virhe:
+      viikkoEiLöydy: Week not found
+      vääräVanha: Wrong old passphrase
+
+quiz:
+  check: Check
+  reset: Try again
+  moveUp: 'Move {item} up'
+  moveDown: 'Move {item} down'
+
+flow:
+  title: Flow
+  param: Param
+  description: Description
+  type: Type
+  example: Example
+  entities:
+    agent: Agent
+    agreement: Agreement
+    commitment: Commitment
+    economic-event: Economic event
+    economic-resource: Economic resource
+    fulfillment: Fulfillment
+    intent: Intent
+    plan: Plan
+    process: Process
+    proposal: Proposal
+    proposed-intent: Proposed intent
+    recipe-exchange: Recipe exchange
+    recipe-flow: Recipe flow
+    recipe-process: Recipe process
+    resource-specification: Resource specification
+    satisfaction: Satisfaction
+    agreement-bundle: Agreement bundle
+    claim: Claim
+    process-specification: Process specification
+    spatial-thing: Place
+    unit: Unit
+  layers:
+    knowledge: Knowledge
+    plan: Plan
+    observation: Observation
+    agent: Agents
+  operations:
+    create: Create
+    update: Update
+    delete: Delete
+  params:
+    inputOf: Input of this process
+    outputOf: Output of this process
+    observedInputs: Observed inputs of this process
+    observedOutputs: Observed outputs of this process
+    unplannedEconomicEvents: Unplanned events in this process
+    committedInputs: Committed inputs of this process
+    committedOutputs: Committed outputs of this process
+    intendedInputs: Intended inputs of this process
+    intendedOutputs: Intended outputs of this process
+    workingAgents: Agents working in this process
+    fulfills: Fulfills this commitment
+    fulfilledBy: Fulfilled by this event
+    satisfies: Satisfies this intent
+    satisfiedBy: Satisfied by this commitment
+    clauseOf: Clause of this agreement
+    realizationOf: Realization of this agreement
+    affects: Affects this resource
+    proposedIn: Proposed in this proposal
+    publishedIn: Published in this proposal
+    independentDemandOf: Independent demand of this plan
+    plannedWithin: Planned within this plan
+    inScopeOf: In scope of this agent
+    provider: Provided by this agent
+    receiver: Received by this agent
+    agentType: Type of agent
+    contains: Contains this resource
+    containedIn: Contained in this resource
+    conformsTo: Conforms to this specification
+    conformingResources: Resources conforming to this specification
+    affectedBy: Affected by this event
+    primaryAccountable: Primary accountable agent
+    recipeInputOf: Recipe input of this process
+    recipeOutputOf: Recipe output of this process
+    recipeClauseOf: Recipe clause of this exchange
+    recipeReciprocal: Reciprocal clause of this exchange
+  primitives:
+    string: Text
+  noParams: No filters for this entity
+  search: Search flows
+  allLayers: All layers
+  noResults: No flows match your search
+  usedBy: Used by
+  glossary: See in glossary
+
+bookmarks:
+  upload:
+    label: Drop your Bookmarks HTML file
+    description: or click to browse
+  downloadAll: 'All ({total}) yml'
+  downloadSelected: 'Selected ({count}) yml'
+  openLink: Open link
+  search: Search by title or URL
+  clearSearch: Clear search
+  selectAll: Select all
+  clear: Clear
+  noResults: No bookmarks match your search
+  error:
+    title: Could not import bookmarks
+    invalid: This file is not a bookmarks export
+    empty: No bookmarks were found in this file
+  reorder: Reorder

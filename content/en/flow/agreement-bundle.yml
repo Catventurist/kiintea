@@ -1,0 +1,6 @@
+title: Agreement bundle
+description: A group of agreements that belong together
+entity: agreement-bundle
+layer: plan
+example: The lending rules and the donation terms of the tool library
+operations: [create, update, delete]

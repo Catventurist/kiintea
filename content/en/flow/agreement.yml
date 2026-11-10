@@ -1,0 +1,6 @@
+title: Agreement
+description: A shared understanding between agents about what they will exchange
+entity: agreement
+layer: plan
+example: The tool library lends drills for a week in return for a small donation
+operations: [create, update, delete]

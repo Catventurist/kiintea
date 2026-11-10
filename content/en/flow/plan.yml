@@ -1,0 +1,8 @@
+title: Plan
+description: A set of processes and commitments that work toward a goal
+entity: plan
+layer: plan
+example: Organising the Saturday shared meal
+operations: [create, update, delete]
+params:
+  inScopeOf: agent

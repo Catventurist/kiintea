@@ -1,0 +1,9 @@
+title: Resurssimäärittely
+description: Kuvaus tietynlaisesta resurssista
+entity: resource-specification
+layer: knowledge
+example: Taittotuoli
+operations: [create, update, delete]
+params:
+  conformingResources: economic-resource
+

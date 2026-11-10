@@ -1,0 +1,8 @@
+title: Täyttäminen
+description: Yhdistää tapahtuman sitoumukseen, jonka se täyttää
+entity: fulfillment
+layer: plan
+example: Tuolien toimitus täyttää Annan lupauksen
+params:
+  fulfills: commitment
+  fulfilledBy: economic-event

@@ -1,0 +1,12 @@
+title: Reseptivirta
+description: Uudelleenkäytettävä malli resurssin liikkeestä prosessiin tai sieltä pois
+entity: recipe-flow
+layer: knowledge
+example: Jauhot menevät leipäreseptiin
+operations: [create, update, delete]
+params:
+  recipeInputOf: recipe-process
+  recipeOutputOf: recipe-process
+  recipeClauseOf: recipe-exchange
+  recipeReciprocal: recipe-exchange
+

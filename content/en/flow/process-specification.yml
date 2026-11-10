@@ -1,0 +1,6 @@
+title: Process specification
+description: A description of a kind of process
+entity: process-specification
+layer: knowledge
+example: Cooking a shared meal
+operations: [create, update, delete]

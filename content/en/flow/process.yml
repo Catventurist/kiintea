@@ -1,0 +1,17 @@
+title: Process
+description: Something that turns inputs into outputs
+entity: process
+layer: observation
+example: Cooking the shared meal
+operations: [create, update, delete]
+params:
+  observedInputs: economic-event
+  observedOutputs: economic-event
+  unplannedEconomicEvents: economic-event
+  committedInputs: commitment
+  committedOutputs: commitment
+  intendedInputs: intent
+  intendedOutputs: intent
+  workingAgents: agent
+  plannedWithin: plan
+  inScopeOf: agent

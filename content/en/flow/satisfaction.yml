@@ -1,0 +1,8 @@
+title: Satisfaction
+description: Links a commitment to the intent it satisfies
+entity: satisfaction
+layer: plan
+example: Anna's promise satisfies the need for chairs
+params:
+  satisfies: intent
+  satisfiedBy: commitment

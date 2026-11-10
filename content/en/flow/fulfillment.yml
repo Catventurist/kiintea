@@ -1,0 +1,9 @@
+title: Fulfillment
+description: Links an event to the commitment it fulfills
+entity: fulfillment
+layer: plan
+example: The chair delivery fulfills Anna's promise
+params:
+  fulfills: commitment
+  fulfilledBy: economic-event
+  

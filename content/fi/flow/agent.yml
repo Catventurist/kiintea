@@ -1,0 +1,7 @@
+title: Toimija
+description: Henkilö tai ryhmä, joka osallistuu taloudelliseen toimintaan
+entity: agent
+layer: agent
+example: Anna tai naapuruston työkalukirjasto
+params:
+  agentType: string

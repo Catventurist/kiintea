@@ -1,0 +1,6 @@
+title: Recipe exchange
+description: A reusable pattern for an exchange between agents
+entity: recipe-exchange
+layer: knowledge
+example: Lend a tool, get it back
+operations: [create, update, delete]

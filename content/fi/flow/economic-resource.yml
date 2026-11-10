@@ -1,0 +1,12 @@
+title: Taloudellinen resurssi
+description: Arvokas asia, jota yhteisö voi käyttää tai jakaa
+entity: economic-resource
+layer: observation
+example: Yhteisötilan taittotuolit
+operations: [update]
+params:
+  contains: economic-resource
+  containedIn: economic-resource
+  conformsTo: resource-specification
+  affectedBy: economic-event
+  primaryAccountable: agent

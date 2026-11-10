@@ -1,0 +1,8 @@
+slug: links-not-prefixed
+problem: Links are not prefixed with the locale
+severity: info
+since: '4.7+'
+tags: [i18n]
+cause: 'The @nuxtjs/i18n module is not installed, or the link is external.'
+fix: 'Install @nuxtjs/i18n. Internal links on ULink and UButton are localized automatically, and external links are skipped.'
+

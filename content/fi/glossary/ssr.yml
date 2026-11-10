@@ -1,0 +1,5 @@
+title: Palvelinpuolen renderöinti
+text: Sivut renderöidään HTML:ksi palvelimella.
+description: Palvelin lähettää valmiin HTML:n, joten sisältö näkyy ennen kuin JavaScript on latautunut.
+icon: i-lucide-server
+to: https://nuxt.com/docs/4.x/guide/concepts/rendering
