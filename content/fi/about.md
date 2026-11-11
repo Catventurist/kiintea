@@ -1,12 +1,12 @@
 ---
-title: Tietoja
-description: Sivuston tarkoitus, rakenne ja tulevaa.
+title: Tietoa
+description: Mikä tämä sivusto on, millä se on tehty ja mihin kannattaa mennä seuraavaksi.
 navigation:
-  title: Tietoja
+  title: Tietoa
   icon: i-lucide-info
 seo:
-  title: Tietoja
-  description: Sivuston tarkoitus, rakenne ja tulevaa.
+  title: Tietoa
+  description: Mikä tämä sivusto on, millä se on tehty ja mihin kannattaa mennä seuraavaksi.
 layout: default
 sidebar: true
 collapsed: false
@@ -15,9 +15,11 @@ toc: false
 surround: true
 ---
 
-Tämä sivusto on kokoelma interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille. Jokaista listaa voi järjestää vetämällä, ja kaikki toimii pelkällä Markdownilla.
-
-## Yleiskatsaus
+:::u-page-section
+---
+title: Tietoa sivustosta
+description: Kokoelma interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille. Jokaista listaa voi järjestää vetämällä, ja kaikki toimii pelkällä Markdownilla.
+---
 
 ::tabs-list
 ---
@@ -32,12 +34,64 @@ items:
     value: stack
   - label: Osallistu
     icon: i-lucide-git-pull-request
-    content: Ehdota uutta komponenttia tai paranna olemassa olevaa.
+    content: Ehdota komponenttia tai paranna olemassa olevaa.
     value: contribute
 ---
 ::
+:::
 
-## Teknologiat yhdellä silmäyksellä
+:::u-page-section{class="mt-20"}
+---
+title: Tehty näillä
+description: Työkalut tämän sivuston takana.
+---
+
+::icon-list
+---
+items:
+  - icon: i-social-finland
+    label: Suomi
+    to: /fi
+  - icon: i-social-usa
+    label: English
+    to: /
+  - icon: i-social-nuxt
+    label: Nuxt
+    to: https://nuxt.com
+    target: _blank
+  - icon: i-social-tailwind
+    label: Tailwind CSS
+    to: https://tailwindcss.com
+    target: _blank
+  - icon: i-social-typescript
+    label: TypeScript
+    to: https://www.typescriptlang.org
+    target: _blank
+  - icon: i-social-reka
+    label: Reka UI
+    to: https://reka-ui.com
+    target: _blank
+  - icon: i-social-motionvue
+    label: Motion Vue
+    to: https://motion-v.dev
+    target: _blank
+  - icon: i-social-zod
+    label: Zod
+    to: https://zod.dev
+    target: _blank
+  - icon: i-social-vercel
+    label: Vercel
+    to: https://vercel.com
+    target: _blank
+---
+::
+:::
+
+:::u-page-section{class="mt-20"}
+---
+title: Teknologiat lyhyesti
+description: Teknologiat, joilla tämä sivusto on rakennettu.
+---
 
 ::table-list
 ---
@@ -45,7 +99,7 @@ columns:
   - key: name
     label: Teknologia
   - key: purpose
-    label: Tarkoitus
+    label: Käyttötarkoitus
 data:
   - id: 1
     name: Nuxt 4
@@ -66,33 +120,63 @@ data:
 ---
 ::
 
-## Aiheet
+::compat-matrix
+---
+columns:
+  - Node 18
+  - Node 20
+  - Node 22
+rows:
+  - name: Nuxt UI
+    support: [partial, supported, supported]
+    note: Vaatii v4-version Node 18:lla.
+  - name: Nuxt Content
+    support: [supported, supported, supported]
+---
+::
+:::
+
+:::u-page-section{class="mt-20"}
+---
+title: Aiheet
+description: Lisää itseäsi kiinnostavat aiheet.
+---
 
 ::tags-list
 ---
 placeholder: Lisää aihe...
 items:
-  - Teemoitus
+  - Teemat
   - Lomakkeet
   - Asettelu
   - Sisältö
   - Vedä ja pudota
 ---
 ::
+:::
 
-## Ennen aloitusta
+:::u-page-section{class="mt-20"}
+---
+title: Ennen kuin aloitat
+description: Varmista, että nämä ovat valmiina.
+---
 
 ::checkbox-list
 ---
 legend: Tarkistuslista
 items:
-  - Node.js asennettu
+  - Node.js asennettuna
   - Nuxt 4 -projekti
-  - Nuxt UI ja Nuxt Content lisätty
+  - Nuxt UI ja Nuxt Content lisättynä
 ---
 ::
+:::
 
-## Mikä polku sopii sinulle?
+:::u-page-section{class="mt-20"}
+---
+title: Mikä polku sopii sinulle?
+description: Valitse, mitä haluat tehdä.
+---
 
 ::radio-list
 ---
@@ -103,28 +187,70 @@ items:
   - Osallistua
 ---
 ::
+:::
 
-## Tutustu
+:::u-page-section{class="mt-20"}
+---
+title: Tutustu
+description: Siirry sivuston osiin, joita tarvitset.
+---
 
 ::nav-list
 ---
 orientation: vertical
 items:
-  - label: Aloitus
+  - label: Aloitusopas
     icon: i-lucide-rocket
     to: /guides
   - label: Työkalut
     icon: i-lucide-wrench
     to: /guides/tools
-  - label: Etusivu
+  - label: Koti
     icon: i-lucide-house
     to: /
 ---
 ::
+:::
 
-## Valitse väri
-
-Valitse värinäyte asettaaksesi sivuston pääväri.
+:::u-page-section{class="mt-20"}
+---
+title: Valitse väri
+description: Napsauta värinäytettä asettaaksesi sivuston pääväri.
+---
 
 ::swatch-list{compact}
 ::
+:::
+
+:::u-page-section{class="mt-20"}
+---
+title: Löydä meidät
+description: Missä yhteisö viettää aikaansa.
+---
+
+::icon-list
+---
+items:
+  - icon: i-social-github
+    label: GitHub
+    to: https://github.com/Catventurist/kiintea
+    target: _blank
+  - icon: i-social-telegram
+    label: Telegram
+    to: https://t.me/harhaa
+    target: _blank
+  - icon: i-social-signal
+    label: Signal
+    to: https://signal.org
+    target: _blank
+  - icon: i-social-jitsi
+    label: Jitsi
+    to: https://meet.jit.si
+    target: _blank
+  - icon: i-social-ecency
+    label: Ecency
+    to: https://ecency.com
+    target: _blank
+---
+::
+:::

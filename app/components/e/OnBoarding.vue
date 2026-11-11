@@ -83,92 +83,98 @@ function submit() {
     name="onboarding"
     appear
   >
-    <UCard
-      v-if="!completed"
-      class="min-w-lg mx-auto"
-    >
-      <template #header>
-        <span class="text-xl text-primary font-bold">
-          {{ t('onboarding.welcome') }}
-        </span>
-      </template>
+    <div>
+      <h2
+        v-if="completed"
+        class="text-4xl text-primary animate-quiz-pop self-center"
+      >
+        {{ $t('onboarding.success') }}
+      </h2>
+      <UCard
+        v-if="!completed"
+        class="min-w-xs mx-auto"
+      >
+        <template #header>
+          <span class="text-xl text-primary font-bold">
+            {{ t('onboarding.welcome') }}
+          </span>
+        </template>
 
-      <div class="space-y-4">
-        <p class="text-sm font-medium text-highlighted">
-          {{ t('onboarding.question') }}
-        </p>
+        <div class="space-y-4">
+          <p class="text-sm font-medium text-highlighted">
+            {{ t('onboarding.question') }}
+          </p>
 
-        <div
-          role="radiogroup"
-          :aria-label="t('onboarding.question')"
-          class="grid grid-cols-1 sm:grid-cols-2 gap-3"
-        >
           <div
-            v-for="card in cards"
-            :key="card.value"
-            role="radio"
-            tabindex="0"
-            :aria-checked="priority === card.value"
-            class="rounded-lg p-4 cursor-pointer select-none transition"
-            :class="[
-              priority === card.value ? tones[card.tone].on : tones[card.tone].off,
-              card.wide && 'sm:col-span-2'
-            ]"
-            @click="priority = card.value"
-            @keydown.enter.prevent="priority = card.value"
-            @keydown.space.prevent="priority = card.value"
+            role="radiogroup"
+            :aria-label="t('onboarding.question')"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-3"
           >
-            <div class="flex items-center gap-2 font-medium text-highlighted">
-              <UIcon
-                :name="card.icon"
-                class="size-5"
-                :class="tones[card.tone].icon"
-              />
-              {{ t(card.label) }}
-            </div>
-
             <div
-              v-if="card.locale || card.mode"
-              class="mt-3 flex flex-wrap gap-2"
+              v-for="card in cards"
+              :key="card.value"
+              role="radio"
+              tabindex="0"
+              :aria-checked="priority === card.value"
+              class="rounded-lg p-4 cursor-pointer select-none transition"
+              :class="[
+                priority === card.value ? tones[card.tone].on : tones[card.tone].off,
+                card.wide && 'sm:col-span-2'
+              ]"
+              @click="priority = card.value"
+              @keydown.enter.prevent="priority = card.value"
+              @keydown.space.prevent="priority = card.value"
             >
-              <template v-if="card.locale">
-                <UBadge
-                  v-for="l in locales"
-                  :key="l.value"
-                  as="button"
-                  type="button"
-                  :color="card.tone"
-                  :variant="locale === l.value ? 'solid' : 'outline'"
-                  :label="l.label"
-                  @click="pickLocale(l.value)"
+              <div class="flex items-center gap-2 font-medium text-highlighted">
+                <UIcon
+                  :name="card.icon"
+                  class="size-5"
+                  :class="tones[card.tone].icon"
                 />
-              </template>
+                {{ t(card.label) }}
+              </div>
 
-              <template v-if="card.mode">
-                <UBadge
-                  v-for="m in modes"
-                  :key="m.value"
-                  as="button"
-                  type="button"
-                  :color="card.tone"
-                  :variant="mode === m.value ? 'solid' : 'outline'"
-                  :icon="m.icon"
-                  :label="t(m.label)"
-                  @click="mode = m.value"
-                />
-              </template>
+              <div
+                v-if="card.locale || card.mode"
+                class="mt-3 flex flex-wrap gap-2"
+              >
+                <template v-if="card.locale">
+                  <UButton
+                    v-for="l in locales"
+                    :key="l.value"
+                    :color="card.tone"
+                    :variant="locale === l.value ? 'soft' : 'outline'"
+                    :label="l.label"
+                    @click="pickLocale(l.value)"
+                  />
+                </template>
+
+                <template v-if="card.mode">
+                  <UBadge
+                    v-for="m in modes"
+                    :key="m.value"
+                    as="button"
+                    type="button"
+                    :color="card.tone"
+                    :variant="mode === m.value ? 'solid' : 'outline'"
+                    :icon="m.icon"
+                    :label="t(m.label)"
+                    @click="mode = m.value"
+                  />
+                </template>
+              </div>
             </div>
           </div>
-        </div>
 
-        <UButton
-          block
-          variant="subtle"
-          trailing-icon="i-lucide-arrow-right"
-          :label="t('onboarding.continue')"
-          @click="submit"
-        />
-      </div>
-    </UCard>
+          <UButton
+            block
+            variant="subtle"
+            trailing-icon="i-lucide-arrow-right"
+            :label="t('onboarding.continue')"
+            @click="submit"
+          />
+        </div>
+      </UCard>
+    </div>
   </Transition>
 </template>

@@ -1,9 +1,9 @@
 ---
 title: Koti
-description: Interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille.
+description: Suomalaisen yhteisön interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille.
 seo:
   title: Koti
-  description: Interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille.
+  description: Suomalaisen yhteisön interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille.
 navigation:
   title: Koti
   icon: i-lucide-home
@@ -17,9 +17,9 @@ surround: false
 
 ::u-page-hero
 ---
-headline: Nuxt 4
-title: Kiinteä
-description: Raahattavia komponentteja.
+headline: Kiinteä yhteisö
+title: Rakennetaan yhdessä
+description: Raahattavia MDC-komponentteja, jotka on tehty suomeksi ja jaettu avoimesti. Kopioi, muokkaa ja paranna.
 links:
   - label: Aloita
     to: /about
@@ -31,51 +31,19 @@ links:
     color: neutral
     variant: subtle
     trailingIcon: i-lucide-arrow-right
+  - label: Katsele kirjastoa
+    to: https://github.com/Catventurist/kiintea
+    target: _blank
+    color: secondary
+    variant: outline
+    icon: i-social-github
 ---
 ::
 
-::compat-matrix
----
-columns:
-  - Node 18
-  - Node 20
-  - Node 22
-rows:
-  - name: Nuxt UI
-    support: [partial, supported, supported]
-    note: Vaatii v4-version Node 18:lla.
-  - name: Nuxt Content
-    support: [supported, supported, supported]
----
-::
-
-:::u-page-section{class="mt-20"}
----
-title: Kokeile heti
-description: Valitse asetukset ja saat asennuskomennon.
----
-
-::install-builder
----
-manager: pnpm
-packages:
-  - "@nuxt/ui"
-  - tailwindcss
-options:
-  - label: Nuxt Content
-    package: "@nuxt/content"
-    description: Markdown- ja MDC-tuki.
-    checked: true
-  - label: Nuxt Image
-    package: "@nuxt/image"
-    description: Optimoidut kuvat.
----
-::
-:::
-
-:::u-page-section{class="mt-20"}
+:::u-page-section
 ---
 title: Mitä saat
+description: Valmiita komponentteja, jotka toimivat suoraan Nuxt Contentin Markdownissa.
 ---
 
 ::card-list
@@ -86,6 +54,7 @@ items:
     to: /guides/tools
     icon: i-lucide-list-checks
     id: lists
+    target: _blank
   - title: Asettelun apuvälineet
     description: Kortit, välilehdet, vaiheistus ja aikajana.
     to: /guides/tools
@@ -145,14 +114,45 @@ title: Uutta
 ::timeline-list
 ---
 items:
-  - date: 2.4.2026
+  - date: 11.11.2026
     title: Etusivu
-    description: Uusi etusivu toimivilla komponenteilla.
+    description: Uusi etusivu toimivilla komponenteilla ja yhteisöosiolla.
     icon: i-lucide-rocket
-  - date: 22.3.2026
-    title: Compat matrix
-    description: Versiotuki yhdellä silmäyksellä.
+  - date: 10.11.2026
+    title: Resurssikuvaaja
+    description: Yhteisön toimintaa.
     icon: i-lucide-table
+---
+::
+:::
+
+:::u-page-section{class="mt-20"}
+---
+title: Yhteisö
+description: Tämä on tehty yhdessä. Jokainen komponentti, käännös ja korjaus on tervetullut.
+---
+
+::card-list
+---
+items:
+  - title: Osallistu
+    description: Ehdota uusia komponentteja tai paranna olemassa olevia GitHubissa.
+    to: https://github.com/Catventurist/kiintea/pulls
+    target: _blank
+    icon: i-lucide-git-pull-request
+    id: contribute
+  - title: Ilmoita ongelmasta
+    description: Löysitkö virheen tai kirjoitusvirheen? Kerro siitä meille.
+    to: https://github.com/Catventurist/kiintea/issues
+    target: _blank
+    icon: i-lucide-bug
+    id: issues
+  - title: Keskustele
+    description: Kysy, jaa vinkkejä ja ehdota ideoita.
+    to: https://t.me/harhaa
+    target: _blank
+    icon: i-social-telegram
+    id: discuss
 ---
 ::
 :::
@@ -171,6 +171,12 @@ items:
   - label: Onko dokumentaatio suomeksi?
     content: Kyllä, dokumentaatio on saatavilla englanniksi ja suomeksi.
     value: finnish
+  - label: Voinko osallistua, vaikka en ole kokenut kehittäjä?
+    content: Kyllä! Käännökset, kirjoitusvirheiden korjaukset ja esimerkit ovat yhtä tärkeitä kuin koodi.
+    value: contribute
+  - label: Voinko käyttää komponentteja omissa projekteissani?
+    content: Kyllä, komponentit ovat avoimia. Kopioi ne projektiisi ja muokkaa tarpeen mukaan.
+    value: license
 ---
 ::
 :::

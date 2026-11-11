@@ -190,7 +190,7 @@ export function useBookmarks(list: Readonly<ShallowRef<HTMLElement | null>>) {
 
   const { start, stop, option } = useSortable(list, tree, {
     animation: 150,
-    ghostClass: 'opacity-50',
+    ghostClass: 'opacity-60',
     disabled: true,
     onUpdate: ({ oldIndex, newIndex }: { oldIndex?: number, newIndex?: number }) => {
       if (oldIndex === undefined || newIndex === undefined) return

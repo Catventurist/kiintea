@@ -149,6 +149,7 @@ onboarding:
   light: Light
   dark: Dark
   continue: Continue
+  success: You are on board.
 
 playground:
   source: Source

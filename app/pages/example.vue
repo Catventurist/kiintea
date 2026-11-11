@@ -38,6 +38,7 @@ useSeoMeta({
       v-model="active"
       :items="items"
       :unmount-on-hide="false"
+      variant="link"
       class="w-full"
       :ui="{ content: 'flex flex-col gap-4 items-center pt-4 animate-rise motion-reduce:animate-none' }"
     >

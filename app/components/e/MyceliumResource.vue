@@ -43,7 +43,7 @@ const columns = computed<ColumnDef<Connection>[]>(() => [
           <UButton
             v-for="r in resources"
             :key="r"
-            :label="r"
+            :label="$t(`community.resources.${r}`)"
             :color="activeResources.has(r) ? 'primary' : 'neutral'"
             :variant="activeResources.has(r) ? 'outline' : 'ghost'"
             size="sm"

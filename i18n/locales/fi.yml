@@ -149,6 +149,7 @@ onboarding:
   light: Vaalea
   dark: Tumma
   continue: Jatka
+  success: Olet messissä.
 
 playground:
   source: Lähde
@@ -436,7 +437,7 @@ community:
     consumer: kuluttaja
     both: molemmat
   nodes: solmua
-  links: yhteyksiä
+  links: yhteyttä
   resources:
     food: ruoka
     tools: työkalut

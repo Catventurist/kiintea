@@ -106,7 +106,7 @@ const contentSuggestions = computed(() => {
 
 useSortable(list, items, {
   animation: 150,
-  ghostClass: 'opacity-50',
+  ghostClass: 'opacity-60',
   handle: '[data-drag-handle]'
 })
 

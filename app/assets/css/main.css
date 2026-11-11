@@ -7,6 +7,30 @@
   --font-sans: 'Finlandica', sans-serif;
   --font-mono: 'Chivo Mono', monospace;
 
+  --color-suomi-50: oklch(97% 0.014 262);
+  --color-suomi-100: oklch(93% 0.03 262);
+  --color-suomi-200: oklch(86% 0.06 262);
+  --color-suomi-300: oklch(77% 0.1 262);
+  --color-suomi-400: oklch(65% 0.16 262);
+  --color-suomi-500: oklch(52% 0.19 262);
+  --color-suomi-600: oklch(45% 0.19 262);
+  --color-suomi-700: oklch(39% 0.17 262);
+  --color-suomi-800: oklch(33% 0.14 262);
+  --color-suomi-900: oklch(28% 0.11 262);
+  --color-suomi-950: oklch(21% 0.08 262);
+
+  --color-lake-50: oklch(97% 0.015 215);
+  --color-lake-100: oklch(94% 0.035 215);
+  --color-lake-200: oklch(88% 0.06 215);
+  --color-lake-300: oklch(81% 0.09 215);
+  --color-lake-400: oklch(73% 0.11 215);
+  --color-lake-500: oklch(65% 0.12 215);
+  --color-lake-600: oklch(55% 0.11 215);
+  --color-lake-700: oklch(47% 0.09 215);
+  --color-lake-800: oklch(40% 0.07 215);
+  --color-lake-900: oklch(35% 0.06 215);
+  --color-lake-950: oklch(26% 0.045 215);
+
   --animate-rise: rise 0.5s ease-out both;
   --animate-flicker: flicker var(--flicker, 1.6s) ease-in-out infinite;
   --animate-stat-in: stat-in 0.5s ease-out both;
@@ -109,6 +133,8 @@
   --swatch-amber: #f59e0b;
   --swatch-orange: #f97316;
   --swatch-rose: #f43f5e;
+  --swatch-suomi: var(--color-suomi-500);
+  --swatch-lake: var(--color-lake-500);
 }
 
 .page-enter-active,

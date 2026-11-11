@@ -42,7 +42,7 @@ useSortable(container, list, {
   animation: 150,
   draggable: '[data-row]',
   handle: '[data-drag-handle]',
-  ghostClass: 'opacity-50',
+  ghostClass: 'opacity-60',
   forceFallback: true,
   fallbackOnBody: true,
   fallbackTolerance: 3

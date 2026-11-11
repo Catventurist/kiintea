@@ -253,6 +253,9 @@ surround: true
   - i18n: `en`, `fi`.
   - Composable: `useMycelium` (canvas-silmukka, osumatestaus, hiukkasfysiikka).
   - Tyypit: `CommunityData`, `CommunityNode`, `CommunityEdge`, `Resource`.
+- Järjesteltävä `icon-list`-MDC-komponentti. Jokainen ruutu on ghost-linkkipainike, ja ruutuja voi järjestää vetämällä.
+- Oma `social`-kuvakekokoelma (`i-social-*`), joka ladataan kansiosta `app/assets/icons`.
+- "Tehty näillä" ja "Löydä meidät" -osiot Tietoa-sivulle.
 
 ### Korjattu
 
@@ -270,8 +273,13 @@ surround: true
 - Sivupalkin avoin-tila on sidottu `collapsed`-asetukseen, joten kytkin, valikko ja frontmatter ovat yhtä mieltä.
 - `ClientOnly` ympäröi nyt vain otsikkorivin painikkeet, ei koko sisältöaluetta.
 - Sivupalkin kytkimellä on käännetty `aria-label` ja `aria-expanded`.
+- Tietoa-sivu rakennettu uudelleen `u-page-section`-lohkoista, ja siitä on suomenkielinen versio.
+- Etusivu uudistettu yhteisöosiolla sekä englannin- ja suomenkielisillä versioilla.
+- Teema päivitetty `suomi`- (sininen) ja `lake`-paletteihin (sinivihreä).
 
 ### Ongelmat
 
 - Nuxt Content v3.5.0 ei saa käynnistettyä SQLite-kyselyn päätepistettään, kun Bun tunnistetaan mutta kehityspalvelin ajetaan Node-ympäristössä (`bun:` ESM -virhe). Käynnistä kehityspalvelin yhdenmukaisella ajoympäristöllä tai päivitä `@nuxt/content`.
+- Vaiheistuksen hydraatiovirhe. Se alkaa nyt pystysuuntaisena ja vaihtuu vaakasuuntaiseksi leveämmillä näytöillä latauksen jälkeen.
+- `card-list`-linkeiltä puuttunut `target`. Mallipohjassa käytetään nyt arvoa `item.target`.
 

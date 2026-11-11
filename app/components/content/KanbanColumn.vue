@@ -25,7 +25,7 @@ let nextSibling: Node | null = null
 useSortable(el, cards, {
   group: 'kanban',
   draggable: '[data-card]',
-  ghostClass: 'opacity-50',
+  ghostClass: 'opacity-60',
   direction: 'vertical',
   animation: 150,
   forceFallback: true,

@@ -6,7 +6,7 @@ const props = withDefaults(defineProps<{
   select?: boolean
   compact?: boolean
 }>(), {
-  colors: () => ['blue', 'sky', 'indigo', 'violet', 'green', 'emerald', 'amber', 'orange', 'rose'],
+  colors: () => ['blue', 'sky', 'indigo', 'violet', 'green', 'emerald', 'amber', 'orange', 'rose', 'suomi', 'lake'],
   select: true,
   compact: false
 })
@@ -26,7 +26,7 @@ function pick(name: string) {
 useSortable(container, list, {
   animation: 150,
   draggable: '[data-swatch]',
-  ghostClass: 'opacity-50',
+  ghostClass: 'opacity-60',
   forceFallback: true,
   fallbackOnBody: true,
   fallbackTolerance: 3

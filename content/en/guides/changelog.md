@@ -247,6 +247,9 @@ surround: true
   - i18n: `en`, `fi`.
   - Composable: `useMycelium` (canvas loop, hit-testing, particle physics).
   - Types: `CommunityData`, `CommunityNode`, `CommunityEdge`, `Resource`.
+- Sortable `icon-list` MDC component. Each tile is a ghost link button and can be reordered by dragging.
+- Custom `social` icon collection (`i-social-*`) loaded from `app/assets/icons`.
+- "Built with" and "Find us" sections on the About page.
 
 ### Fixed
 
@@ -264,7 +267,12 @@ surround: true
 - The sidebar open state is bound to the `collapsed` option, so the toggle, menu and frontmatter agree.
 - `ClientOnly` now wraps only the header buttons, not the whole content area.
 - The sidebar toggle has a translated `aria-label` and `aria-expanded`.
+- About page rebuilt from `u-page-section` blocks, with a Finnish version.
+- Home page reworked with a community section and English and Finnish versions.
+- Theme updated to the `suomi` (blue) and `lake` (teal) palettes.
 
 ### Issues
 
 - Nuxt Content v3.5.0 fails to run its SQLite query endpoint when Bun is detected but the dev server runs on Node (`bun:` ESM error). Start dev with a consistent runtime, or update `@nuxt/content`.
+- Hydration mismatch in the stepper. It now starts vertical and switches to horizontal on wider screens after mount.
+- `target` not applied on `card-list` links. The template now uses `item.target`.

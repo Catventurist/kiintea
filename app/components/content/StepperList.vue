@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useSortable, moveArrayElement, insertNodeAt, removeNode } from '@vueuse/integrations/useSortable'
+import { breakpointsTailwind, useBreakpoints, useMounted } from '@vueuse/core'
 
 interface SortableStep {
   title: string
@@ -14,6 +15,14 @@ const props = defineProps<{
 const { t } = useI18n()
 const list = ref<SortableStep[]>(props.items.map(item => ({ ...item })))
 const active = ref(0)
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const mounted = useMounted()
+const isDesktop = breakpoints.greaterOrEqual('md')
+
+const orientation = computed(() =>
+  mounted.value && isDesktop.value ? 'horizontal' : 'vertical'
+)
 
 const stepper = useTemplateRef<{ $el: HTMLElement }>('stepper')
 const el = computed(() => stepper.value?.$el?.querySelector('[data-slot="header"]') as HTMLElement | undefined)
@@ -40,6 +49,7 @@ useSortable(el, list, {
       v-model="active"
       :items="list"
       :linear="false"
+      :orientation="orientation"
       :ui="{ item: 'cursor-grab active:cursor-grabbing' }"
     />
     <div class="flex justify-between">
