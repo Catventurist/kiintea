@@ -16,13 +16,11 @@ const display = computed(() => isNotFound.value
   ? {
       ...props.error,
       statusText: t('error.notFound.title'),
-      statusMessage: t('error.notFound.title'),
       message: t('error.notFound.description', { path: route.path })
     }
   : {
       ...props.error,
       statusText: t('error.generic.title'),
-      statusMessage: t('error.generic.title'),
       message: t('error.generic.description')
     })
 

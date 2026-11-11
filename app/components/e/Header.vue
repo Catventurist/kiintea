@@ -29,6 +29,9 @@ const { navItems } = useNavItems()
     <template #right>
       <LazyUContentSearchButton
         :collapsed="false"
+        :ui="{ label: 'hidden sm:inline', trailing: 'hidden sm:flex' }"
+        variant="ghost"
+        class="max-sm:px-2"
         hydrate-on-idle
       />
       <LazyLocaleMenu />

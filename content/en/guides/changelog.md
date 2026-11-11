@@ -235,3 +235,26 @@ surround: true
 
 - Missing pages now throw a fatal 404, so the error page is shown
 - Page title and description were read before the page had loaded
+
+## 11.11
+
+## Fixed
+
+- Switching locale no longer shows stale, empty or wrong-language content. The content queries now use the locale from the URL, and the cache keys and watchers use `route.path`. This covers `useContentCollection`, `pages/index.vue` and the catch-all page.
+- Hash links (`#section`) now scroll to the target, also across pages. A small client plugin handles it, because the content scrolls inside `UScrollArea` and not the window.
+- The page scroll position resets when you navigate to a page without a hash.
+- The TOC now shows on desktop when the splitter is off.
+- Options set from the page-options menu now last for one page only, so frontmatter wins on the next page.
+
+## Changed
+
+- Added `useRouteLocale()`, a single source of truth for the current locale, validated against the configured i18n locales.
+- The locale menu is now a popover with the flag icon from the i18n config.
+- The header shows an icon-only search button on small screens.
+- The sidebar open state is bound to the `collapsed` option, so the toggle, menu and frontmatter agree.
+- `ClientOnly` now wraps only the header buttons, not the whole content area.
+- The sidebar toggle has a translated `aria-label` and `aria-expanded`.
+
+## Known issues
+
+- Nuxt Content v3.5.0 fails to run its SQLite query endpoint when Bun is detected but the dev server runs on Node (`bun:` ESM error). Start dev with a consistent runtime, or update `@nuxt/content`.

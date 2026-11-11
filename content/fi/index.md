@@ -25,6 +25,7 @@ links:
     to: /about
     variant: soft
     icon: i-lucide-square-play
+    class: 'hover:animate-dancing'
   - label: Selaa ohjeita
     to: /guides
     color: neutral

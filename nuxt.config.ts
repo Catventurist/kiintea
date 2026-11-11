@@ -100,7 +100,7 @@ export default defineNuxtConfig({
       subsets: ['latin']
     },
     families: [
-      { name: 'Finlandica', weights: [400, 600] },
+      { name: 'Finlandica', weights: [400, 600], preload: true, display: 'swap' },
       { name: 'Chivo Mono', weights: [400], subsets: ['latin'], preload: false }
     ]
   },
@@ -108,8 +108,8 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'prefix',
     locales: [
-      { code: 'en', name: 'English', language: 'en-US', flag: '🇺🇸', dir: 'ltr', file: 'en.yml' },
-      { code: 'fi', name: 'Suomi', language: 'fi-FI', flag: '🇫🇮', dir: 'ltr', file: 'fi.yml' }
+      { code: 'en', name: 'English', language: 'en-US', flag: '🇺🇸', dir: 'ltr', file: 'en.yml', icon: 'i-social-usa' },
+      { code: 'fi', name: 'Suomi', language: 'fi-FI', flag: '🇫🇮', dir: 'ltr', file: 'fi.yml', icon: 'i-social-finland' }
     ],
     detectBrowserLanguage: {
       useCookie: false,

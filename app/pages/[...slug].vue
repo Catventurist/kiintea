@@ -1,5 +1,9 @@
 <script setup lang="ts">
-definePageMeta({ middleware: 'layout', layout: 'dashboard' })
+definePageMeta({
+  middleware: 'layout',
+  layout: 'dashboard',
+  key: route => route.fullPath
+})
 
 const { page, ready, surround } = useContentCollection()
 const { options } = usePageOptions()

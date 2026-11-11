@@ -32,20 +32,28 @@ export function useNavItems() {
   return { navItems }
 }
 
+export const useRouteLocale = () => {
+  const route = useRoute()
+  const { locales, defaultLocale } = useI18n()
+
+  return computed(() => {
+    const seg = route.path.split('/')[1]
+    const codes: string[] = locales.value.map(l => typeof l === 'string' ? l : l.code)
+    return (seg && codes.includes(seg) ? seg : defaultLocale) as typeof defaultLocale
+  })
+}
+
 export function useContentCollection() {
   const route = useRoute()
-  const { locale } = useI18n()
+  const locale = useRouteLocale()
 
-  const collection = computed(() => ('content_' + locale.value) as keyof PageCollections)
+  const collection = computed(() => `content_${locale.value}` as keyof PageCollections)
 
-  const page = useAsyncData(() => `page-${locale.value}-${route.path}`, async () => {
-    const content = await queryCollection(collection.value).path(route.path).first()
-
-    if (!content && locale.value !== 'en') {
-      return await queryCollection('content_en').path(route.path).first()
-    }
-    return content
-  }, { watch: [locale] })
+  const page = useAsyncData(
+    () => `page-${route.path}`,
+    () => queryCollection(collection.value).path(route.path).first(),
+    { watch: [() => route.path] }
+  )
 
   const navigation = useAsyncData(
     () => `navigation-${locale.value}`,
@@ -62,19 +70,18 @@ export function useContentCollection() {
     { server: false, watch: [locale] }
   )
 
-  const surround = useAsyncData(() => `surround-${locale.value}-${route.path}`, async () => {
-    let col = collection.value
-    const hasLocalized = await queryCollection(col).path(route.path).first()
-    if (!hasLocalized && locale.value !== 'en') col = 'content_en' as keyof PageCollections
-
-    return queryCollectionItemSurroundings(col, route.path, {
+  const surround = useAsyncData(
+    () => `surround-${route.path}`,
+    () => queryCollectionItemSurroundings(collection.value, route.path, {
       fields: ['title', 'description']
-    })
-  }, { watch: [locale] })
+    }),
+    { watch: [() => route.path] }
+  )
 
   const ready = Promise.all([page, navigation, surround])
 
   return {
+    locale,
     collection,
     page: page.data,
     navigation: navigation.data,
@@ -113,7 +120,7 @@ export function usePreferences() {
 
 export function usePageOptions() {
   const route = useRoute()
-  const { locale } = useI18n()
+  const locale = useRouteLocale()
   const { page } = useContentCollection()
   const { preferences, set } = usePreferences()
 

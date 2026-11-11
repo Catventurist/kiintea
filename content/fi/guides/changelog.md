@@ -242,3 +242,26 @@ surround: true
 - Puuttuvat sivut heittävät nyt vakavan 404-virheen, joten virhesivu näkyy
 - Sivun otsikko ja kuvaus luettiin ennen kuin sivu oli ladattu
 
+## 11.11
+
+## Korjattu
+
+- Kielen vaihtaminen ei enää näytä vanhentunutta, tyhjää tai vääränkielistä sisältöä. Sisältökyselyt käyttävät nyt URL-osoitteen kieltä, ja välimuistiavaimet ja tarkkailijat käyttävät `route.path`-arvoa. Tämä koskee `useContentCollection`-funktiota, `pages/index.vue`-sivua ja yleissivua (catch-all).
+- Ankkurilinkit (`#section`) vierittävät nyt kohteeseen myös sivujen välillä. Asian hoitaa pieni asiakaspuolen lisäosa, koska sisältö vierii `UScrollArea`-komponentin sisällä eikä ikkunassa.
+- Sivun vierityskohta nollautuu, kun siirrytään sivulle ilman ankkuria.
+- Sisällysluettelo näkyy nyt työpöydällä, kun jakaja (splitter) on pois päältä.
+- Sivuasetusvalikosta tehdyt valinnat koskevat nyt vain yhtä sivua, joten frontmatter on voimassa seuraavalla sivulla.
+
+## Muutettu
+
+- Lisätty `useRouteLocale()`, joka on yksi ainoa totuuden lähde nykyiselle kielelle ja jonka arvo tarkistetaan määritettyjä i18n-kieliä vasten.
+- Kielivalikko on nyt ponnahdusikkuna (popover), jossa näkyy i18n-asetuksista haettu lippukuvake.
+- Otsikkorivillä näkyy pienillä näytöillä pelkkä hakukuvake.
+- Sivupalkin avoin-tila on sidottu `collapsed`-asetukseen, joten kytkin, valikko ja frontmatter ovat yhtä mieltä.
+- `ClientOnly` ympäröi nyt vain otsikkorivin painikkeet, ei koko sisältöaluetta.
+- Sivupalkin kytkimellä on käännetty `aria-label` ja `aria-expanded`.
+
+## Ongelmat
+
+- Nuxt Content v3.5.0 ei saa käynnistettyä SQLite-kyselyn päätepistettään, kun Bun tunnistetaan mutta kehityspalvelin ajetaan Node-ympäristössä (`bun:` ESM -virhe). Käynnistä kehityspalvelin yhdenmukaisella ajoympäristöllä tai päivitä `@nuxt/content`.
+

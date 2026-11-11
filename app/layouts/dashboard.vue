@@ -14,11 +14,19 @@ const open = computed({
   set: (value: boolean) => set('collapsed', !value)
 })
 
-watch(() => route.path, () => reset(), { flush: 'sync' })
+const mainScroll = ref<{ $el: HTMLElement } | null>(null)
+const asideScroll = ref<{ $el: HTMLElement } | null>(null)
+
+watch(() => route.path, () => {
+  reset()
+  if (!route.hash) {
+    nextTick(() => mainScroll.value?.$el?.scrollTo({ top: 0 }))
+  }
+}, { flush: 'sync' })
 
 const splitterItems: SplitterItem[] = [
-  { slot: 'main', defaultSize: 75, minSize: 40, class: 'overflow-y-auto' },
-  { slot: 'toc', defaultSize: 25, minSize: 15, maxSize: 40, class: 'overflow-y-auto' }
+  { slot: 'main', defaultSize: 75, minSize: 40, class: 'min-h-0 overflow-hidden' },
+  { slot: 'toc', defaultSize: 25, minSize: 15, maxSize: 40, class: 'min-h-0 overflow-y-auto' }
 ]
 
 const breakpoints = useBreakpoints(breakpointsTailwind, { ssrWidth: 1280 })
@@ -35,9 +43,7 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
     label: item.title,
     icon: item.icon as string | undefined,
     to: item.path,
-    children: expanded && item.children?.length
-      ? toMenu(item.children, true)
-      : undefined,
+    children: expanded && item.children?.length ? toMenu(item.children, true) : undefined,
     defaultOpen: false
   }))
 }
@@ -69,18 +75,23 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
           icon="i-lucide-panel-left"
           color="neutral"
           variant="ghost"
-          :aria-label="t('pageOptions.toggleSidebar')"
+          :aria-label="t('layout.toggleSidebar')"
           :aria-expanded="open"
           @click="open = !open"
         />
-        <ClientOnly>
-          <LazyEOptionsButton />
-          <LazyUColorModeButton variant="ghost" />
-          <LazyENotesButton />
-          <LazyEDownloadButton :page="page" />
-          <LazyLocaleMenu />
-          <LazyUContentSearchButton :collapsed="false" />
-        </ClientOnly>
+        <div class="ms-auto flex items-center gap-1">
+          <ClientOnly>
+            <LazyEOptionsButton />
+            <LazyUColorModeButton variant="ghost" />
+            <LazyENotesButton />
+            <LazyEDownloadButton :page="page" />
+            <LazyLocaleMenu />
+            <LazyUContentSearchButton
+              :collapsed="!isDesktop"
+              hydrate-on-idle
+            />
+          </ClientOnly>
+        </div>
       </div>
 
       <div class="flex-1 min-h-0">
@@ -92,6 +103,7 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
         >
           <template #main>
             <UScrollArea
+              ref="mainScroll"
               class="h-full px-6 pb-6"
               shadow
             >
@@ -105,9 +117,10 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
 
         <div
           v-else
-          class="h-full flex"
+          class="h-full min-h-0 flex"
         >
           <UScrollArea
+            ref="mainScroll"
             class="h-full flex-1 min-w-0 p-6"
             shadow
           >
@@ -123,7 +136,8 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
 
           <aside
             v-if="showDesktopAside"
-            class="w-64 shrink-0 overflow-y-auto p-6 border-s border-default"
+            ref="asideScroll"
+            class="w-64 shrink-0 min-h-0 overflow-y-auto p-6 border-s border-default"
           >
             <LazyUContentToc :links="tocLinks" />
           </aside>
