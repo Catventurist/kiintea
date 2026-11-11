@@ -14,42 +14,6 @@ surround: true
 
 Small interactive components for documentation pages. Each one works from Markdown with MDC.
 
-## Bilingual view
-
-The same page in English and Finnish side by side, with linked scrolling. It's meant for checking translations: blocks line up even when one language is longer.
-
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::bilingual-view
----
-path: /guides/changelog
-height: 40
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
-::bilingual-view
----
-path: /guides/changelog
-height: 60
-linked: true
----
-::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::bilingual-view{path="/guides/changelog" :height="60"}
-::
-```
-:::
-::
-
-Props: `path` (required, the page path without a language prefix), `height` (in `vh`, default `70`) and `linked` (the starting state of linked scrolling, default `true`).
-
-Don't point `path` at the page that contains the component. A bilingual view inside another one renders a warning instead.
-
 ## CompatMatrix
 
 A compatibility matrix with one row per dependency and one cell per version. Each cell shows whether the version is supported, partly supported or not supported. Drag the grip handle to reorder the rows.

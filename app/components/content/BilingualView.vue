@@ -13,13 +13,21 @@ const { t } = useI18n()
 const nested = inject<boolean>('bilingual-view', false)
 provide('bilingual-view', true)
 
-const { data: pages } = await useAsyncData('bilingual-' + props.path, async () => {
-  const [en, fi] = await Promise.all([
-    queryCollection('content_en').path('/en' + props.path).first(),
-    queryCollection('content_fi').path('/fi' + props.path).first()
-  ])
-  return { en, fi }
-})
+const fields = ['title', 'path', 'body'] as const
+
+const { data: pages, status } = useLazyAsyncData(
+  'bilingual-' + props.path,
+  async () => {
+    const [en, fi] = await Promise.all([
+      queryCollection('content_en').path('/en' + props.path).select(...fields).first(),
+      queryCollection('content_fi').path('/fi' + props.path).select(...fields).first()
+    ])
+    return { en, fi }
+  },
+  { server: false, immediate: !nested }
+)
+
+const loading = computed(() => status.value === 'idle' || status.value === 'pending')
 
 const sync = ref(props.linked)
 const left = useTemplateRef<HTMLElement>('left')
@@ -92,8 +100,12 @@ function follow(from: HTMLElement | null, to: HTMLElement | null) {
           :style="{ height: height + 'vh' }"
           @scroll="follow(left, right)"
         >
+          <USkeleton
+            v-if="loading"
+            class="h-full w-full"
+          />
           <ContentRenderer
-            v-if="pages?.en"
+            v-else-if="pages?.en"
             :value="pages.en"
           />
           <UAlert
@@ -117,8 +129,12 @@ function follow(from: HTMLElement | null, to: HTMLElement | null) {
           :style="{ height: height + 'vh' }"
           @scroll="follow(right, left)"
         >
+          <USkeleton
+            v-if="loading"
+            class="h-full w-full"
+          />
           <ContentRenderer
-            v-if="pages?.fi"
+            v-else-if="pages?.fi"
             :value="pages.fi"
           />
           <UAlert

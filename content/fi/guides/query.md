@@ -11,7 +11,7 @@ toc: true
 surround: true
 ---
 
-Jotkin komponentit hakevat lisätietoja tiedostoista. Itsenäiset komponentit voivat olla hankalia Content-kyselyjen kanssa.
+Jotkin komponentit hakevat lisätietoja [tiedostoista](/guides/query). Itsenäiset komponentit voivat olla hankalia Content-kyselyjen kanssa.
 
 Useimmat tämän sivuston komponentit ovat puhtaita: ne näyttävät vain annetut propsit tai YAML-lohkon. Tämän sivun komponentit lukevat lisäksi sisältökokoelmia, joten niiden data seuraa nykyistä kieltä ja pysyy synkassa sisällön kanssa.
 

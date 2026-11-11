@@ -75,7 +75,7 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
           icon="i-lucide-panel-left"
           color="neutral"
           variant="ghost"
-          :aria-label="t('layout.toggleSidebar')"
+          :aria-label="t('pageOptions.toggleSidebar')"
           :aria-expanded="open"
           @click="open = !open"
         />
@@ -104,7 +104,7 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
           <template #main>
             <UScrollArea
               ref="mainScroll"
-              class="h-full px-6 pb-6"
+              class="h-full ps-8 pe-2"
               shadow
             >
               <slot />
@@ -121,7 +121,7 @@ function toMenu(items: ContentNavigationItem[], expanded: boolean): NavigationMe
         >
           <UScrollArea
             ref="mainScroll"
-            class="h-full flex-1 min-w-0 p-6"
+            class="h-full flex-1 min-w-0 p-4"
             shadow
           >
             <LazyUContentToc
