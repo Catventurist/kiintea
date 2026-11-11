@@ -21,8 +21,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
+  <div class="p-4">
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+    />
+  </div>
 </template>

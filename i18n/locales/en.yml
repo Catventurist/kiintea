@@ -42,6 +42,7 @@ page:
     progress: Progress
     checkin: Check-in
     bookmarks: Bookmarks
+    mycelium: Mycelium
 
 error:
   back: Back to home
@@ -408,3 +409,40 @@ bookmarks:
     invalid: This file is not a bookmarks export
     empty: No bookmarks were found in this file
   reorder: Reorder
+community:
+  title: Community Network
+  subtitle: Resource flow between members
+  network: Network
+  noData:
+    title: No network data
+    description: No nodes or edges have been recorded yet.
+  legend:
+    producer: Producer
+    consumer: Consumer
+    both: Both
+    flow: Flow
+  stats:
+    in: In
+    out: Out
+    links: Links
+  table:
+    node: Node
+    resource: Resource
+    flow: Flow
+    dir: Dir
+  types:
+    producer: producer
+    consumer: consumer
+    both: both
+  nodes: nodes
+  links: links
+  resources:
+    food: food
+    tools: tools
+    skills: skills
+    money: money
+    time: time
+  dir:
+    in: in
+    out: out
+

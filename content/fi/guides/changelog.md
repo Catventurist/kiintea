@@ -244,7 +244,17 @@ surround: true
 
 ## 11.11
 
-## Korjattu
+### Lisätty
+
+- [Mycelium-resurssiverkosto](/example?tab=mycelium), interaktiivinen canvas-visuualisaatio yhteisön resurssivirtauksesta.
+  - Tietopohjainen: piirtää solmut (tuottaja / kuluttaja / molemmat) ja suuntatut yhteydet virtauksen mukana skaalautuvilla hiukkasilla.
+  - Resurssisuodattimet (`ruoka`, `työkalut`, `taidot`, `raha`, `aika`) vaihtavat aliverkostoja.
+  - Klikkaa solmua → sivupaneeli sisään-/ulosvirtausstatistiikoineen ja yhteyksien taulukolla.
+  - i18n: `en`, `fi`.
+  - Composable: `useMycelium` (canvas-silmukka, osumatestaus, hiukkasfysiikka).
+  - Tyypit: `CommunityData`, `CommunityNode`, `CommunityEdge`, `Resource`.
+
+### Korjattu
 
 - Kielen vaihtaminen ei enää näytä vanhentunutta, tyhjää tai vääränkielistä sisältöä. Sisältökyselyt käyttävät nyt URL-osoitteen kieltä, ja välimuistiavaimet ja tarkkailijat käyttävät `route.path`-arvoa. Tämä koskee `useContentCollection`-funktiota, `pages/index.vue`-sivua ja yleissivua (catch-all).
 - Ankkurilinkit (`#section`) vierittävät nyt kohteeseen myös sivujen välillä. Asian hoitaa pieni asiakaspuolen lisäosa, koska sisältö vierii `UScrollArea`-komponentin sisällä eikä ikkunassa.
@@ -252,7 +262,7 @@ surround: true
 - Sisällysluettelo näkyy nyt työpöydällä, kun jakaja (splitter) on pois päältä.
 - Sivuasetusvalikosta tehdyt valinnat koskevat nyt vain yhtä sivua, joten frontmatter on voimassa seuraavalla sivulla.
 
-## Muutettu
+### Muutettu
 
 - Lisätty `useRouteLocale()`, joka on yksi ainoa totuuden lähde nykyiselle kielelle ja jonka arvo tarkistetaan määritettyjä i18n-kieliä vasten.
 - Kielivalikko on nyt ponnahdusikkuna (popover), jossa näkyy i18n-asetuksista haettu lippukuvake.
@@ -261,7 +271,7 @@ surround: true
 - `ClientOnly` ympäröi nyt vain otsikkorivin painikkeet, ei koko sisältöaluetta.
 - Sivupalkin kytkimellä on käännetty `aria-label` ja `aria-expanded`.
 
-## Ongelmat
+### Ongelmat
 
 - Nuxt Content v3.5.0 ei saa käynnistettyä SQLite-kyselyn päätepistettään, kun Bun tunnistetaan mutta kehityspalvelin ajetaan Node-ympäristössä (`bun:` ESM -virhe). Käynnistä kehityspalvelin yhdenmukaisella ajoympäristöllä tai päivitä `@nuxt/content`.
 

@@ -42,6 +42,7 @@ page:
     progress: Eteneminen
     checkin: Check-in
     bookmarks: Kirjanmerkit
+    mycelium: Rihmasto
 
 error:
   back: Takaisin etusivulle
@@ -408,4 +409,41 @@ bookmarks:
     invalid: Tiedosto ei ole kirjanmerkkivienti
     empty: Tiedostosta ei löytynyt kirjanmerkkejä
   reorder: Järjestä uudelleen
+
+community:
+  title: Yhteisöverkosto
+  subtitle: Resurssien virtaaminen jäsenten välillä
+  network: Verkosto
+  noData:
+    title: Ei verkostotietoja
+    description: Solmuja tai yhteyksiä ei ole vielä tallennettu.
+  legend:
+    producer: Tuottaja
+    consumer: Kuluttaja
+    both: Molemmat
+    flow: Virtaus
+  stats:
+    in: Sisään
+    out: Ulos
+    links: Yhteydet
+  table:
+    node: Solmu
+    resource: Resurssi
+    flow: Virtaus
+    dir: Suunta
+  types:
+    producer: tuottaja
+    consumer: kuluttaja
+    both: molemmat
+  nodes: solmua
+  links: yhteyksiä
+  resources:
+    food: ruoka
+    tools: työkalut
+    skills: taidot
+    money: raha
+    time: aika
+  dir:
+    in: sisään
+    out: ulos
 
