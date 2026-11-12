@@ -276,3 +276,36 @@ surround: true
 - Nuxt Content v3.5.0 fails to run its SQLite query endpoint when Bun is detected but the dev server runs on Node (`bun:` ESM error). Start dev with a consistent runtime, or update `@nuxt/content`.
 - Hydration mismatch in the stepper. It now starts vertical and switches to horizontal on wider screens after mount.
 - `target` not applied on `card-list` links. The template now uses `item.target`.
+
+## 12.11
+
+### Added
+
+- `UChatMessages` with manual `#default` rendering (day-grouped via `USeparator`)
+- Encrypted-text display with hover tooltip revealing plaintext
+- `UTooltip` + lock/lock-open toggle button (`showPlaintext`)
+- `UUser` sidebar with `useSortable` (drag-to-reorder conversations)
+- Unread indicator (`useState<Set>`, clears on select)
+- `onKeyStroke` ↑/↓ to switch conversations
+- Dialectic badges (`thesis` / `antithesis` / `synthesis`) with `followChain` navigation
+- `send()` appends user message and auto-advances to next stage in the chain
+- `useState` for SSR-safe state (`activeId`, `showPlaintext`, `userMessages`)
+- `@nuxtjs/i18n`, `en.yml` / `fi.yml` under `conversations.*`
+- `animate-rise` keyframe on message text (replays on toggle via `:key`)
+- `chart-list` MDC component: a chart whose rows can be reordered by drag or sorted with buttons.
+- props `data`, `type`, `sortable` and `stateKey`. The order is kept in `useState` and resets on a full page reload.
+- `charts.*` translations for `en` and `fi`.
+
+### Fixed
+
+- `UBadge` → `as="button"` for accessible click on synthesis badge
+- `noUncheckedIndexedAccess` guards (`?.text ?? ''`, `?? ''` on `t()` fallback)
+- `DialecticRole` union threaded through `activeId`, `conversations`, `nextInChain`, `Msg.linksTo`
+- `dialecticColor` return typed as `Color` with explicit `Record<DialecticRole, Color>`
+- URL sync via `?stage=` (preserves parent `?tab=`)
+- "extraneous non-props attributes" warning by declaring props and using a single root element.
+- `categories` type error by typing the chart data as `ChartData[]`.
+
+### Notes
+
+- `#part` slot and `scrollToBottom()` available in `@nuxt/ui` 4.13+, swap in on upgrade

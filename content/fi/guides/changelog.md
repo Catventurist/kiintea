@@ -283,3 +283,35 @@ surround: true
 - Vaiheistuksen hydraatiovirhe. Se alkaa nyt pystysuuntaisena ja vaihtuu vaakasuuntaiseksi leveämmillä näytöillä latauksen jälkeen.
 - `card-list`-linkeiltä puuttunut `target`. Mallipohjassa käytetään nyt arvoa `item.target`.
 
+## 12.11
+
+### Lisätty
+
+- `UChatMessages` manuaalisella `#default`-renderöinnillä (päiväryhmittely `USeparator`illa)
+- Salatun tekstin näyttö hover-vinkkineineen (paljastaa alkuperäistekstin)
+- `UTooltip` + avatun/lukitun sisällön vaihtonappi (`showPlaintext`)
+- `UUser`-sivupalkki `useSortable`:lla (raahattava keskustelulista)
+- Luku-määräindikaattori (`useState<Set>`, tyhjenee poistuessa)
+- `onKeyStroke` ↑/↓ keskusteluiden vaihtoon
+- Dialektiset kuvaukset (`teesi` / `vastateesi` / `synteesi`) `followChain`-navigaatiolla
+- `send()` lisää käyttäjäviestin ja siirtyy automaattisesti seuraavaan vaiheeseen
+- `useState` EU- ja SSR-turvalliseen tilaan (`activeId`, `showPlaintext`, `userMessages`)
+- `@nuxtjs/i18n`, `en.yml` / `fi.yml` avaimen `conversations.*` alla
+- `animate-rise`-animaatio viestitekstissä (toistuu vaihdon yhteydessä `:key`:llä)
+- `chart-list` MDC-komponentti: kaavio, jonka rivejä voi järjestää vetämällä tai lajitella painikkeilla.
+- propsit `data`, `type`, `sortable` ja `stateKey`. Järjestys säilytetään `useState`-tilassa ja nollautuu sivun uudelleenlatauksessa.
+- `charts.*`-käännökset kielille `en` ja `fi`.
+
+### Korjattu
+
+- `UBadge` → `as="button"` klikkaamiseen synteesin läpipainekuvassa
+- `noUncheckedIndexedAccess`-vartijat (`?.text ?? ''`, `?? ''` `t()`-varalta)
+- `DialecticRole`-tyyppi `activeId`, `conversations`, `nextInChain`, `Msg.linksTo` läpi
+- `dialecticColor`-palautustyyppi `Color` kirjattuna `Record<DialecticRole, Color>`
+- URL-sync `?stage=`-parametrilla (säilyttää vanhemman `?tab=`)
+- "extraneous non-props attributes"-varoitus määrittelemällä propsit ja käyttämällä yhtä juurielementtiä.
+- `categories`-tyyppivirhe tyypittämällä kaaviodataksi `ChartData[]`.
+
+### Huomioita
+
+- `#part`-slot ja `scrollToBottom()` saatavilla `@nuxt/ui` 4.13+, vaihda päivityksen yhteydessä

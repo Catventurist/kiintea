@@ -135,6 +135,8 @@
   --swatch-rose: #f43f5e;
   --swatch-suomi: var(--color-suomi-500);
   --swatch-lake: var(--color-lake-500);
+  --ui-chart-1: var(--ui-color-primary-500);
+  --ui-chart-2: var(--ui-color-success-500);
 }
 
 .page-enter-active,

@@ -43,6 +43,7 @@ page:
     checkin: Check-in
     bookmarks: Bookmarks
     mycelium: Mycelium
+    dialect: Dialectic
 
 error:
   back: Back to home
@@ -447,3 +448,54 @@ community:
     in: in
     out: out
 
+conversations:
+  thesis:
+    name: Abstract Freedom
+    description: Freedom from all constraint
+  antithesis:
+    name: Moral Freedom
+    description: Freedom as self-legislation
+  synthesis:
+    name: Ethical Freedom
+    description: Freedom in institutions
+  badges:
+    thesis: thesis
+    antithesis: antithesis
+    synthesis: synthesis
+  messages:
+    '1': What is freedom?
+    '2': Freedom is the power to choose anything. No constraint, no obligation. Pure will.
+    '3': But isn't that just emptiness? Choice without content?
+    '4': True freedom is self-legislation. I am free when I obey a law I give myself.
+    '5': But a solitary conscience can't sustain itself. Where does the law come from?
+    '6': From the world itself. Family, civil society, the state, institutions I recognize as mine.
+  search: Search...
+  placeholder: Write a message...
+
+charts:
+  sortDesktop: Sort desktop
+  sortMobile: Sort mobile
+  desktop: Desktop
+  mobile: Mobile
+  months:
+    january: January
+    february: February
+    march: March
+    april: April
+  poll: Poll Results
+  attendance: Attendance
+  revenue: Revenue
+  noData: No data available
+  votes: Votes
+  month: Month
+  count: Count
+  revenuecost: Revenue vs Costs
+  leaderboard: Top Contributors
+  topics: Topic Distribution
+  growth: Member Growth
+  sprint: Sprint Status
+  feedback: Event Feedback
+  sprintDone: Done
+  sprintProgress: In progress
+  sprintBlocked: Blocked
+  costs: Costs

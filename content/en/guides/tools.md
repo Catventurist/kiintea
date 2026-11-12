@@ -14,6 +14,48 @@ surround: true
 
 Small interactive components for documentation pages. Each one works from Markdown with MDC.
 
+## ChartList
+
+A bar chart whose rows can be reordered by drag or sorted with the buttons. The order is kept in `useState`, so it resets on a full page reload.
+
+::tabs
+:::tabs-item{label="Preview" icon="i-lucide-eye"}
+::::chart-list
+---
+state-key: preview
+type: bar
+data:
+  - { month: january, desktop: 186, mobile: 80 }
+  - { month: february, desktop: 305, mobile: 200 }
+  - { month: march, desktop: 237, mobile: 120 }
+  - { month: april, desktop: 73, mobile: 190 }
+---
+::::
+:::
+:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+```mdc
+::chart-list
+---
+type: bar
+data:
+  - { month: january, desktop: 186, mobile: 80 }
+  - { month: february, desktop: 305, mobile: 200 }
+  - { month: march, desktop: 237, mobile: 120 }
+  - { month: april, desktop: 73, mobile: 190 }
+---
+::
+```
+:::
+:::tabs-item{label="Inline props" icon="i-lucide-code"}
+```mdc
+::chart-list{type="line" state-key="inline" :data='[{"month":"january","desktop":186,"mobile":80},{"month":"february","desktop":305,"mobile":200}]'}
+::
+```
+:::
+::
+
+Props: `data`, `type` (default `bar`), `sortable` (default `true`), `stateKey` (default `default`).
+
 ## CompatMatrix
 
 A compatibility matrix with one row per dependency and one cell per version. Each cell shows whether the version is supported, partly supported or not supported. Drag the grip handle to reorder the rows.

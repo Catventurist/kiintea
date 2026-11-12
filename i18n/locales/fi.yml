@@ -43,6 +43,7 @@ page:
     checkin: Check-in
     bookmarks: Kirjanmerkit
     mycelium: Rihmasto
+    dialect: Dialektiikka
 
 error:
   back: Takaisin etusivulle
@@ -448,3 +449,54 @@ community:
     in: sisään
     out: ulos
 
+conversations:
+  thesis:
+    name: Abstrakti vapaus
+    description: Vapaus kaikista rajoitteista
+  antithesis:
+    name: Moraalinen vapaus
+    description: Vapaus itsemääräykseen
+  synthesis:
+    name: Eettinen vapaus
+    description: Vapaus instituutioista
+  badges:
+    thesis: teesi
+    antithesis: vastateesi
+    synthesis: synteesi
+  messages:
+    1: Mikä on vapaus?
+    2: Vapaus on valita mitä haluaa. Ei rajoituksia tai velvoitteita. Puhtas tahto.
+    3: Eikö se ole tyhjyyttä? Valintoja ilman sisältöä?
+    4: Aito vapaus on itsemääräystä. Olen vapaa, kun noudatan itselleni annettua moraalia.
+    5: Mutta yksinäinen tietoisuus ei kestä. Mistä sääntö tulee?
+    6: Maailmasta itsestään. Perhe, sivilisyyhteiskunta ja valtio. Instituutioita, jotka tunnustan omikseni.
+  search: Hae...
+  placeholder: Kirjoita viesti...
+
+charts:
+  sortDesktop: Työpöytä ensin
+  sortMobile: Mobiili ensin
+  desktop: Työpöytä
+  mobile: Mobiili
+  months:
+    january: Tammi
+    february: Helmi
+    march: Maalis
+    april: Huhti
+  poll: Kyselyn tulokset
+  attendance: Osallistuminen
+  revenue: Tulot
+  noData: Ei dataa
+  votes: Äänet
+  month: Kuukausi
+  count: Määrä
+  revenuecost: Tulot vs kustannukset
+  leaderboard: Parhaat panostajat
+  topics: Aiheiden jakauma
+  growth: Jäsenten kasvu
+  sprint: Pyräysten tila
+  feedback: Tapahtuman palaute
+  sprintDone: Valmis
+  sprintProgress: Käynnissä
+  sprintBlocked: Estynyt
+  costs: Kustannukset

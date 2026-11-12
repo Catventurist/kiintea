@@ -75,4 +75,14 @@ to: /guides/changelog
 ---
 Mitä on muuttunut ja milloin.
 :::
+
+:::card
+---
+title: Kaaviot
+icon: i-lucide-bar-chart-3
+to: /guides/charts
+---
+Kaavioita kuvajaisten esittämiseen.
+:::
+
 ::::

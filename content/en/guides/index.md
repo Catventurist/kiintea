@@ -75,4 +75,14 @@ to: /guides/changelog
 ---
 What changed and when.
 :::
+
+:::card
+---
+title: Charts
+icon: i-lucide-bar-chart-3
+to: /guides/charts
+---
+Casual charts for various uses.
+:::
 ::::
+

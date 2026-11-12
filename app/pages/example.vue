@@ -21,7 +21,8 @@ const items = computed<TabsItem[]>(() => [
   { value: 'onboarding', slot: 'onboarding', label: t('page.tabs.onboarding'), icon: 'i-lucide-rocket' },
   { value: 'stats', slot: 'stats', label: t('page.tabs.stats'), icon: 'i-lucide-chart-column' },
   { value: 'bookmarks', slot: 'bookmarks', label: t('page.tabs.bookmarks'), icon: 'i-lucide-bookmark' },
-  { value: 'mycelium', slot: 'mycelium', label: t('page.tabs.mycelium'), icon: 'i-lucide-flower' }
+  { value: 'mycelium', slot: 'mycelium', label: t('page.tabs.mycelium'), icon: 'i-lucide-flower' },
+  { value: 'dialect', slot: 'dialect', label: t('page.tabs.dialect'), icon: 'i-lucide-message-circle-dashed' }
 ])
 
 useSeoMeta({
@@ -56,6 +57,10 @@ useSeoMeta({
 
       <template #mycelium>
         <LazyEMyceliumMain />
+      </template>
+
+      <template #dialect>
+        <LazyEChatDialect />
       </template>
     </UTabs>
   </div>

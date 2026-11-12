@@ -1,3 +1,7 @@
+import { createResolver } from '@nuxt/kit'
+
+const { resolve } = createResolver(import.meta.url)
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
@@ -119,7 +123,10 @@ export default defineNuxtConfig({
   },
   icon: {
     customCollections: [
-      { prefix: 'social', dir: './app/assets/icons' }
-    ]
+      { prefix: 'social', dir: resolve('./app/assets/icons') }
+    ],
+    clientBundle: {
+      includeCustomCollections: true
+    }
   }
 })

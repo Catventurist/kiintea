@@ -14,6 +14,48 @@ surround: true
 
 Pieniä interaktiivisia komponentteja dokumentaatiosivuille. Jokainen toimii Markdownista MDC:n avulla.
 
+## ChartList
+
+Pylväskaavio, jonka rivejä voi järjestää vetämällä tai lajitella painikkeilla. Järjestys säilytetään `useState`-tilassa, joten se nollautuu sivun uudelleenlatauksessa.
+
+::tabs
+:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+::::chart-list
+---
+state-key: preview
+type: bar
+data:
+  - { month: january, desktop: 186, mobile: 80 }
+  - { month: february, desktop: 305, mobile: 200 }
+  - { month: march, desktop: 237, mobile: 120 }
+  - { month: april, desktop: 73, mobile: 190 }
+---
+::::
+:::
+:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+```mdc
+::chart-list
+---
+type: bar
+data:
+  - { month: january, desktop: 186, mobile: 80 }
+  - { month: february, desktop: 305, mobile: 200 }
+  - { month: march, desktop: 237, mobile: 120 }
+  - { month: april, desktop: 73, mobile: 190 }
+---
+::
+```
+:::
+:::tabs-item{label="Inline-propsit" icon="i-lucide-code"}
+```mdc
+::chart-list{type="line" state-key="inline" :data='[{"month":"january","desktop":186,"mobile":80},{"month":"february","desktop":305,"mobile":200}]'}
+::
+```
+:::
+::
+
+Propsit: `data`, `type` (oletus `bar`), `sortable` (oletus `true`), `stateKey` (oletus `default`).
+
 ## CompatMatrix
 
 Yhteensopivuusmatriisi, jossa on yksi rivi kutakin riippuvuutta kohden ja yksi solu kutakin versiota kohden. Jokainen solu näyttää, onko versio tuettu, osittain tuettu vai tukematon. Muuta rivien järjestystä vetämällä tarttumakahvasta.
