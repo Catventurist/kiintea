@@ -315,3 +315,12 @@ surround: true
 ### Huomioita
 
 - `#part`-slot ja `scrollToBottom()` saatavilla `@nuxt/ui` 4.13+, vaihda päivityksen yhteydessä
+
+
+## 13.11
+
+### Lisätty
+
+- Runo: selaimessa tapahtuva salattu jakaminen (AES-GCM). Liitä teksti ja saat linkin, avaimen ja datan tai Markdown-tiedoston yksityisille sivuille.
+  - Yksityiset sivut (`encrypted: true` ja `blob` etumatkassa) näyttävät vain avainkentän ja purkavat tekstin paikallisesti.
+  - Julkiset runo-sivut näyttävät dokumentin ja jakolomakkeen erillisillä välilehdillä.

@@ -121,13 +121,19 @@ const flowSchema = z.object({
   }).strict().optional()
 })
 
+const runoSchema = pageSchema.extend({
+  tags: z.array(z.string()).default([]),
+  encrypted: z.boolean().default(false),
+  blob: z.string().optional()
+})
+
 export default defineContentConfig({
   collections: {
     content_en: defineCollection({
       type: 'page',
       source: {
         include: 'en/**',
-        exclude: ['en/index.md', 'en/glossary/**', 'en/problems/*.yml', 'en/viikot/*.yml', 'en/flow/*.yml']
+        exclude: ['en/index.md', 'en/glossary/**', 'en/problems/*.yml', 'en/viikot/*.yml', 'en/flow/*.yml', 'en/runo/*.md']
       },
       schema: pageSchema
     }),
@@ -135,7 +141,7 @@ export default defineContentConfig({
       type: 'page',
       source: {
         include: 'fi/**',
-        exclude: ['fi/index.md', 'fi/glossary/**', 'fi/problems/*.yml', 'fi/viikot/*.yml', 'fi/flow/*.yml']
+        exclude: ['fi/index.md', 'fi/glossary/**', 'fi/problems/*.yml', 'fi/viikot/*.yml', 'fi/flow/*.yml', 'fi/runo/*.md']
       },
       schema: pageSchema
     }),
@@ -196,6 +202,20 @@ export default defineContentConfig({
         include: 'fi/flow/*.yml'
       },
       schema: flowSchema
+    }),
+    runo_en: defineCollection({
+      type: 'page',
+      source: {
+        include: 'en/runo/*.md'
+      },
+      schema: runoSchema
+    }),
+    runo_fi: defineCollection({
+      type: 'page',
+      source: {
+        include: 'fi/runo/*.md'
+      },
+      schema: runoSchema
     })
   }
 })

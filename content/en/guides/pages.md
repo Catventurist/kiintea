@@ -35,9 +35,11 @@ items:
   - label: Weeks
     icon: i-lucide-calendar-days
     to: /viikot
+  - label: Runo
+    icon: i-lucide-scroll-text
+    to: /runo
 ---
 ::
-
 
 ## Fire
 
@@ -111,9 +113,9 @@ A page at `/example` that shows the custom Vue components in use outside Markdow
 - [`StatsSource`](/guides/query#stats-source): the stats panel. See its definition for details.
 - [`EBookmarks`](#bookmarks): the bookmarks importer, described below.
 
-## Bookmarks
+### Bookmarks
 
-The `EBookmarks` component, shown in the Bookmarks tab on `/example`. Drop a browser bookmarks export (an HTML file) onto it and browse the result as a folder tree.
+The `EBookmarks` component, shown in the [Bookmarks tab](/example?tab=bookmarks) on `/example`. Drop a browser bookmarks export (an HTML file) onto it and browse the result as a folder tree.
 
 **How it works**
 - The file is parsed in the browser. Nested folders become a nested tree, collapsed by default. Nothing is uploaded.
@@ -128,6 +130,22 @@ The `EBookmarks` component, shown in the Bookmarks tab on `/example`. Drop a bro
 - Logic: `app/composables/useBookmarks.ts` holds the parsing, filtering, selection, sorting and export.
 - Texts: the `bookmarks` key in `i18n/locales/en.yml` and `i18n/locales/fi.yml`.
 - Dependencies: `@vueuse/integrations` and `sortablejs` for drag and drop.
+
+## Runo
+
+An encrypted [sharing page](/runo) at `/runo`, built from Nuxt UI components: tabs, form fields, a textarea, inputs, alerts and buttons, with the Web Crypto API doing the encryption in the browser.
+
+**How it works**
+- Paste text and press encrypt. The browser makes a random AES-GCM key, encrypts the text, and shows a share link, the key and the encrypted data.
+- A link has the form `/en/runo/<words>#k=<key>&d=<data>`. The key and data are in the hash, so they never reach the server.
+- A Markdown file with `encrypted: true` and a `blob` in its frontmatter is a private page. It shows only the key field and the open button, and the text is decrypted and rendered as Markdown in the browser.
+- Public pages show the document in one tab and the share form in another.
+
+**Files**
+- Page: `app/pages/runo/[...slug].vue`.
+- Component: `FRunoJako`.
+- Texts: the `runo` keys in `i18n/locales/en.yml` and `i18n/locales/fi.yml`.
+- Content: `content/<locale>/runo/*.md`. The `encrypted` and `blob` fields are in the `runo_en` and `runo_fi` schemas in `content.config.ts`.
 
 ## Adding a page
 

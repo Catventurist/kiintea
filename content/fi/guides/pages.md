@@ -35,6 +35,9 @@ items:
   - label: Viikot
     icon: i-lucide-calendar-days
     to: /viikot
+  - label: Runo
+    icon: i-lucide-scroll-text
+    to: /runo
 ---
 ::
 
@@ -110,7 +113,7 @@ Sivu osoitteessa `/example`, joka näyttää omat Vue-komponentit käytössä Ma
 - [`StatsSource`](/guides/query#stats-source): tilastopaneeli. Katso tarkempi määritelmä linkistä.
 - [`EBookmarks`](#kirjanmerkit): kirjanmerkkien tuonti, kuvattu alla.
 
-## Kirjanmerkit
+### Kirjanmerkit
 
 `EBookmarks`-komponentti, joka näkyy Kirjanmerkit-välilehdessä sivulla `/example`. Pudota siihen selaimen kirjanmerkkitiedosto (HTML), niin voit selata tulosta kansiopuuna.
 
@@ -127,6 +130,22 @@ Sivu osoitteessa `/example`, joka näyttää omat Vue-komponentit käytössä Ma
 - Logiikka: `app/composables/useBookmarks.ts` sisältää jäsennyksen, suodatuksen, valinnan, järjestämisen ja viennin.
 - Tekstit: avain `bookmarks` tiedostoissa `i18n/locales/en.yml` ja `i18n/locales/fi.yml`.
 - Riippuvuudet: `@vueuse/integrations` ja `sortablejs` vetämistä ja pudottamista varten.
+
+## Runo
+
+Salattu [jakosivu](/runo) osoitteessa `/runo`, rakennettu Nuxt UI -komponenteista: välilehdet, lomakekentät, tekstialue, syöttökentät, ilmoitukset ja painikkeet. Salauksen takaa selaimessa toimiva **Web Crypto API**.
+
+**Näin se toimii**
+- Liitä teksti ja paina salaa. Selain luo satunnaisen AES-GCM-avaimen, salaa tekstin ja näyttää jakolinkin, avaimen sekä salatun datan.
+- Linkki on muotoa `/fi/runo/<sanat>#k=<avain>&d=<data>`. Avain ja data ovat hajautusosassa (hash), joten ne eivät koskaan päädy palvelimelle.
+- Markdown-tiedosto, jonka etutiedoissa (frontmatter) on `encrypted: true` ja `blob` on yksityinen sivu. Se näyttää vain avainkentän ja avauspainikkeen, teksti puretaan ja renderöidään Markdownina selaimessa.
+- Julkisilla sivuilla dokumentti on yhdellä välilehdellä ja jakolomake toisella.
+
+**Tiedostot**
+- Sivu: `app/pages/runo/[...slug].vue`.
+- Komponentti: `FRunoJako`.
+- Tekstit: `runo`-avaimet tiedostoissa `i18n/locales/en.yml` ja `i18n/locales/fi.yml`.
+- Sisältö: `content/<kieli>/runo/*.md`. Kentät `encrypted` ja `blob` ovat `runo_en`- ja `runo_fi`-skeemoissa tiedostossa `content.config.ts`.
 
 ## Sivun lisääminen
 

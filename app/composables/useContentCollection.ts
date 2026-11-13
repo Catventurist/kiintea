@@ -4,30 +4,55 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 export type Color = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral' | undefined
 
+interface Page {
+  key: string
+  icon: string
+  path?: string
+  children?: Page[]
+}
+
 export function useNavItems() {
   const route = useRoute()
   const localePath = useLocalePath()
   const { t } = useI18n()
 
-  const pages = [
+  const pages: Page[] = [
     { key: 'about', path: '/about', icon: 'i-lucide-info' },
-    { key: 'guides', path: '/guides', icon: 'i-lucide-book' },
-    { key: 'glossary', path: '/glossary', icon: 'i-lucide-book-open' },
-    { key: 'example', path: '/example', icon: 'i-lucide-flask-conical' },
-    { key: 'flow', path: '/flow', icon: 'i-lucide-workflow' },
-    { key: 'viikot', path: '/viikot', icon: 'i-lucide-calendar-days' }
-  ] as const
+    {
+      key: 'community',
+      icon: 'i-lucide-users',
+      children: [
+        { key: 'example', path: '/example', icon: 'i-lucide-flask-conical' },
+        { key: 'fire', path: '/fire', icon: 'i-lucide-flame' },
+        { key: 'flow', path: '/flow', icon: 'i-lucide-workflow' },
+        { key: 'glossary', path: '/glossary', icon: 'i-lucide-book-open' },
+        { key: 'runo', path: '/runo', icon: 'i-lucide-lock-keyhole' },
+        { key: 'viikot', path: '/viikot', icon: 'i-lucide-calendar-days' }
+      ]
+    },
+    { key: 'guides', path: '/guides', icon: 'i-lucide-book' }
+  ]
 
-  const navItems = computed<NavigationMenuItem[]>(() => pages.map(({ key, path, icon }) => {
-    const to = localePath(path)
+  const isActive = (to: string) => route.path === to || route.path.startsWith(`${to}/`)
 
-    return {
-      label: t(`nav.${key}`),
-      to,
-      icon,
-      active: route.path === to || route.path.startsWith(`${to}/`)
+  const toItem = (page: Page): NavigationMenuItem => {
+    const label = t(`nav.${page.key}`)
+
+    if (page.children) {
+      const children = page.children.map(toItem)
+      return {
+        label,
+        icon: page.icon,
+        defaultOpen: children.some(c => c.active),
+        children
+      }
     }
-  }))
+
+    const to = localePath(page.path!)
+    return { label, icon: page.icon, to, active: isActive(to) }
+  }
+
+  const navItems = computed<NavigationMenuItem[]>(() => pages.map(toItem))
 
   return { navItems }
 }

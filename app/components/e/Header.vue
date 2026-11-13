@@ -11,6 +11,10 @@ const { navItems } = useNavItems()
   >
     <LazyUNavigationMenu
       :items="navItems"
+      :ui="{
+        viewportWrapper: 'top-auto bottom-full',
+        viewport: 'origin-[bottom_center]'
+      }"
       hydrate-on-idle
     />
 

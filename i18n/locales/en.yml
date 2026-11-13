@@ -9,8 +9,11 @@ nav:
   start: Start
   example: Example
   glossary: Glossary
+  fire: Fire
   flow: Flow
   viikot: Weeks
+  community: Community
+  runo: Runo
 
 page:
   empty: Page not found
@@ -499,3 +502,28 @@ charts:
   sprintProgress: In progress
   sprintBlocked: Blocked
   costs: Costs
+
+runo:
+  create: Create
+  open: Open
+  encrypt_and_create: 'Encrypt & Create'
+  created: Runo created. Share the link below.
+  link: Link
+  key: Key
+  key_warning: The key is secret. Share it separately. The link without the key is locked.
+  data: Data
+  data_placeholder: Paste encrypted data...
+  key_placeholder: Paste key...
+  open_runo: Open runo
+  opened: Runo opened.
+  encryption_failed: Encryption failed
+  decryption_failed: Decryption failed, wrong key or corrupted data
+  index:
+    title: Runos
+    desc: Encrypted content shares
+  empty: No runos yet
+  content: Content
+  document: Document
+  share: Share
+  md_title: Title
+  md_file: Markdown file

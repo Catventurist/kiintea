@@ -309,3 +309,13 @@ surround: true
 ### Notes
 
 - `#part` slot and `scrollToBottom()` available in `@nuxt/ui` 4.13+, swap in on upgrade
+
+
+## 13.11
+
+### Added
+
+- Runo: `/runo` encrypted sharing in the browser (AES-GCM). Paste text to get a link, key and data, or a Markdown file for private pages.
+  - Private pages (`encrypted: true` and `blob` in the frontmatter) show only the key field and decrypt the text locally.
+  - Public runo pages show the document and the share form in separate tabs.
+

@@ -9,8 +9,11 @@ nav:
   start: Aloitus
   example: Esim
   glossary: Sanasto
+  fire: Tuli
   flow: Virta
   viikot: Viikot
+  community: Yhteiset
+  runo: Runo
 
 page:
   empty: Sivua ei löytynyt
@@ -500,3 +503,28 @@ charts:
   sprintProgress: Käynnissä
   sprintBlocked: Estynyt
   costs: Kustannukset
+
+runo:
+  create: Luo
+  open: Avaa
+  encrypt_and_create: 'Sulje & Luo runo'
+  created: Runo luotu. Jaa alla oleva linkki.
+  link: Linkki
+  key: Avain
+  key_warning: Avain on salainen. Jaa se erikseen. Linkki ilman avainta on lukittu.
+  data: Data
+  data_placeholder: Liitä salattu data...
+  key_placeholder: Liitä avain...
+  open_runo: Avaa runo
+  opened: Runo avattu.
+  encryption_failed: Salaus epäonnistui
+  decryption_failed: Avaus epäonnistui, väärä avain tai vaurioitunut data
+  index:
+    title: Runot
+    desc: Salatun sisällön jaot
+  empty: Ei runoja
+  content: Sisältö
+  document: Dokumentti
+  share: Jaa
+  md_title: Otsikko
+  md_file: Markdown-tiedosto
