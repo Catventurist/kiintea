@@ -318,4 +318,13 @@ surround: true
 - Runo: `/runo` encrypted sharing in the browser (AES-GCM). Paste text to get a link, key and data, or a Markdown file for private pages.
   - Private pages (`encrypted: true` and `blob` in the frontmatter) show only the key field and decrypt the text locally.
   - Public runo pages show the document and the share form in separate tabs.
-
+- `::resource-group` MDC component. It renders a list of resources from a YAML `items` array, with a title, link, type badge and contributors.
+  - Drag-and-drop reordering with `useSortable`. The `handle` prop (default `true`) limits dragging to a grip icon.
+  - Light and dark contributor avatars through the `avatar` and `avatarDark` props. They default to `/catlight.webp` and `/catdark.webp`.
+  - Links to external URLs open in a new tab. Internal routes stay in the same tab.
+- `::tier-list` MDC component. Readers drag items between tiers (S, A, B, C or your own) and an "Unranked" row.
+  - `tiers` prop with a `label` and a Nuxt UI `color` for each tier.
+  - `items` prop that accepts plain strings or `{ label, icon }` objects, so items can show an icon.
+  - `stateKey` prop. The ranking is kept in `useState`, so it survives navigation.
+  - `sortable` prop (default `true`). Set it to `false` for a read-only board.
+  - Per-row `useSortable` with a shared group. Moves inside a row use `useSortable`, and moves between rows are handled by the parent.

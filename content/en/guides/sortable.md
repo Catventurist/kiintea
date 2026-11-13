@@ -472,7 +472,7 @@ A palette of color swatches you can reorder by dragging. Clicking a swatch can a
 - `select` (boolean, optional): when `true`, clicking a swatch sets `ui.colors.primary`. Defaults to `true`.
 - `compact` (boolean, optional): hide the labels and use smaller swatches. Defaults to `false`.
 
-Colors must exist in your theme. Use Tailwind's default colors or define the 50–950 shades of a custom color first.
+Colors must exist in your theme. Use Tailwind's default colors or define the 50-950 shades of a custom color first.
 
 ::tabs
 

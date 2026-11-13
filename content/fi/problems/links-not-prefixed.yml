@@ -4,4 +4,4 @@ severity: info
 since: '4.7+'
 tags: [i18n]
 cause: 'Moduulia @nuxtjs/i18n ei ole asennettu, tai linkki on ulkoinen.'
-fix: 'Asenna @nuxtjs/i18n. ULink- ja UButton-komponenttien sisäiset linkit lokalisoidaan automaattisesti, ja ulkoiset linkit ohitetaan.'
+fix: 'Asenna @nuxtjs/i18n. ULink- ja UButton-komponenttien sisäiset linkit lokalisoidaan automaattisesti ja ulkoiset linkit ohitetaan.'

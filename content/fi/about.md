@@ -18,7 +18,7 @@ surround: true
 :::u-page-section
 ---
 title: Tietoa sivustosta
-description: Kokoelma interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille. Jokaista listaa voi järjestää vetämällä, ja kaikki toimii pelkällä Markdownilla.
+description: Kokoelma interaktiivisia MDC-komponentteja Nuxt 4:lle, Nuxt UI v4:lle ja Nuxt Contentille. Jokaista listaa voi järjestää vetämällä ja kaikki toimii pelkällä Markdownilla.
 ---
 
 ::tabs-list

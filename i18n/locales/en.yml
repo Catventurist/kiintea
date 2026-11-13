@@ -102,6 +102,7 @@ common:
   download:
     markdown: md
   check: Check
+  unranked: Unranked
 
 pageOptions:
   title: Page options

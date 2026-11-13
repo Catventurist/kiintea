@@ -101,7 +101,8 @@ common:
   fix: Korjaus
   download:
     markdown: md
-  check: Check
+  check: Tarkista
+  unranked: Luokaton
 
 pageOptions:
   title: Sivun asetukset

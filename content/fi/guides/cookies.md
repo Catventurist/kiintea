@@ -6,7 +6,7 @@ navigation:
   icon: i-lucide-cookie
 layout: dashboard
 sidebar: true
-collapsed: false
+collapsed: true
 splitter: false
 toc: true
 surround: true
@@ -90,7 +90,7 @@ Upotettu video kirjoittaa tallennustilaan myös tietosuojaystävällisellä verk
 | `IndexedDB`-kirjoitus | Kyllä | Kyllä |
 | IP-osoite lähtee Googlelle | Kyllä | Kyllä |
 
-Lataa iframe vasta, kun käyttäjä napsauttaa, ja käytä osoitetta `youtube-nocookie.com`:
+Lataa iframe vasta, kun käyttäjä napsauttaa ja käytä osoitetta `youtube-nocookie.com`:
 
 ```text
 [Pikkukuva ja toistopainike]

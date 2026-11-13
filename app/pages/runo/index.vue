@@ -21,7 +21,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="p-8 max-w-2xl mx-auto">
+  <div class="p-8 max-w-4xl mx-auto">
     <h1 class="text-2xl font-bold mb-6">
       {{ t('runo.index.title') }}
     </h1>
@@ -36,7 +36,8 @@ useSeoMeta({
         :title="d.title"
         icon="i-lucide-file-text"
         :to="d.path"
-        variant="ghost"
+        variant="outline"
+        class="animate-rise"
       />
     </UPageGrid>
 

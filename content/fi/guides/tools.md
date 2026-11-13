@@ -323,7 +323,7 @@ examples:
 
 ## ProgressCheck
 
-Tarkistuslista, jossa on edistymispalkki. Palkki täyttyy, kun kohteita merkitään tehdyiksi, ja muuttuu vihreäksi, kun kaikki on tehty. Tila säilyy sivujen välillä siirryttäessä, mutta nollautuu, kun sivu ladataan kokonaan uudelleen.
+Tarkistuslista, jossa on edistymispalkki. Palkki täyttyy, kun kohteita merkitään tehdyiksi ja muuttuu vihreäksi, kun kaikki on tehty. Tila säilyy sivujen välillä siirryttäessä, mutta nollautuu, kun sivu ladataan kokonaan uudelleen.
 
 **Kentät**
 - `items` (taulukko): listan kohteet. Jokainen on joko merkkijono tai objekti.
@@ -442,11 +442,11 @@ items:
 
 Propsit: `items` (pakollinen, korttien lista), `columns` (valinnainen, `2`, `3` tai `4`, oletus `3`) ja `colorful` (valinnainen, oletus `true`).
 
-Jokaisella kohteella on `label` (pakollinen) ja valinnaisesti `value`, `unit`, `icon`, `color`, `progress` ja `to`. Numeerinen `value` laskee ylöspäin ja muotoillaan nykyisen kielen mukaan. Muu arvo näytetään tekstinä, ja puuttuva arvo näyttää ajatusviivan.
+Jokaisella kohteella on `label` (pakollinen) ja valinnaisesti `value`, `unit`, `icon`, `color`, `progress` ja `to`. Numeerinen `value` laskee ylöspäin ja muotoillaan nykyisen kielen mukaan. Muu arvo näytetään tekstinä ja puuttuva arvo näyttää ajatusviivan.
 
 Kun `progress: true` ja `value` on numero, kortti näyttää myös palkin. Palkin enimmäisarvo on 100, joten käytä sitä prosenteille. Lainaa `'%'` YAML:ssa, koska pelkkä `%` on siellä erikoismerkki.
 
-`color` on jokin arvoista `primary`, `secondary`, `success`, `info`, `warning`, `error` ja `neutral`. Se määrää valokeilan, kuvakkeen ja palkin värin. Ilman sitä värit kiertävät valmiin joukon läpi. Kun `colorful: false`, kaikki kortit, joilla ei ole `color`-arvoa, käyttävät väriä `primary`. Kortti, jolla on `to`, muuttuu linkiksi, ja valokeila korvaa silloin tavallisen hover-tehosteen.
+`color` on jokin arvoista `primary`, `secondary`, `success`, `info`, `warning`, `error` ja `neutral`. Se määrää valokeilan, kuvakkeen ja palkin värin. Ilman sitä värit kiertävät valmiin joukon läpi. Kun `colorful: false`, kaikki kortit, joilla ei ole `color`-arvoa, käyttävät väriä `primary`. Kortti, jolla on `to`, muuttuu linkiksi ja valokeila korvaa silloin tavallisen hover-tehosteen.
 
 Luvut laskevat ylöspäin ja kortit häivytetään näkyviin yksi kerrallaan. Molemmat poistetaan käytöstä, kun lukija haluaa vähennettyä liikettä.
 
@@ -547,7 +547,7 @@ Jokaisella merkinnällä on `id`, `problem`, `cause` ja `fix` (kaikki pakollisia
 
 Inline-attribuutit asettavat vain yksinkertaiset propsit. Itse lista on annettava YAML-lohkossa, joten pelkkä inline-muoto näyttää tyhjän tilan.
 
-Anna jokaiselle samalla sivulla olevalle listalle oma `group`, jotta niiden hakukentät pysyvät erillään. Merkintään voi linkittää suoraan `id`-arvolla, esimerkiksi `#prose-not-styled`, ja sivu avaa kyseisen merkinnän latautuessaan. Käytä samaa `id`-arvoa molemmilla kielillä, jotta linkit toimivat kielenvaihdon jälkeen.
+Anna jokaiselle samalla sivulla olevalle listalle oma `group`, jotta niiden hakukentät pysyvät erillään. Merkintään voi linkittää suoraan `id`-arvolla, esimerkiksi `#prose-not-styled` ja sivu avaa kyseisen merkinnän latautuessaan. Käytä samaa `id`-arvoa molemmilla kielillä, jotta linkit toimivat kielenvaihdon jälkeen.
 
 Jos haluat täyttää listan sisältötiedostoista, katso [Vianmäärityksen lähde](/guides/query#vianmäärityksen-lähde).
 
@@ -596,9 +596,56 @@ hint: '@nuxt/ui pitää asentaa ennen kuin sen rekisteröi.'
 
 Ominaisuudet: `title` (pakollinen, kysymys), `items` (pakollinen, vaiheet oikeassa järjestyksessä), `success` ja `fail` (pakollisia, Tarkista-painikkeen jälkeen näytettävät viestit) ja `hint` (valinnainen, näytetään kahden väärän yrityksen jälkeen).
 
-Tarkista-painike pysyy pois käytöstä, kunnes lukija on siirtänyt jotain. Väärä vastaus näyttää Yritä uudelleen -painikkeen, ja lista sekoitetaan uudelleen, joten se ei koskaan ala ratkaistussa järjestyksessä.
+Tarkista-painike pysyy pois käytöstä, kunnes lukija on siirtänyt jotain. Väärä vastaus näyttää Yritä uudelleen -painikkeen ja lista sekoitetaan uudelleen, joten se ei koskaan ala ratkaistussa järjestyksessä.
 
 Vastaus on osa sivua, joten kuka tahansa voi löytää sen sivun lähdekoodista. Käytä tietovisaa oppimiseen, älä salaisiin asioihin.
+
+## ResourceGroup
+
+Lista resursseista ja niiden tekijöistä. Rivejä voi järjestää uudelleen vetämällä. Järjestys on vain komponentin sisällä, joten se nollautuu, kun sivu ladataan kokonaan uudelleen.
+
+::tabs
+:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+::::resource-group
+---
+items:
+  - title: Seuraa resursseja
+    to: /flow
+    type: artikkeli
+    contributors: [lintu]
+  - title: Lukuoppaat
+    to: /guides
+    type: teksti
+    contributors: [kissa, koira]
+---
+::::
+:::
+:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+```mdc
+::resource-group
+---
+items:
+  - title: Seuraa resursseja
+    to: /flow
+    type: artikkeli
+    contributors: [lintu]
+  - title: Lukuoppaat
+    to: /guides
+    type: teksti
+    contributors: [kissa, koira]
+---
+::
+```
+:::
+:::tabs-item{label="Inline-propsit" icon="i-lucide-code"}
+```mdc
+::resource-group{:items='[{"title":"Lukuoppaat","to":"/guides","type":"teksti","contributors":["kissa","koira"]}]' :handle="false"}
+::
+```
+:::
+::
+
+Propsit: `items`, `avatar` (oletus `/catlight.webp`), `avatarDark` (oletus `/catdark.webp`), `handle` (oletus `true`).
 
 ## Scenario
 
@@ -655,6 +702,71 @@ steps:
 :::
 ::
 
-Ominaisuudet: `steps` (pakollinen, lista vaiheista) ja `title` (valinnainen, näytetään askeltajan yläpuolella). Jokaisella vaiheella on `title`, ja valinnaisesti `description` (markdown toimii), `icon` ja `entity`.
+Ominaisuudet: `steps` (pakollinen, lista vaiheista) ja `title` (valinnainen, näytetään askeltajan yläpuolella). Jokaisella vaiheella on `title` ja valinnaisesti `description` (markdown toimii), `icon` ja `entity`.
 
 `entity` on virtasivun nimi väliviivalla kirjoitettuna, kuten `economic-event`. Se näyttää käännetyn kohteen nimen linkkinä osoitteeseen `/flow/<entity>`. Käytä vain nimiä, jotka löytyvät virtaosiosta, tai linkki ei johda mihinkään.
+
+## Tasolista
+
+Arvostelutaulu, jossa lukija vetää kohteita tasojen välillä. Kohteet alkavat "Luokittelemattomat"-rivillä. Järjestys säilyy `useState`:ssa, joten se pysyy sivunvaihdoissa mutta nollautuu, kun sivu ladataan kokonaan uudelleen.
+
+::tabs
+:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+::::tier-list
+---
+state-key: preview-fi
+tiers:
+  - label: S
+    color: error
+  - label: A
+    color: warning
+  - label: B
+    color: success
+  - label: C
+    color: info
+items:
+  - label: Nuxt UI
+    icon: i-lucide-layout-dashboard
+  - label: Nuxt Content
+    icon: i-lucide-file-text
+  - label: VueUse
+    icon: i-lucide-zap
+  - i18n
+---
+::::
+:::
+:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+```mdc
+::tier-list
+---
+state-key: favorite-tools
+tiers:
+  - label: S
+    color: error
+  - label: A
+    color: warning
+  - label: B
+    color: success
+  - label: C
+    color: info
+items:
+  - label: Nuxt UI
+    icon: i-lucide-layout-dashboard
+  - label: Nuxt Content
+    icon: i-lucide-file-text
+  - label: VueUse
+    icon: i-lucide-zap
+  - i18n
+---
+::
+```
+:::
+:::tabs-item{label="Inline-propsit" icon="i-lucide-code"}
+```mdc
+::tier-list{state-key="inline-fi" :sortable="false" :tiers='[{"label":"S","color":"error"},{"label":"A","color":"warning"}]' :items='["Nuxt UI","i18n"]'}
+::
+```
+:::
+::
+
+Propsit: `tiers`, `items`, `stateKey` (oletus `default`), `sortable` (oletus `true`).

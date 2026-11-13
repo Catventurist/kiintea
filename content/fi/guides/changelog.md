@@ -76,14 +76,14 @@ surround: true
 ### Lisätty
 
 - `hero-list`: hero, jonka lohkoja voi järjestää vetämällä. Järjestys säilyy `useState`-tilassa. Vedon saa pois asetuksella `sortable=false`.
-- Aloituskortti: kielen ja tumman tilan valinta värillisillä korteilla ja badgeilla. Kieli vaihtuu heti, ja väriteema otetaan käyttöön heti.
+- Aloituskortti: kielen ja tumman tilan valinta värillisillä korteilla ja badgeilla. Kieli vaihtuu heti ja väriteema otetaan käyttöön heti.
 - Aloitusvalinnat tallennetaan evästeeseen vasta, kun käyttäjä painaa Jatka. Valinta "Jatka tallentamatta" ei tallenna mitään.
 - Oppaiden etusivun kortit: Aloitus, Oppaat, Markdown, Järjestettävät, Työkalut ja Muutosloki.
 - Sivu evästeistä, tallennuksesta ja aloituksesta **EU-käyttäjille**. Huomioita evästeistä, tallennuksesta ja aloituksesta kehittäjille, jotka julkaisevat EU:ssa. Evästeasetukset on poistettu käytöstä tämän projektin asetuksissa, joten muut voivat ohittaa ne.
-- `term`: tekstin sisäinen sanastotermi, jonka selitys näkyy osoittimella, kohdistuksella tai napautuksella. Selitykset tulevat `glossary`-sisältökokoelmasta kielikohtaisesti, ja puuttuessaan käytetään englantia.
-- `term`: tekstin sisäinen sanastotermi, jonka selitys näkyy osoittimella, kohdistuksella tai napautuksella. Selitykset tulevat kielikohtaisista sanastomerkinnöistä, ja puuttuessaan käytetään englantia.
+- `term`: tekstin sisäinen sanastotermi, jonka selitys näkyy osoittimella, kohdistuksella tai napautuksella. Selitykset tulevat `glossary`-sisältökokoelmasta kielikohtaisesti ja puuttuessaan käytetään englantia.
+- `term`: tekstin sisäinen sanastotermi, jonka selitys näkyy osoittimella, kohdistuksella tai napautuksella. Selitykset tulevat kielikohtaisista sanastomerkinnöistä ja puuttuessaan käytetään englantia.
 - Sanastosivu: haettava aakkosjärjestyksessä oleva termilista. Oma järjestys -kytkimellä termit voi vetää haluamaansa järjestykseen. Jokaisella termillä on ankkuri, joten linkit kuten `/glossary#ssr` toimivat.
-- `playground`: muokattava MDC-esimerkki, joka renderöi oikeat komponentit reaaliajassa. Mukana esimerkkivalikko hakuineen ja kuvauksineen, kopiointi ja palautus, ja virheellisen syntaksin kohdalla säilyy viimeinen toimiva esikatselu.
+- `playground`: muokattava MDC-esimerkki, joka renderöi oikeat komponentit reaaliajassa. Mukana esimerkkivalikko hakuineen ja kuvauksineen, kopiointi ja palautus ja virheellisen syntaksin kohdalla säilyy viimeinen toimiva esikatselu.
 - `bilingual-view`: sama sivu englanniksi ja suomeksi rinnakkain, vieritys linkitettynä lohko lohkolta.
 - Kotisivu
 
@@ -138,7 +138,7 @@ surround: true
 
 ### Lisätty
 
-- `stats`-komponentti: ruudukko numerokortteja, jotka perustuvat `UPageCard`-komponenttiin, ja joissa on kuvakkeet, korttikohtaiset värit, kohdevalo, joka seuraa kursoria, laskuanimaatio ja valinnaiset edistymispalkit. Animaatiot poistetaan käytöstä, jos käyttäjä haluaa vähemmän liikettä.
+- `stats`-komponentti: ruudukko numerokortteja, jotka perustuvat `UPageCard`-komponenttiin ja joissa on kuvakkeet, korttikohtaiset värit, kohdevalo, joka seuraa kursoria, laskuanimaatio ja valinnaiset edistymispalkit. Animaatiot poistetaan käytöstä, jos käyttäjä haluaa vähemmän liikettä.
 - `stats-source`-komponentti, joka laskee komponentit, sivut, käännösten kattavuuden, kielet, sanaston termit ja ongelmat sivustolta itseltään. Kortteja voi suodattaa `show`-ominaisuudella.
 - `useSiteStats`-komposiitti, joka hakee luvut kerran sivua ja kieltä kohti.
 
@@ -170,7 +170,7 @@ surround: true
 - `/flow`-hakemisto, jossa yksi kortti jokaista kohdetta kohti, ryhmiteltynä tasoittain (tieto, suunnitelma, havainto, toimijat)
 - Haku ja tasosuodatin hakemistoon
 - Kohdesivut, joilla on kyselyparametrien taulukko, yhteisöesimerkki ja käytettävissä olevat toiminnot (luo, päivitä, poista)
-- Parametrit linkittyvät kohteeseen, johon ne viittaavat, ja jokaisella sivulla on lista kohteista, jotka käyttävät sitä ("Käyttäjät")
+- Parametrit linkittyvät kohteeseen, johon ne viittaavat ja jokaisella sivulla on lista kohteista, jotka käyttävät sitä ("Käyttäjät")
 - Edellinen / seuraava -navigointi tasojärjestyksessä sekä takaisin-painike otsikossa
 - Valinnainen linkki kohteesta sanaston termiin
 - Kuvake ja väri jokaiselle tasolle
@@ -197,9 +197,9 @@ surround: true
 
 - Kirjanmerkkien tuonti: pudota selaimen kirjanmerkkitiedosto (HTML) `UFileUpload`-komponenttiin ja selaa sitä kansiopuuna `UTree`-komponentilla
 - Sisäkkäiset kansiot, jotka rakennetaan tiedoston `<DL>`-rakenteesta ja jotka ovat oletuksena suljettuina
-- Valintaruudut, joissa on `propagate-select` ja `bubble-select`: kansion valinta valitsee sen kirjanmerkit, ja osittainen valinta näkyy välitilana
+- Valintaruudut, joissa on `propagate-select` ja `bubble-select`: kansion valinta valitsee sen kirjanmerkit ja osittainen valinta näkyy välitilana
 - Virtualisoitu puu suuria vientejä varten
-- Haku otsikon tai URL-osoitteen mukaan, ja hakua vastaavat kansiot aukeavat automaattisesti
+- Haku otsikon tai URL-osoitteen mukaan ja hakua vastaavat kansiot aukeavat automaattisesti
 - "Valitse kaikki" (vain näkyvät kohteet) ja "Tyhjennä" -painikkeet
 - Latauspainikkeet kaikille kirjanmerkeille tai vain valituille, vienti tiedostoon `bookmarks.yml` ja jokaisen kirjanmerkin koko kansiopolku mukana
 - Järjestä uudelleen -kytkin: kirjanmerkkejä ja kansioita voi vetää ja pudottaa, myös kansiosta toiseen
@@ -217,11 +217,11 @@ surround: true
 - Viennin kansiopolut lasketaan jokaisen kirjanmerkin paikasta puussa, joten siirretty kirjanmerkki saa oikean kansion
 - Vienti noudattaa puun nykyistä järjestystä valintajärjestyksen sijaan
 - Välilehtien paneelit pysyvät kiinnitettyinä ensimmäisen avaamisen jälkeen, joten esimerkiksi tuotu tiedosto säilyy välilehteä vaihdettaessa
-- Uudelleenjärjestäminen poistaa virtualisoinnin käytöstä ja käyttää litteää puunäkymää, ja ottaa virtualisoinnin takaisin käyttöön sen jälkeen
+- Uudelleenjärjestäminen poistaa virtualisoinnin käytöstä ja käyttää litteää puunäkymää ja ottaa virtualisoinnin takaisin käyttöön sen jälkeen
 
 ### Korjattu
 
-- Kaikki kirjanmerkit päätyivät ensimmäiseen kansioon, ja kirjanmerkit tuplautuivat kerran jokaista ylempää kansiota kohti
+- Kaikki kirjanmerkit päätyivät ensimmäiseen kansioon ja kirjanmerkit tuplautuivat kerran jokaista ylempää kansiota kohti
 - Virhe "Type instantiation is excessively deep" `TreeItem`-tyypissä, korjattu käyttämällä rajapintaa ja `shallowRef`-viittausta
 - Kansioita ei voinut avata, kun oma `trailing`-slotti korvasi nuolikuvakkeen
 - Vetäminen ei alkanut, kun virtualisoidusta puusta vaihdettiin litteään puuhun
@@ -253,13 +253,13 @@ surround: true
   - i18n: `en`, `fi`.
   - Composable: `useMycelium` (canvas-silmukka, osumatestaus, hiukkasfysiikka).
   - Tyypit: `CommunityData`, `CommunityNode`, `CommunityEdge`, `Resource`.
-- Järjesteltävä `icon-list`-MDC-komponentti. Jokainen ruutu on ghost-linkkipainike, ja ruutuja voi järjestää vetämällä.
+- Järjesteltävä `icon-list`-MDC-komponentti. Jokainen ruutu on ghost-linkkipainike ja ruutuja voi järjestää vetämällä.
 - Oma `social`-kuvakekokoelma (`i-social-*`), joka ladataan kansiosta `app/assets/icons`.
 - "Tehty näillä" ja "Löydä meidät" -osiot Tietoa-sivulle.
 
 ### Korjattu
 
-- Kielen vaihtaminen ei enää näytä vanhentunutta, tyhjää tai vääränkielistä sisältöä. Sisältökyselyt käyttävät nyt URL-osoitteen kieltä, ja välimuistiavaimet ja tarkkailijat käyttävät `route.path`-arvoa. Tämä koskee `useContentCollection`-funktiota, `pages/index.vue`-sivua ja yleissivua (catch-all).
+- Kielen vaihtaminen ei enää näytä vanhentunutta, tyhjää tai vääränkielistä sisältöä. Sisältökyselyt käyttävät nyt URL-osoitteen kieltä ja välimuistiavaimet ja tarkkailijat käyttävät `route.path`-arvoa. Tämä koskee `useContentCollection`-funktiota, `pages/index.vue`-sivua ja yleissivua (catch-all).
 - Ankkurilinkit (`#section`) vierittävät nyt kohteeseen myös sivujen välillä. Asian hoitaa pieni asiakaspuolen lisäosa, koska sisältö vierii `UScrollArea`-komponentin sisällä eikä ikkunassa.
 - Sivun vierityskohta nollautuu, kun siirrytään sivulle ilman ankkuria.
 - Sisällysluettelo näkyy nyt työpöydällä, kun jakaja (splitter) on pois päältä.
@@ -273,7 +273,7 @@ surround: true
 - Sivupalkin avoin-tila on sidottu `collapsed`-asetukseen, joten kytkin, valikko ja frontmatter ovat yhtä mieltä.
 - `ClientOnly` ympäröi nyt vain otsikkorivin painikkeet, ei koko sisältöaluetta.
 - Sivupalkin kytkimellä on käännetty `aria-label` ja `aria-expanded`.
-- Tietoa-sivu rakennettu uudelleen `u-page-section`-lohkoista, ja siitä on suomenkielinen versio.
+- Tietoa-sivu rakennettu uudelleen `u-page-section`-lohkoista ja siitä on suomenkielinen versio.
 - Etusivu uudistettu yhteisöosiolla sekä englannin- ja suomenkielisillä versioilla.
 - Teema päivitetty `suomi`- (sininen) ja `lake`-paletteihin (sinivihreä).
 
@@ -324,3 +324,13 @@ surround: true
 - Runo: selaimessa tapahtuva salattu jakaminen (AES-GCM). Liitä teksti ja saat linkin, avaimen ja datan tai Markdown-tiedoston yksityisille sivuille.
   - Yksityiset sivut (`encrypted: true` ja `blob` etumatkassa) näyttävät vain avainkentän ja purkavat tekstin paikallisesti.
   - Julkiset runo-sivut näyttävät dokumentin ja jakolomakkeen erillisillä välilehdillä.
+- `::resource-group`-MDC-komponentti. Se näyttää resurssilistan YAML-muotoisesta `items`-taulukosta: otsikko, linkki, tyyppimerkki ja tekijät.
+  - Järjestäminen vetämällä (`useSortable`). `handle`-prop (oletus `true`) rajaa vetämisen tartuntakuvakkeeseen.
+  - Tekijöiden vaalea ja tumma avatar `avatar`- ja `avatarDark`-propeilla. Oletukset ovat `/catlight.webp` ja `/catdark.webp`.
+  - Ulkoiset linkit aukeavat uuteen välilehteen. Sisäiset reitit pysyvät samassa välilehdessä.
+- `::tier-list`-MDC-komponentti. Lukija vetää kohteita tasojen (S, A, B, C tai omat) ja "Unranked"-rivin välillä.
+- `tiers`-prop, jossa jokaisella tasolla on `label` ja Nuxt UI:n `color`.
+- `items`-prop, joka hyväksyy pelkkiä merkkijonoja tai `{ label, icon }`-objekteja, joten kohteilla voi olla kuvake.
+- `stateKey`-prop. Järjestys säilyy `useState`:ssa, joten se pysyy sivunvaihdoissa.
+- `sortable`-prop (oletus `true`). Aseta `false`, jos taulun on tarkoitus olla vain luettavissa.
+- Riikohtainen `useSortable` yhteisellä ryhmällä. Rivin sisäiset siirrot hoitaa `useSortable` ja rivien väliset siirrot hoitaa vanhempi.

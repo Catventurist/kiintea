@@ -97,12 +97,12 @@ Nimet, joita ei ole tässä listassa, ohitetaan. Kortit pitävät omat värinsä
 
 Jos kokoelma puuttuu tai laskenta epäonnistuu, kyseinen kortti näyttää ajatusviivan ja muut piirtyvät silti.
 
-Luvut haetaan kerran sivua ja kieltä kohden, ja kaikki saman sivun tilastolähteet jakavat ne.
+Luvut haetaan kerran sivua ja kieltä kohden ja kaikki saman sivun tilastolähteet jakavat ne.
 
 
 ## Term
 
-Tekstin sisäinen sanastotermi. Vie osoitin termin päälle, siirrä siihen kohdistus tai napauta sitä, niin näet lyhyen selityksen. Selitykset tulevat nykyisen kielen sanastomerkinnöistä, ja jos käännöstä ei ole, käytetään englantia.
+Tekstin sisäinen sanastotermi. Vie osoitin termin päälle, siirrä siihen kohdistus tai napauta sitä, niin näet lyhyen selityksen. Selitykset tulevat nykyisen kielen sanastomerkinnöistä ja jos käännöstä ei ole, käytetään englantia.
 
 ::tabs
 :::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
@@ -132,7 +132,7 @@ Yksittäinen termi, jolle ei ole sanastoselitettä: :term[hydraatiolla]{text="Pa
 
 - `name`: käytettävä sanastomerkintä eli tiedoston nimi ilman päätettä.
 - `text`: yhden rivin selitys, joka näytetään työkaluvihjeessä.
-- `title`, `description`, `to`, `icon`: laajempi ponnahdusikkuna. Termi, jolla on `description` tai `to`, avaa ponnahdusikkunan, ja termi, jolla on vain `text`, avaa työkaluvihjeen.
+- `title`, `description`, `to`, `icon`: laajempi ponnahdusikkuna. Termi, jolla on `description` tai `to`, avaa ponnahdusikkunan ja termi, jolla on vain `text`, avaa työkaluvihjeen.
 - `side`: mihin suuntaan ikkuna aukeaa: `top`, `right`, `bottom` tai `left`. Oletus on `bottom`.
 - Paina `Jaa linkki` kopioidaksesi osoitteen, joka sisältää nykyisen tekstin. Osoitteen avaaminen lataa tekstin leikkikenttään, vierittää sen näkyviin ja näyttää ilmoituksen. Hyvin pitkää tekstiä ei voi jakaa linkkinä.
 
@@ -164,7 +164,7 @@ Kaikki kentät ovat valinnaisia. Merkinnät näkyvät myös sanastosivulla.
 
 ## Troubleshooting source
 
-Yhteinen ongelmien kokoelma, jota voi suodattaa tunnisteella. Se ympäröi puhtaan `troubleshooting`-komponentin, joten lista näyttää ja toimii samoin. Suomenkieliset merkinnät korvaavat englanninkieliset, joilla on sama `slug`, ja kääntämättömät pysyvät englanniksi.
+Yhteinen ongelmien kokoelma, jota voi suodattaa tunnisteella. Se ympäröi puhtaan `troubleshooting`-komponentin, joten lista näyttää ja toimii samoin. Suomenkieliset merkinnät korvaavat englanninkieliset, joilla on sama `slug` ja kääntämättömät pysyvät englanniksi.
 
 ::tabs
 :::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
@@ -204,4 +204,4 @@ Ongelmat sijaitsevat tiedostoissa `content/en/problems/*.yml` ja `content/fi/pro
 - Välimuistin avain sisältää kielen, joten kielenvaihto ei koskaan näytä vanhaa dataa.
 - Käännökset yhdistetään merkintä kerrallaan `slug`-arvon perusteella, ei sivu kerrallaan.
 - Vain komponentin tarvitsemat kentät luetaan.
-- Data haetaan kerran sivua kohden, ja kaikki saman komponentin esiintymät jakavat sen.
+- Data haetaan kerran sivua kohden ja kaikki saman komponentin esiintymät jakavat sen.

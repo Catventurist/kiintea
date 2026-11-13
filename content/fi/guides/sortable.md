@@ -464,14 +464,14 @@ items:
 
 ## SwatchList
 
-Väripaletti, jonka värinäytteiden järjestystä voi muuttaa vetämällä. Värinäytettä napsauttamalla voi myös asettaa sivuston pääväriksi. Värit tulevat `--swatch-*`-CSS-muuttujista, ja jos muuttujaa ei ole, käytetään teeman `500`-sävyä.
+Väripaletti, jonka värinäytteiden järjestystä voi muuttaa vetämällä. Värinäytettä napsauttamalla voi myös asettaa sivuston pääväriksi. Värit tulevat `--swatch-*`-CSS-muuttujista ja jos muuttujaa ei ole, käytetään teeman `500`-sävyä.
 
 **Kentät**
 - `colors` (merkkijono[], valinnainen): värien nimet näyttöjärjestyksessä. Oletuksena blue, sky, indigo, violet, green, emerald, amber, orange ja rose.
 - `select` (totuusarvo, valinnainen): kun arvo on `true`, värinäytteen napsauttaminen asettaa arvon `ui.colors.primary`. Oletus on `true`.
 - `compact` (totuusarvo, valinnainen): piilottaa nimet ja käyttää pienempiä värinäytteitä. Oletus on `false`.
 
-Värien on oltava teemassasi. Käytä Tailwindin oletusvärejä tai määritä oman värin sävyt 50–950 ensin.
+Värien on oltava teemassasi. Käytä Tailwindin oletusvärejä tai määritä oman värin sävyt 50-950 ensin.
 
 ::tabs
 

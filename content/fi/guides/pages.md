@@ -76,7 +76,7 @@ Nuxt tekee sivuista interaktiivisia :term[hydraation]{text="Palvelimella render�
 ```
 
 **Mistä määritelmät tulevat**
-- Määritelmät ovat `glossary`-sisältökokoelmassa, ja jokaiselle kielelle on omat merkintänsä.
+- Määritelmät ovat `glossary`-sisältökokoelmassa ja jokaiselle kielelle on omat merkintänsä.
 - Jos termillä ei ole merkintää nykyisellä kielellä, käytetään englanninkielistä merkintää.
 - `useGlossary`-funktio tekee yhden välimuistissa olevan sanastokyselyn. `term` ja sanastosivu käyttävät sitä yhdessä, joten data haetaan vain kerran.
 
@@ -100,7 +100,7 @@ tags:
 
 ## Esimerkki
 
-Sivu osoitteessa `/example`, joka näyttää omat Vue-komponentit käytössä Markdownin ulkopuolella. Jokainen komponentti on omassa välilehdessään, ja välilehden sisältö ladataan vasta, kun se avataan ensimmäisen kerran.
+Sivu osoitteessa `/example`, joka näyttää omat Vue-komponentit käytössä Markdownin ulkopuolella. Jokainen komponentti on omassa välilehdessään ja välilehden sisältö ladataan vasta, kun se avataan ensimmäisen kerran.
 
 **Välilehdet**
 - Jokainen komponentti on omassa `UTabs`-paneelissaan ja tuodaan `Lazy`-etuliitteellä, joten sen koodi haetaan vasta, kun välilehti avataan ensimmäisen kerran.
@@ -119,10 +119,10 @@ Sivu osoitteessa `/example`, joka näyttää omat Vue-komponentit käytössä Ma
 
 **Miten se toimii**
 - Tiedosto jäsennetään selaimessa. Sisäkkäisistä kansioista tulee sisäkkäinen puu, joka on oletuksena suljettuna. Mitään ei lähetetä palvelimelle.
-- Jokaisella rivillä on valintaruutu. Kansion valinta valitsee kaiken sen sisällä, ja osittain valittu kansio näkyy välitilassa.
+- Jokaisella rivillä on valintaruutu. Kansion valinta valitsee kaiken sen sisällä ja osittain valittu kansio näkyy välitilassa.
 - Hakukenttä suodattaa otsikon tai URL-osoitteen mukaan ja avaa vastaavat kansiot. **Valitse kaikki** koskee vain näkyviä kohteita.
-- **Kaikki** lataa jokaisen kirjanmerkin ja **Valitut** merkityt, molemmat tiedostoon `bookmarks.yml`, ja jokaisen kirjanmerkin koko kansiopolku mukana.
-- Ota **Järjestä uudelleen** -kytkin käyttöön, niin voit vetää kirjanmerkkejä ja kansioita uuteen järjestykseen, myös kansiosta toiseen. Vienti noudattaa uutta järjestystä. Uudelleenjärjestäminen on pois käytöstä haun ollessa aktiivinen, ja se kytkee virtualisoinnin pois, kunnes palautat kytkimen.
+- **Kaikki** lataa jokaisen kirjanmerkin ja **Valitut** merkityt, molemmat tiedostoon `bookmarks.yml` ja jokaisen kirjanmerkin koko kansiopolku mukana.
+- Ota **Järjestä uudelleen** -kytkin käyttöön, niin voit vetää kirjanmerkkejä ja kansioita uuteen järjestykseen, myös kansiosta toiseen. Vienti noudattaa uutta järjestystä. Uudelleenjärjestäminen on pois käytöstä haun ollessa aktiivinen ja se kytkee virtualisoinnin pois, kunnes palautat kytkimen.
 - Tiedosto, joka ei ole kirjanmerkkivienti tai jossa ei ole kirjanmerkkejä, näyttää ilmoituksen ja tyhjentää latauksen, jotta voit pudottaa uuden tiedoston.
 
 **Tiedostot**

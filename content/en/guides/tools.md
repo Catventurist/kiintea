@@ -602,6 +602,53 @@ The Check button stays disabled until the reader has moved something. A wrong an
 
 The answer is part of the page, so anyone can find it in the page source. Use the quiz for learning, not for anything that has to stay secret.
 
+## ResourceGroup
+
+A list of resources with their contributors. The rows can be reordered by drag. The order lives in the component, so it resets on a full page reload.
+
+::tabs
+:::tabs-item{label="Preview" icon="i-lucide-eye"}
+::::resource-group
+---
+items:
+  - title: Following resources
+    to: /flow
+    type: article
+    contributors: [bird]
+  - title: Reading guides
+    to: /guides
+    type: text
+    contributors: [cat, dog]
+---
+::::
+:::
+:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+```mdc
+::resource-group
+---
+items:
+  - title: Following resources
+    to: /flow
+    type: article
+    contributors: [bird]
+  - title: Reading guides
+    to: /guides
+    type: text
+    contributors: [cat, dog]
+---
+::
+```
+:::
+:::tabs-item{label="Inline props" icon="i-lucide-code"}
+```mdc
+::resource-group{:items='[{"title":"Reading guides","to":"/guides","type":"text","contributors":["cat","dog"]}]' :handle="false"}
+::
+```
+:::
+::
+
+Props: `items`, `avatar` (default `/catlight.webp`), `avatarDark` (default `/catdark.webp`), `handle` (default `true`).
+
 ## Scenario
 
 A short story told step by step. Each step can point to a flow entity, so the reader sees how the pieces of the system fit together. Readers can go back and forth with the buttons, or jump to any step by clicking it.
@@ -661,3 +708,67 @@ Props: `steps` (required, a list of steps) and `title` (optional, shown above th
 
 The `entity` is the name of a flow page in kebab case, like `economic-event`. It shows the translated entity name as a link to `/flow/<entity>`. Use only names that exist in the flow section, or the link goes nowhere.
 
+## Tier list
+
+A ranking board where readers drag items between tiers. Items start in an "Unranked" row. The ranking is kept in `useState`, so it survives navigation but resets on a full page reload.
+
+::tabs
+:::tabs-item{label="Preview" icon="i-lucide-eye"}
+::::tier-list
+---
+state-key: preview
+tiers:
+  - label: S
+    color: error
+  - label: A
+    color: warning
+  - label: B
+    color: success
+  - label: C
+    color: info
+items:
+  - label: Nuxt UI
+    icon: i-lucide-layout-dashboard
+  - label: Nuxt Content
+    icon: i-lucide-file-text
+  - label: VueUse
+    icon: i-lucide-zap
+  - i18n
+---
+::::
+:::
+:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+```mdc
+::tier-list
+---
+state-key: favorite-tools
+tiers:
+  - label: S
+    color: error
+  - label: A
+    color: warning
+  - label: B
+    color: success
+  - label: C
+    color: info
+items:
+  - label: Nuxt UI
+    icon: i-lucide-layout-dashboard
+  - label: Nuxt Content
+    icon: i-lucide-file-text
+  - label: VueUse
+    icon: i-lucide-zap
+  - i18n
+---
+::
+```
+:::
+:::tabs-item{label="Inline props" icon="i-lucide-code"}
+```mdc
+::tier-list{state-key="inline" :sortable="false" :tiers='[{"label":"S","color":"error"},{"label":"A","color":"warning"}]' :items='["Nuxt UI","i18n"]'}
+::
+```
+:::
+::
+
+Props: `tiers`, `items`, `stateKey` (default `default`), `sortable` (default `true`).

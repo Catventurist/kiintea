@@ -45,10 +45,10 @@ const tabItems = computed(() => [
   { label: t('runo.open'), value: 'avaa', icon: 'i-lucide-unlock' }
 ])
 
-const NOM = ['kaleva', 'karhu', 'sampo', 'ilmari', 'aino', 'leino', 'tuuri', 'voitto']
+const NOM = ['kalevi', 'karhu', 'sampo', 'ilmari', 'aino', 'leivo', 'tuuri', 'voitto']
 const GEN = ['karhun', 'kalevan', 'sammon', 'tuulen', 'meren', 'maan', 'tulen', 'rauhan']
-const PART = ['marjan', 'soran', 'tervaa', 'vesiä', 'heinää', 'karjaa', 'ruoaa', 'sora-a']
-const ILL = ['tuonelaan', 'kalvoon', 'saraan', 'maahan', 'mereen', 'metsään', 'taivaan', 'kalevaan']
+const PART = ['marjan', 'soran', 'tervaa', 'vettä', 'heinää', 'karjaa', 'ruokaa', 'soraa']
+const ILL = ['tuonelaan', 'kaivoon', 'saraan', 'maahan', 'mereen', 'metsään', 'taivahan', 'kalaan']
 const VERB = ['otti', 'antoi', 'vei', 'loi', 'räjähti', 'käski', 'sanoi', 'laski']
 
 function toB64(u8: Uint8Array): string {

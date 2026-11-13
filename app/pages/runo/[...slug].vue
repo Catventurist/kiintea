@@ -28,43 +28,45 @@ useSeoMeta({
 
 <template>
   <UPage>
-    <div class="p-8 max-w-2xl mx-auto">
-      <h1
-        v-if="doc"
-        class="text-2xl font-bold mb-4"
-      >
-        {{ doc.title }}
-      </h1>
+    <ClientOnly>
+      <div class="p-8 max-w-4xl mx-auto">
+        <h1
+          v-if="doc"
+          class="text-2xl font-bold mb-4"
+        >
+          {{ doc.title }}
+        </h1>
 
-      <FRunoJako
-        v-if="doc?.encrypted"
-        :blob="doc.blob"
-      />
+        <LazyFRunoJako
+          v-if="doc?.encrypted"
+          :blob="doc.blob"
+        />
 
-      <UTabs
-        v-else-if="doc"
-        :items="tabs"
-        variant="link"
-        default-value="doc"
-        class="w-full"
-      >
-        <template #doc>
-          <ContentRenderer
-            :value="doc"
-            class="pt-4"
-          />
-        </template>
-        <template #share>
-          <div class="pt-4">
-            <FRunoJako
-              :content="doc.rawbody"
-              :tabs="false"
+        <UTabs
+          v-else-if="doc"
+          :items="tabs"
+          variant="link"
+          default-value="doc"
+          class="w-full"
+        >
+          <template #doc>
+            <ContentRenderer
+              :value="doc"
+              class="pt-4"
             />
-          </div>
-        </template>
-      </UTabs>
+          </template>
+          <template #share>
+            <div class="pt-4">
+              <LazyFRunoJako
+                :content="doc.rawbody"
+                :tabs="false"
+              />
+            </div>
+          </template>
+        </UTabs>
 
-      <FRunoJako v-else />
-    </div>
+        <LazyFRunoJako v-else />
+      </div>
+    </ClientOnly>
   </UPage>
 </template>
