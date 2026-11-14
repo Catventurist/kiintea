@@ -14,47 +14,17 @@ surround: true
 
 Small interactive components for documentation pages. Each one works from Markdown with MDC.
 
-## ChartList
+## Passing props inline
 
-A bar chart whose rows can be reordered by drag or sorted with the buttons. The order is kept in `useState`, so it resets on a full page reload.
+Short values can go in braces, and lists as JSON in single quotes. A colon in front of a name (`:sortable`) means the value is read as JSON, so `:sortable="false"` is a boolean and `sortable="false"` is the text "false".
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::chart-list
----
-state-key: preview
-type: bar
-data:
-  - { month: january, desktop: 186, mobile: 80 }
-  - { month: february, desktop: 305, mobile: 200 }
-  - { month: march, desktop: 237, mobile: 120 }
-  - { month: april, desktop: 73, mobile: 190 }
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
 ```mdc
-::chart-list
----
-type: bar
-data:
-  - { month: january, desktop: 186, mobile: 80 }
-  - { month: february, desktop: 305, mobile: 200 }
-  - { month: march, desktop: 237, mobile: 120 }
-  - { month: april, desktop: 73, mobile: 190 }
----
+::tier-list{state-key="demo" :sortable="false" :items='["Nuxt UI","i18n"]'}
 ::
 ```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::chart-list{type="line" state-key="inline" :data='[{"month":"january","desktop":186,"mobile":80},{"month":"february","desktop":305,"mobile":200}]'}
-::
-```
-:::
-::
 
-Props: `data`, `type` (default `bar`), `sortable` (default `true`), `stateKey` (default `default`).
+Longer data goes in a YAML block, as in the examples below. Inline attributes can't replace the YAML block for components whose content is a long list.
+
 
 ## CompatMatrix
 
@@ -70,9 +40,7 @@ A compatibility matrix with one row per dependency and one cell per version. Eac
 
 Don't use `yes` or `no` as statuses. Some YAML parsers turn them into booleans.
 
-::tabs
-
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
+:::code-preview
 ::compat-matrix
 ---
 columns:
@@ -89,45 +57,29 @@ rows:
     support: [supported, partial, unsupported]
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::compat-matrix
 ---
 columns:
   - Node 18
   - Node 20
-  - Node 22
 rows:
-  - name: Kiintea
-    support: [supported, supported, supported]
   - name: Tailwind CSS
-    support: [partial, supported, supported]
+    support: [partial, supported]
     note: Needs the v4 build on Node 18.
-  - name: Legacy plugin
-    support: [supported, partial, unsupported]
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::compat-matrix{:columns='["Node 18","Node 20","Node 22"]' :rows='[{"name":"Kiintea","support":["supported","supported","supported"]},{"name":"Tailwind CSS","support":["partial","supported","supported"],"note":"Needs the v4 build on Node 18."},{"name":"Legacy plugin","support":["supported","partial","unsupported"]}]'}
-::
-```
-:::
-
-::
 
 ## Hero list
 
 A hero whose blocks (headline, title, description, links) can be reordered by drag. The order is kept in `useState`, so it resets on a full page reload.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::hero-list
+:::code-preview
+::hero-list
 ---
 headline: Kiintea
 title: Build faster with Vue
@@ -138,34 +90,25 @@ links:
     to: /guides
     icon: i-lucide-rocket
 ---
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+::
+
+#code
 ```mdc
 ::hero-list
 ---
 headline: Kiintea
 title: Build faster with Vue
-description: Drag the blocks to change their order.
 sections: [headline, title, description, links]
 links:
   - label: Get started
-    to: /about
+    to: /guides
     icon: i-lucide-rocket
 ---
 ::
 ```
 :::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::hero-list{headline="Kiintea" title="Build faster with Vue" state-key="inline" :links='[{"label":"About","to":"/about"}]'}
-::
-```
-:::
-::
 
 Props: `headline`, `title`, `description`, `links`, `sections` (initial order), `sortable` (default `true`), `stateKey` (default `default`).
-
 
 ## InstallBuilder
 
@@ -183,9 +126,7 @@ Builds an install command from a package manager, a list of packages and optiona
 
 Package names that start with `@` must be quoted in YAML, for example `"@nuxt/ui"`.
 
-::tabs
-
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
+:::code-preview
 ::install-builder
 ---
 manager: pnpm
@@ -202,126 +143,37 @@ options:
     description: Optimized images.
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::install-builder
 ---
 manager: pnpm
 packages:
   - "@nuxt/ui"
-  - tailwindcss
 options:
   - label: Nuxt Content
     package: "@nuxt/content"
-    description: Markdown and MDC support.
     checked: true
-  - label: Nuxt Image
-    package: "@nuxt/image"
-    description: Optimized images.
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::install-builder{manager="pnpm" :packages='["@nuxt/ui","tailwindcss"]' :options='[{"label":"Nuxt Content","package":"@nuxt/content","checked":true},{"label":"Nuxt Image","package":"@nuxt/image"}]'}
-::
-```
-:::
-
-::
 
 **Dev dependencies**
 
 Set `dev` to install the packages as development dependencies.
 
-::tabs
-
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
+:::code-preview
 ::install-builder{dev manager="npm" :packages='["eslint","typescript"]'}
 ::
-:::
 
-:::tabs-item{label="Code" icon="i-lucide-code"}
+#code
 ```mdc
 ::install-builder{dev manager="npm" :packages='["eslint","typescript"]'}
 ::
 ```
 :::
-
-::
-
-## Playground
-
-An editable MDC example. The reader changes the source and sees your real components render next to it. The preview updates after a short pause. A syntax error shows a message and keeps the last good preview.
-
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::playground
----
-title: Try the components
-rows: 6
-state-key: docs-preview
-examples:
-  - label: Term
-    description: Inline glossary term with a popover
-    source: |
-      Nuxt renders pages with :term[SSR]{name="ssr"} by default.
-  - label: Term with a tooltip
-    description: A one-off term with no glossary entry
-    source: |
-      Nuxt makes pages interactive through :term[hydration]{text="Making server-rendered HTML interactive in the browser."}.
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
-::::playground
----
-title: Try the components
-rows: 8
-examples:
-  - label: Term
-    description: Inline glossary term with a popover
-    source: |
-      Nuxt renders pages with :term[SSR]{name="ssr"} by default.
-  - label: Hero list
-    source: |
-      ::hero-list
-      ---
-      title: Playground hero
-      ---
-      ::
----
-::::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::playground{title="Inline" source='Nuxt renders pages with :term[SSR]{name="ssr"} by default.'}
-::
-```
-:::
-::
-
-**Props**
-
-- `title`: a heading in the toolbar.
-- `source`: a single starting text. Use it when there is only one example.
-- `examples`: a list of `label`, `source` and an optional `description`. With two or more, a menu appears. With more than six, the menu also gets a search box.
-- `rows`: the height of the editor in lines. The default is `12`.
-- `stateKey`: the key under which the text is kept in `useState`. The default is `default`. Give each playground on one page its own key, or they will share their text.
-
-**Good to know**
-
-- The playground can render any component in `components/content/`, except itself.
-- When the source contains `::` blocks, use four colons on the outer component, as in the YAML tab.
-- Choosing another example replaces the current text. The Reset button restores the first example.
-- The text is kept in `useState`, so it survives navigation but not a full page reload.
-- The preview is rendered in the browser only. It is empty in the server-rendered HTML.
 
 ## ProgressCheck
 
@@ -334,10 +186,9 @@ A checklist with a progress bar. The bar fills as items are checked and turns gr
 - `items[].checked` (boolean, optional): start with the item checked.
 - `title` (string, optional): heading shown above the progress bar.
 - `id` (string, optional): unique key for the checklist state. Defaults to the page path, so give each checklist its own `id` if a page has more than one.
+- `resetLabel` (string, optional): text of the reset button. In inline form, write it as `reset-label="Reset"`, with no colon.
 
-::tabs
-
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
+:::code-preview
 ::progress-check
 ---
 title: Migration
@@ -351,42 +202,28 @@ items:
   - label: Deploy
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::progress-check
 ---
 title: Migration
 id: migration-v4
-reset-label: Reset
 items:
-  - label: Update the dependency
-    description: Install the latest version.
-  - label: Run the migration
-  - label: Check the theme overrides
-  - label: Deploy
+  - Update the dependency
+  - Run the migration
+  - Deploy
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::progress-check{title="Migration" id="migration-v4" :items='["Update the dependency","Run the migration","Check the theme overrides","Deploy"]' :reset-label="Reset"}
-::
-```
-:::
-
-::
 
 ## Stats
 
 A grid of number cards with an icon, a count-up animation and a spotlight that follows the cursor. Use it for the numbers you write yourself. To count things from the site automatically, see [Stats source](/guides/query#stats-source).
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::stats
+:::code-preview
+::stats
 ---
 columns: 3
 items:
@@ -402,19 +239,15 @@ items:
     progress: true
     icon: i-lucide-languages
 ---
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+::
+
+#code
 ```mdc
 ::stats
 ---
 columns: 3
 colorful: true
 items:
-  - label: Components
-    value: 24
-    icon: i-lucide-puzzle
-    color: primary
   - label: Translated
     value: 80
     unit: '%'
@@ -426,21 +259,10 @@ items:
     icon: i-lucide-circle-alert
     color: warning
     to: https://github.com/nuxt/ui/issues
-  - label: Last release
-    value: 4.7.0
-    icon: i-lucide-tag
-    color: neutral
 ---
 ::
 ```
 :::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::stats{:columns="2" :colorful="false"}
-::
-```
-:::
-::
 
 Props: `items` (required, the list of cards), `columns` (optional, `2`, `3` or `4`, default `3`) and `colorful` (optional, default `true`).
 
@@ -452,128 +274,14 @@ With `progress: true` and a numeric `value`, the card also shows a bar. The bar'
 
 The numbers count up and the cards fade in one after another. Both are switched off when the reader prefers reduced motion.
 
-Inline attributes only set `columns` and `colorful`. The cards themselves must be in the YAML block, so the inline form alone shows nothing.
+Inline attributes only set `columns` and `colorful`. The cards themselves must be in the YAML block.
 
-## Troubleshooting
-
-A searchable list of problems with their cause and fix. Readers can type part of an error message, filter by tag, and open one entry at a time or all of them.
-
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::troubleshooting
----
-group: tools-demo
-title: Common problems
-items:
-  - id: prose-not-styled
-    problem: Prose components are not styled
-    severity: warning
-    tags: [content, config]
-    cause: 'The @nuxt/content module is registered before @nuxt/ui, so the prose components are not available.'
-    fix: 'Register @nuxt/content after @nuxt/ui in the modules array.'
-    code:
-      lang: ts
-      file: nuxt.config.ts
-      content: |
-        export default defineNuxtConfig({
-          modules: [
-            '@nuxt/ui',
-            '@nuxt/content'
-          ]
-        })
-  - id: tailwind-classes-missing
-    problem: Tailwind classes in markdown are missing
-    severity: error
-    tags: [tailwind, content]
-    cause: Tailwind does not scan markdown files by default.
-    fix: 'Add a @source directive for the content directory to your main CSS file.'
-  - id: links-not-prefixed
-    problem: Links are not prefixed with the locale
-    severity: info
-    since: '4.7+'
-    tags: [i18n]
-    cause: 'The @nuxtjs/i18n module is not installed, or the link is external.'
-    fix: 'Install @nuxtjs/i18n. Internal links on ULink and UButton are localized automatically.'
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
-::troubleshooting
----
-group: setup
-title: Common problems
-searchable: true
-items:
-  - id: prose-not-styled
-    problem: Prose components are not styled
-    severity: warning
-    tags: [content, config]
-    cause: 'The @nuxt/content module is registered before @nuxt/ui, so the prose components are not available.'
-    fix: 'Register @nuxt/content after @nuxt/ui in the modules array.'
-    code:
-      lang: ts
-      file: nuxt.config.ts
-      content: |
-        export default defineNuxtConfig({
-          modules: [
-            '@nuxt/ui',
-            '@nuxt/content'
-          ]
-        })
-    links:
-      - label: Content integration
-        to: https://ui.nuxt.com/docs/getting-started/integrations/content
-  - id: links-not-prefixed
-    problem: Links are not prefixed with the locale
-    severity: info
-    since: '4.7+'
-    tags: [i18n]
-    cause: 'The @nuxtjs/i18n module is not installed, or the link is external.'
-    fix: 'Install @nuxtjs/i18n.'
----
-::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::troubleshooting{title="Common problems" group="setup" :searchable="false"}
-::
-```
-:::
-::
-
-Props: `items` (required, the list of problems), `title` (optional), `group` (optional, default `default`) and `searchable` (optional, default `true`).
-
-Each item has `id`, `problem`, `cause` and `fix` (all required), and optionally `severity` (`error`, `warning` or `info`, default `info`), `tags` (a list), `since` (a version string, quoted), `code` (`content`, plus optional `lang` and `file`) and `links` (a list of `label` and `to`).
-
-Inline attributes only set the simple props. The list itself must be in the YAML block, so the inline form alone shows the empty state.
-
-Give every list on the same page its own `group`, so their search boxes stay separate. An `id` can be linked to directly, for example `#prose-not-styled`, and the page opens that entry on load. Keep the same `id` in both languages so these links survive a language switch.
-
-To fill the list from content files instead, see the [Troubleshooting source](/guides/query#troubleshooting-source).
 
 ## QuizList
 
 A drag-and-drop quiz where the reader puts steps in the right order. List the items in the correct order, and the component shuffles them. It works with the keyboard too, through the up and down buttons on every item.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::quiz-list
----
-title: Put the setup steps in the right order
-items:
-  - Install `@nuxt/ui`
-  - Add it to `modules`
-  - Import it in `main.css`
-success: Correct!
-fail: Not quite.
-hint: '@nuxt/ui has to be installed before you register it.'
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
+:::code-preview
 ::quiz-list
 ---
 title: Put the setup steps in the right order
@@ -586,15 +294,22 @@ fail: Not quite.
 hint: '@nuxt/ui has to be installed before you register it.'
 ---
 ::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
+
+#code
 ```mdc
-::quiz-list{title="Put the setup steps in the right order" :items='["Install `@nuxt/ui`", "Add it to `modules`", "Import it in `main.css`"]' success="Correct!" fail="Not quite."}
+::quiz-list
+---
+title: Put the setup steps in the right order
+items:
+  - Install `@nuxt/ui`
+  - Add it to `modules`
+  - Import it in `main.css`
+success: Correct!
+fail: Not quite.
+---
 ::
 ```
 :::
-::
 
 Props: `title` (required, the question), `items` (required, the steps in the correct order), `success` and `fail` (required, the messages shown after Check) and `hint` (optional, shown after two wrong attempts).
 
@@ -606,24 +321,7 @@ The answer is part of the page, so anyone can find it in the page source. Use th
 
 A list of resources with their contributors. The rows can be reordered by drag. The order lives in the component, so it resets on a full page reload.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::resource-group
----
-items:
-  - title: Following resources
-    to: /flow
-    type: article
-    contributors: [bird]
-  - title: Reading guides
-    to: /guides
-    type: text
-    contributors: [cat, dog]
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
+:::code-preview
 ::resource-group
 ---
 items:
@@ -637,84 +335,29 @@ items:
     contributors: [cat, dog]
 ---
 ::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
+
+#code
 ```mdc
-::resource-group{:items='[{"title":"Reading guides","to":"/guides","type":"text","contributors":["cat","dog"]}]' :handle="false"}
+::resource-group
+---
+items:
+  - title: Reading guides
+    to: /guides
+    type: text
+    contributors: [cat, dog]
+---
 ::
 ```
 :::
-::
 
 Props: `items`, `avatar` (default `/catlight.webp`), `avatarDark` (default `/catdark.webp`), `handle` (default `true`).
-
-## Scenario
-
-A short story told step by step. Each step can point to a flow entity, so the reader sees how the pieces of the system fit together. Readers can go back and forth with the buttons, or jump to any step by clicking it.
-
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::scenario
----
-title: Anna and the chairs
-steps:
-  - title: A need
-    icon: i-lucide-megaphone
-    entity: intent
-    description: The community hall needs ten chairs for Saturday's shared meal.
-  - title: A promise
-    icon: i-lucide-handshake
-    entity: commitment
-    description: Anna promises to bring ten chairs.
-  - title: It happens
-    icon: i-lucide-truck
-    entity: economic-event
-    description: The chairs are delivered to the hall on Friday.
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
-::scenario
----
-title: Anna and the chairs
-steps:
-  - title: A need
-    icon: i-lucide-megaphone
-    entity: intent
-    description: The community hall needs ten chairs for Saturday's shared meal.
-  - title: A promise
-    icon: i-lucide-handshake
-    entity: commitment
-    description: Anna promises to bring ten chairs.
-  - title: It happens
-    icon: i-lucide-truck
-    entity: economic-event
-    description: The chairs are delivered to the hall on Friday.
----
-::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::scenario{title="Anna and the chairs" :steps='[{"title":"A need","entity":"intent","description":"The hall needs ten chairs."},{"title":"A promise","entity":"commitment","description":"Anna promises to bring them."}]'}
-::
-```
-:::
-::
-
-Props: `steps` (required, a list of steps) and `title` (optional, shown above the stepper). Each step has a `title`, and optionally a `description` (markdown works), an `icon` and an `entity`.
-
-The `entity` is the name of a flow page in kebab case, like `economic-event`. It shows the translated entity name as a link to `/flow/<entity>`. Use only names that exist in the flow section, or the link goes nowhere.
 
 ## Tier list
 
 A ranking board where readers drag items between tiers. Items start in an "Unranked" row. The ranking is kept in `useState`, so it survives navigation but resets on a full page reload.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::tier-list
+:::code-preview
+::tier-list
 ---
 state-key: preview
 tiers:
@@ -735,9 +378,9 @@ items:
     icon: i-lucide-zap
   - i18n
 ---
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+::
+
+#code
 ```mdc
 ::tier-list
 ---
@@ -747,28 +390,13 @@ tiers:
     color: error
   - label: A
     color: warning
-  - label: B
-    color: success
-  - label: C
-    color: info
 items:
   - label: Nuxt UI
     icon: i-lucide-layout-dashboard
-  - label: Nuxt Content
-    icon: i-lucide-file-text
-  - label: VueUse
-    icon: i-lucide-zap
   - i18n
 ---
 ::
 ```
 :::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::tier-list{state-key="inline" :sortable="false" :tiers='[{"label":"S","color":"error"},{"label":"A","color":"warning"}]' :items='["Nuxt UI","i18n"]'}
-::
-```
-:::
-::
 
 Props: `tiers`, `items`, `stateKey` (default `default`), `sortable` (default `true`).

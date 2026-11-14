@@ -65,6 +65,7 @@ error:
     example: Esimerkki
     flow: Virta
     weeks: Viikot
+    guides: Oppaat
   
 footer:
   rights: Kaikki oikeudet pidätetään
@@ -529,3 +530,48 @@ runo:
   share: Jaa
   md_title: Otsikko
   md_file: Markdown-tiedosto
+
+skills:
+  all: Kaikki
+  openToHelp: Auttaa mielellään
+  members: '{count} jäsen | {count} jäsentä'
+  empty: Ei vielä osumia.
+  title: Taidot
+  learning: Oppimassa
+  projects: Projektit
+  available: 'Saatavilla: {value}'
+  profile: Profiili
+  years: '{count} v yhteisössä | {count} v yhteisössä'
+  canHelp: '{count} jäsen voi auttaa taidossa {skill} | {count} jäsentä voi auttaa taidossa {skill}'
+  yrs: '{count} v | {count} v'
+  level1: Perus
+  level2: Hyvä
+  level3: Vahva
+  level4: Asiantuntija
+
+demographics:
+  series:
+    natural: Luonnollinen
+    immigration: Maahanmuutto
+    births: Syntyneet
+    deaths: Kuolleet
+  population:
+    title: Väestö
+    text: 'Luonnollinen: kokonaishedelmällisyysluku 1,30 → 0,60, Etelä-Korean vauhtia laskeva. Maahanmuutto: puskuri, joka romahtaa (30 000 → 5 000 vuodessa talouden supistuessa). Huippua ei ole, väestö vähenee jatkuvasti 5,65 miljoonasta.'
+    axis: Väestö (milj.)
+    aria: Väestön koostumus
+  debt:
+    title: Velka / BKT
+    text: '2006-2026: +52 prosenttiyksikköä. Maastrichtin raja (60 %): ylitetty pysyvästi vuodesta 2018.'
+    axis: Velka/BKT (%)
+    aria: Velka suhteessa BKT:hen
+  unemployment:
+    title: Työttömyys
+    text: '2006-2026: +3,3 prosenttiyksikköä, kiihtyen. Vuoden 1996 kriisin huippu (harmaa viiva): 15,6 %. Vuonna 2046: takaisin siinä.'
+    axis: Työttömyys (%)
+    aria: Työttömyysaste
+  births:
+    title: Syntyneet ja kuolleet
+    text: '1986: +10 000. 2016: ylitys. 2026: -13 000. 2046: -27 000. Ero on maa. Mikään politiikka ei sulje sitä.'
+    axis: Tuhatta
+    aria: Syntyneet ja kuolleet

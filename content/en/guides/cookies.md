@@ -5,7 +5,7 @@ navigation:
   title: Cookies
   icon: i-lucide-cookie
 layout: dashboard
-sidebar: true
+sidebar: false
 collapsed: false
 splitter: false
 toc: true

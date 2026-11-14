@@ -328,3 +328,38 @@ surround: true
   - `stateKey` prop. The ranking is kept in `useState`, so it survives navigation.
   - `sortable` prop (default `true`). Set it to `false` for a read-only board.
   - Per-row `useSortable` with a shared group. Moves inside a row use `useSortable`, and moves between rows are handled by the parent.
+
+## 14.11
+
+### Added
+
+- `::reveal` component: content animates in when it scrolls into view. Four variants (`emerge`, `blur`, `scale`, `split`), with `delay`, `distance` and `threshold`.
+- `::scroll-story` component: a pinned image that crossfades while the text scrolls past, with a progress bar.
+- `::scroll-chart` component: a pinned chart that emphasizes different lines and reference lines at each step. Props: `data`, `x`, `series`, `steps`, `yLabel` and `stepHeight`.
+- Animation page documenting the reveal, the animation tokens, reduced motion and how animation interacts with dragging.
+- Population charts now read all their text, axis labels and series names from the locale files.
+- Profiles for [Kitty the Cat](/guides/team/cat) and [Bruno the Dog](/guides/team/dog), plus a [team index](/guides/team). Available in English and Finnish.
+
+### Changed
+
+- Tools, Charts, Query and Sortable pages now use `code-preview` with a single code example per component, instead of three tabs.
+- Large sections (Playground, Troubleshooting, Scenario, SkillFinder) moved to their own pages, which makes `/guides/tools` much lighter.
+- Each page has an overview table, and one shared section explains how to pass props inline.
+- Scroll components share one `useScrollyStory` composable. Progress is now measured over the steps column and reaches 100% at the end of the story.
+- Scroll components work on small screens: the image or chart stays pinned above the text, and its height follows the screen.
+
+### Fixed
+
+- `progress-check`: the inline `reset-label` example had a stray colon and an unclosed quote.
+- ChartGrowth example used Finnish month names on the English page.
+- `reveal` hid its content again after scrolling out of view.
+- `scroll-story`: the default `dark` image path had no leading slash, and `show-label` was passed to `UProgress`, which has no such prop.
+- Scroll progress ignored scrolling inside a container, and could jump on mobile when the browser's address bar moved.
+- `scroll-chart` card collapsed or covered the text in the two-column layout.
+- Tailwind lint warning about an unknown class.
+
+### Notes
+
+- The Finnish pages follow the same structure, with `-fi` state keys for the previews.
+- Content inside `reveal` stays hidden without JavaScript.
+- Use at most one scroll story or chart per page.

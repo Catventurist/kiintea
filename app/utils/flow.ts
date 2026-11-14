@@ -14,3 +14,28 @@ export function sortFlows<T extends { layer: string, title: string }>(items: T[]
     || a.title.localeCompare(b.title)
   )
 }
+
+export interface FinderSkill {
+  name: string
+  level: number
+  years?: number
+  note?: string
+}
+
+export interface FinderLearning {
+  name: string
+  progress?: number
+  goal?: string
+}
+
+export interface FinderMember {
+  name: string
+  to?: string
+  role?: string
+  since?: number
+  availability?: string
+  openToHelp?: boolean
+  skills: FinderSkill[]
+  learning?: FinderLearning[]
+  projects?: { title: string, to: string }[]
+}

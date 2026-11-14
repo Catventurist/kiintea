@@ -11,9 +11,18 @@ toc: true
 surround: true
 ---
 
-Some components look for files for additional data. Standalone components can be tricky with Content queries.
+Most components on this site are pure: they render the props or YAML block you give them. The components on this page also read content collections, so their data follows the current language and stays in sync with the content.
 
-Most components in this site are pure: they render the props or YAML block you give them. The components on this page also read content collections, so their data follows the current language and stays in sync with the content.
+Standalone components can be tricky with Content queries, because a query has to run in the right language and be shared between instances. See [How these components read content](#how-these-components-read-content) for the rules they follow.
+
+## Overview
+
+| Component | Reads | Main props |
+| --- | --- | --- |
+| `bilingual-view` | One page in both languages | `path`, `height`, `linked` |
+| `stats-source` | Counts from the site's content | `show`, `columns` |
+| `term` | Glossary entries | `name`, `text`, `side` |
+| `troubleshooting-source` | Problem entries | `tag`, `title`, `group` |
 
 ## Bilingual view
 
@@ -28,7 +37,7 @@ height: 40
 ---
 ::::
 :::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+:::tabs-item{label="Code" icon="i-lucide-code"}
 ```mdc
 ::bilingual-view
 ---
@@ -36,12 +45,6 @@ path: /guides/changelog
 height: 60
 linked: true
 ---
-::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::bilingual-view{path="/guides/changelog" :height="60"}
 ::
 ```
 :::
@@ -55,34 +58,26 @@ Don't point `path` at the page that contains the component. A bilingual view ins
 
 The same cards as [Stats](/guides/tools#stats), with the numbers counted from the site itself. The values follow the current language and stay up to date when content is added.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::stats-source
----
-show: [components, pages, coverage, languages, glossary, problems]
-columns: 3
----
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
+:::code-preview
 ::stats-source
 ---
 show: [components, pages, coverage, languages, glossary, problems]
 columns: 3
 ---
 ::
-```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::stats-source{show="components, pages, coverage, languages, glossary, problems" :columns="3"}
-::
-```
-:::
-::
 
-Props: `show` (optional, which cards to show, as a YAML list or a comma separated attribute, default all of them) and `columns` (optional, `2`, `3` or `4`, default `3`).
+#code
+```mdc
+::stats-source
+---
+show: [components, pages, coverage]
+columns: 3
+---
+::
+```
+:::
+
+Props: `show` (optional, which cards to show, default all of them) and `columns` (optional, `2`, `3` or `4`, default `3`). In an inline attribute, `show` can also be a comma separated string, such as `show="components, pages"`.
 
 The cards are:
 
@@ -103,11 +98,19 @@ The counts are fetched once per page and per language, and every stats source on
 
 An inline glossary term. Hover, focus or tap it to see a short definition. Definitions come from the glossary entries for the current language and fall back to English when a term has no translation.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
+:::code-preview
 Nuxt renders pages with :term[SSR]{name="ssr"} by default, and then makes them interactive through :term[hydration]{text="Making server-rendered HTML interactive in the browser."}.
+
+#code
+```mdc
+Nuxt renders pages with :term[SSR]{name="ssr"} by default.
+
+A one-off term with no glossary entry: :term[hydration]{text="Making server-rendered HTML interactive in the browser."}
+```
 :::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+
+The text in the square brackets is what the reader sees. There is also a block form, which takes the same props in a YAML block, and the text between the opening and closing lines is what is shown:
+
 ```mdc
 ::term
 ---
@@ -117,15 +120,6 @@ side: top
 server-side rendering
 ::
 ```
-:::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-Nuxt renders pages with :term[SSR]{name="ssr"} by default.
-
-A one-off term with no glossary entry: :term[hydration]{text="Making server-rendered HTML interactive in the browser."}
-```
-:::
-::
 
 **Props**
 
@@ -159,22 +153,20 @@ icon: i-lucide-server
 
 All fields are optional. Entries are also listed on the glossary page.
 
-
 ## Troubleshooting source
 
 A shared pool of problems, filtered by tag. It wraps the pure `troubleshooting` component, so the list looks and behaves the same. Finnish entries replace English ones with the same `slug`, and anything not yet translated stays in English.
 
-::tabs
-:::tabs-item{label="Preview" icon="i-lucide-eye"}
-::::troubleshooting-source
+:::code-preview
+::troubleshooting-source
 ---
 tag: content
 title: Content problems
 group: query-demo
 ---
-::::
-:::
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+::
+
+#code
 ```mdc
 ::troubleshooting-source
 ---
@@ -185,13 +177,6 @@ group: query-demo
 ::
 ```
 :::
-:::tabs-item{label="Inline props" icon="i-lucide-code"}
-```mdc
-::troubleshooting-source{tag="content" title="Content problems" group="query-demo"}
-::
-```
-:::
-::
 
 Props: `tag` (optional, only show problems with this tag), `title` (optional) and `group` (optional, default `source`; use a different value for each list on the same page so their search boxes stay separate).
 

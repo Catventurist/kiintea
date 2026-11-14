@@ -528,3 +528,48 @@ runo:
   share: Share
   md_title: Title
   md_file: Markdown file
+
+skills:
+  all: All
+  openToHelp: Open to help
+  members: '{count} member | {count} members'
+  empty: Nobody matches yet.
+  title: Skills
+  learning: Learning
+  projects: Projects
+  available: 'Available: {value}'
+  profile: Profile
+  years: '{count} yr in community | {count} yrs in community'
+  canHelp: '{count} member can help with {skill} | {count} members can help with {skill}'
+  yrs: '{count} yr | {count} yrs'
+  level1: Basic
+  level2: Good
+  level3: Strong
+  level4: Expert
+
+demographics:
+  series:
+    natural: Natural
+    immigration: Immigration
+    births: Births
+    deaths: Deaths
+  population:
+    title: Population
+    text: 'Natural: TFR 1.30 → 0.60, Korea-speed decline. Immigration: a buffer that collapses (30k → 5k/yr as the economy contracts). No peak, total declines continuously from 5.65M.'
+    axis: Population (M)
+    aria: Population decomposition
+  debt:
+    title: Debt / GDP
+    text: '2006-2026: +52pp. Maastricht limit (60%): permanently exceeded since 2018.'
+    axis: Debt/GDP (%)
+    aria: Debt to GDP
+  unemployment:
+    title: Unemployment
+    text: '2006-2026: +3.3pp, accelerating. 1996 crisis peak (gray line): 15.6%. 2046: back there.'
+    axis: Unemployment (%)
+    aria: Unemployment rate
+  births:
+    title: Births vs Deaths
+    text: '1986: +10k. 2016: crossover. 2026: -13k. 2046: -27k. The gap is the country. No policy closes it.'
+    axis: Thousands
+    aria: Births and deaths

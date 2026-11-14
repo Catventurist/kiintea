@@ -1,8 +1,8 @@
 ---
-title: Lajiteltavat listat
-description: Vedettävät komponentit, joita voi käyttää Markdownissa.
+title: Järjesteltävät listat
+description: Vedä ja pudota -komponentteja, joita voi käyttää Markdownista.
 navigation:
-  title: Lajiteltavat
+  title: Järjesteltävät
   icon: i-lucide-list-start
 layout: dashboard
 sidebar: true
@@ -12,80 +12,81 @@ toc: true
 surround: true
 ---
 
-Jokaista alla olevaa komponenttia voi käyttää kahdella tavalla: **YAML**-lohkolla tai **rivinsisäisillä propseilla** avausrivillä. Muuta listan järjestystä vetämällä kohteita.
+Nuxt UI:hin perustuvia komponentteja, joiden kohteiden järjestystä voi muuttaa vetämällä. Kirjoita tiedot **YAML**-lohkona, kuten alla olevissa esimerkeissä. Lyhyille arvoille voi käyttää myös inline-propseja, katso [Propsien antaminen inline-muodossa](/guides/tools#propsien-antaminen-inline-muodossa).
+
+## Yleiskatsaus
+
+| Komponentti | Kääree | Mitä vedetään |
+| --- | --- | --- |
+| `accordion-list` | `UAccordion` | Paneelit, tarttumakahvasta |
+| `board-list` | `UCard` | Kortit, sarakkeen sisällä ja sarakkeiden välillä |
+| `card-list` | `UCard` | Kortit, kortin kuvakkeesta |
+| `checkbox-list` | `UCheckboxGroup` | Valintaruudut |
+| `circle-progress` | Ympyräedistymä | Arvo, kun `interactive` on päällä |
+| `nav-list` | `UNavigationMenu` | Linkit |
+| `radio-list` | `URadioGroup` | Valintapainikkeet |
+| `stepper-list` | `UStepper` | Vaiheet |
+| `swatch-list` | Värinäytteet | Näytteet |
+| `table-list` | `UTable` | Rivit, vetosarakkeesta |
+| `tabs-list` | `UTabs` | Välilehdet |
+| `tags-list` | `UInputTags` | Tunnisteet |
+| `timeline-list` | `UTimeline` | Merkinnät, kuvakkeesta tai avatarista |
 
 ## AccordionList
 
-`UAccordion`, jonka paneelien järjestystä voi muuttaa tarttumakahvasta vetämällä.
+`UAccordion`, jonka paneeleita voi järjestää tarttumakahvalla.
 
 **Kentät**
 - `items[].label` (merkkijono): paneelin otsikko.
 - `items[].content` (merkkijono): paneelin sisältö.
-- `items[].value` (merkkijono, valinnainen): pysyvä tunniste. Aseta se, jotta avoin paneeli pysyy oman kohteensa mukana.
+- `items[].value` (merkkijono, valinnainen): vakaa tunniste. Aseta se, jotta avoin paneeli seuraa kohdettaan.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::accordion-list
 ---
 items:
-  - label: Aloitus
+  - label: Aloittaminen
     content: Asenna moduuli ja lisää se asetuksiin.
     value: start
   - label: Teemoitus
-    content: Muokkaa värejä, pyöristystä ja fontteja.
+    content: Mukauta värejä, pyöristyksiä ja fontteja.
     value: theming
-  - label: Julkaisu
+  - label: Julkaiseminen
     content: Rakenna ja julkaise sovelluksesi.
     value: deploy
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::accordion-list
 ---
 items:
-  - label: Aloitus
+  - label: Aloittaminen
     content: Asenna moduuli ja lisää se asetuksiin.
     value: start
   - label: Teemoitus
-    content: Muokkaa värejä, pyöristystä ja fontteja.
+    content: Mukauta värejä, pyöristyksiä ja fontteja.
     value: theming
-  - label: Julkaisu
-    content: Rakenna ja julkaise sovelluksesi.
-    value: deploy
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::accordion-list{:items='[{"label":"Aloitus","content":"Asenna moduuli ja lisää se asetuksiin.","value":"start"},{"label":"Teemoitus","content":"Muokkaa värejä, pyöristystä ja fontteja.","value":"theming"},{"label":"Julkaisu","content":"Rakenna ja julkaise sovelluksesi.","value":"deploy"}]'}
-::
-```
-:::
-
-::
 
 ## BoardList
 
-Sarakkeista koostuva taulu, jossa on `UCard`-kortteja. Kortteja voi järjestää uudelleen sarakkeen sisällä ja vetää sarakkeesta toiseen, myös tyhjiin sarakkeisiin.
+Taulu, jossa on sarakkeita ja `UCard`-kortteja. Kortteja voi järjestää sarakkeen sisällä ja vetää sarakkeiden välillä, myös tyhjiin sarakkeisiin.
 
 **Kentät**
 - `columns[].id` (merkkijono): sarakkeen yksilöllinen tunniste.
-- `columns[].title` (merkkijono): sarakkeen otsikko. Merkki näyttää sarakkeen korttien määrän.
-- `columns[].cards` (taulukko, valinnainen): sarakkeen kortit. Jätä pois tai käytä arvoa `[]`, jos sarake on tyhjä.
+- `columns[].title` (merkkijono): sarakkeen otsikko. Merkki näyttää sen korttien määrän.
+- `columns[].cards` (taulukko, valinnainen): sarakkeen kortit. Jätä pois tai käytä `[]` tyhjälle sarakkeelle.
 - `columns[].cards[].id` (merkkijono): kortin tunniste. Sen on oltava yksilöllinen kaikissa sarakkeissa.
 - `columns[].cards[].title` (merkkijono): kortin otsikko.
 - `columns[].cards[].description` (merkkijono, valinnainen): otsikon alla oleva teksti.
 - `columns[].cards[].icon` (merkkijono, valinnainen): Iconify-nimi, joka näytetään otsikon vieressä.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::board-list
 ---
 columns:
@@ -104,16 +105,15 @@ columns:
     cards:
       - id: theme
         title: Määritä teema
-        description: Värit, pyöristys ja fontit.
+        description: Värit, pyöristykset ja fontit.
         icon: i-lucide-palette
   - id: done
     title: Valmis
     cards: []
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::board-list
 ---
@@ -123,18 +123,7 @@ columns:
     cards:
       - id: layout
         title: Suunnittele asettelu
-        description: Rautalankamallit ja komponenttivalinnat.
         icon: i-lucide-pen-tool
-      - id: pages
-        title: Rakenna sivut
-        icon: i-lucide-hammer
-  - id: doing
-    title: Työn alla
-    cards:
-      - id: theme
-        title: Määritä teema
-        description: Värit, pyöristys ja fontit.
-        icon: i-lucide-palette
   - id: done
     title: Valmis
     cards: []
@@ -142,15 +131,6 @@ columns:
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::board-list{:columns='[{"id":"todo","title":"Tehtävät","cards":[{"id":"layout","title":"Suunnittele asettelu","description":"Rautalankamallit ja komponenttivalinnat.","icon":"i-lucide-pen-tool"},{"id":"pages","title":"Rakenna sivut","icon":"i-lucide-hammer"}]},{"id":"doing","title":"Työn alla","cards":[{"id":"theme","title":"Määritä teema","description":"Värit, pyöristys ja fontit.","icon":"i-lucide-palette"}]},{"id":"done","title":"Valmis","cards":[]}]'}
-::
-```
-:::
-
-::
 
 ## CardList
 
@@ -160,12 +140,10 @@ Pino `UCard`-kortteja. Kortin kuvake toimii vetokahvana.
 - `items[].title` (merkkijono): kortin otsikko.
 - `items[].description` (merkkijono, valinnainen): otsikon alla oleva teksti.
 - `items[].icon` (merkkijono, valinnainen): Iconify-nimi, jota käytetään kahvana.
-- `items[].id` (merkkijono, valinnainen): pysyvä tunniste.
-- `handle-icon` (merkkijono, valinnainen): kuvake, jota käytetään, kun kohteella ei ole omaa kuvaketta. Oletus on `i-lucide-grip-vertical`.
+- `items[].id` (merkkijono, valinnainen): vakaa tunniste.
+- `handle-icon` (merkkijono, valinnainen): kuvake, jota käytetään, kun kohteella ei ole omaa. Oletus on `i-lucide-grip-vertical`.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::card-list
 ---
 items:
@@ -182,49 +160,31 @@ items:
     id: ship
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::card-list
 ---
 items:
   - title: Suunnittele asettelu
-    description: Rautalankamallit ja komponenttivalinnat.
     icon: i-lucide-pen-tool
     id: design
-  - title: Rakenna sivut
-    description: Käytä Nuxt UI -komponentteja.
-    icon: i-lucide-hammer
-    id: build
   - title: Julkaise
-    icon: i-lucide-rocket
     id: ship
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::card-list{:items='[{"title":"Suunnittele asettelu","description":"Rautalankamallit ja komponenttivalinnat.","icon":"i-lucide-pen-tool","id":"design"},{"title":"Rakenna sivut","description":"Käytä Nuxt UI -komponentteja.","icon":"i-lucide-hammer","id":"build"},{"title":"Julkaise","icon":"i-lucide-rocket","id":"ship"}]'}
-::
-```
-:::
-
-::
 
 ## CheckboxList
 
-`UCheckboxGroup`, jonka kohteiden järjestystä voi muuttaa vetämällä.
+`UCheckboxGroup`, jossa kohteita voi järjestää vetämällä.
 
 **Kentät**
 - `legend` (merkkijono, valinnainen): ryhmän yläpuolella näkyvä otsikko.
-- `items` (merkkijono[]): yksi valintaruutu kutakin alkiota kohden.
+- `items` (merkkijono[]): yksi valintaruutu kutakin kohdetta kohden.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::checkbox-list
 ---
 legend: Tehtävät
@@ -234,43 +194,24 @@ items:
   - Julkaise
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
-::checkbox-list
----
-legend: Tehtävät
-items:
-  - Suunnittele
-  - Rakenna
-  - Julkaise
----
-::
-```
-:::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
+#code
 ```mdc
 ::checkbox-list{legend="Tehtävät" :items='["Suunnittele","Rakenna","Julkaise"]'}
 ::
 ```
 :::
 
-::
-
 ## CircleProgress
 
-Ympyränmuotoinen edistymisilmaisin. Kun `interactive` on päällä, käyttäjä voi muuttaa arvoa.
+Ympyränmuotoinen edistymisen ilmaisin. Kun `interactive` on asetettu, käyttäjä voi muuttaa arvoa.
 
 **Kentät**
-- `modelValue` (number, valinnainen): nykyinen arvo. Oletus on `0`.
-- `variant` (string, valinnainen): ulkoasu. Käytä arvoa `circular`.
-- `interactive` (boolean, valinnainen): sallii arvon muuttamisen käyttäjältä. Oletus on `false`.
+- `modelValue` (luku, valinnainen): nykyinen arvo. Oletus on `0`. Inline-muodossa kirjoita `:model-value`.
+- `variant` (merkkijono, valinnainen): ulkoasu. Käytä arvoa `circular`.
+- `interactive` (totuusarvo, valinnainen): sallii käyttäjän muuttaa arvoa. Oletus on `false`.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::circle-progress
 ---
 modelValue: 67
@@ -278,43 +219,26 @@ variant: circular
 interactive: true
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
-```mdc
-::circle-progress
----
-modelValue: 67
-variant: circular
-interactive: true
----
-::
-```
-:::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
+#code
 ```mdc
 ::circle-progress{:model-value="67" variant="circular" interactive}
 ::
 ```
 :::
 
-::
-
 ## NavList
 
-Tasainen `UNavigationMenu`, jonka linkkien järjestystä voi muuttaa vetämällä. Sisäkkäisiä `children`-kohteita ei tueta.
+Tasainen `UNavigationMenu`, jonka linkkejä voi järjestää vetämällä. Sisäkkäisiä `children`-kohteita ei tueta.
 
 **Kentät**
 - `items[].label` (merkkijono): linkin teksti.
 - `items[].icon` (merkkijono, valinnainen): Iconify-nimi.
-- `items[].to` (merkkijono, valinnainen): linkin kohde. Linkin napsauttaminen siirtyy edelleen kohteeseen.
-- `items[].badge` (merkkijono | numero, valinnainen): linkin lopussa näkyvä merkki.
+- `items[].to` (merkkijono, valinnainen): linkin kohde. Linkin napsauttaminen siirtää silti sivulle.
+- `items[].badge` (merkkijono | luku, valinnainen): linkin lopussa näkyvä merkki.
 - `orientation` (`vertical` | `horizontal`, valinnainen): valikon asettelu. Oletus on `vertical`.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::nav-list
 ---
 orientation: vertical
@@ -330,9 +254,8 @@ items:
     to: https://ui.nuxt.com/docs/getting-started/theme
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::nav-list
 ---
@@ -341,9 +264,7 @@ items:
   - label: Komponentit
     icon: i-lucide-box
     to: https://ui.nuxt.com/docs/components
-  - label: Typografia
-    icon: i-lucide-type
-    to: https://ui.nuxt.com/docs/typography
+    badge: 60
   - label: Teemoitus
     icon: i-lucide-palette
     to: https://ui.nuxt.com/docs/getting-started/theme
@@ -351,212 +272,130 @@ items:
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::nav-list{orientation="vertical" :items='[{"label":"Komponentit","icon":"i-lucide-box","to":"https://ui.nuxt.com/docs/components"},{"label":"Typografia","icon":"i-lucide-type","to":"https://ui.nuxt.com/docs/typography"},{"label":"Teemoitus","icon":"i-lucide-palette","to":"https://ui.nuxt.com/docs/getting-started/theme"}]'}
-::
-```
-:::
-
-::
 
 ## RadioList
 
-`URadioGroup`, jonka kohteita voi vetää. Valittu arvo pysyy kohteen mukana.
+`URadioGroup`, jonka kohteita voi vetää. Valittu arvo pysyy kohteensa mukana.
 
 **Kentät**
 - `legend` (merkkijono, valinnainen): ryhmän yläpuolella näkyvä otsikko.
-- `items` (merkkijono[]): yksi valintapainike kutakin alkiota kohden. Ensimmäinen on oletuksena valittu.
+- `items` (merkkijono[]): yksi valintapainike kutakin kohdetta kohden. Ensimmäinen on oletuksena valittu.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::radio-list
 ---
 legend: Tärkeys
 items:
   - Matala
-  - Tavallinen
+  - Keskitaso
   - Korkea
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
-::radio-list
----
-legend: Tärkeys
-items:
-  - Matala
-  - Tavallinen
-  - Korkea
----
+::radio-list{legend="Tärkeys" :items='["Matala","Keskitaso","Korkea"]'}
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::radio-list{legend="Tärkeys" :items='["Matala","Tavallinen","Korkea"]'}
-::
-```
-:::
-
-::
 
 ## StepperList
 
-`UStepper`, jonka vaiheiden järjestystä voi muuttaa. Eteneminen seuraa vaiheen paikkaa, ei itse vaihetta.
+`UStepper`, jonka vaiheita voi järjestää. Eteneminen seuraa sijaintia, ei vaihetta.
 
 **Kentät**
 - `items[].title` (merkkijono): vaiheen otsikko.
 - `items[].description` (merkkijono, valinnainen): otsikon alla oleva teksti.
 - `items[].icon` (merkkijono, valinnainen): Iconify-nimi.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::stepper-list
 ---
 items:
   - title: Osoite
-    description: Mihin toimitamme tilauksen?
+    description: Minne toimitamme sen?
     icon: i-lucide-map-pin
   - title: Toimitus
-    description: Valitse toimitustapa.
+    description: Valitse tapa.
     icon: i-lucide-truck
   - title: Kassa
     description: Tarkista ja maksa.
     icon: i-lucide-credit-card
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::stepper-list
 ---
 items:
   - title: Osoite
-    description: Mihin toimitamme tilauksen?
     icon: i-lucide-map-pin
-  - title: Toimitus
-    description: Valitse toimitustapa.
-    icon: i-lucide-truck
   - title: Kassa
-    description: Tarkista ja maksa.
     icon: i-lucide-credit-card
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::stepper-list{:items='[{"title":"Osoite","description":"Mihin toimitamme tilauksen?","icon":"i-lucide-map-pin"},{"title":"Toimitus","description":"Valitse toimitustapa.","icon":"i-lucide-truck"},{"title":"Kassa","description":"Tarkista ja maksa.","icon":"i-lucide-credit-card"}]'}
-::
-```
-:::
-
-::
 
 ## SwatchList
 
-Väripaletti, jonka värinäytteiden järjestystä voi muuttaa vetämällä. Värinäytettä napsauttamalla voi myös asettaa sivuston pääväriksi. Värit tulevat `--swatch-*`-CSS-muuttujista ja jos muuttujaa ei ole, käytetään teeman `500`-sävyä.
+Värinäytteiden paletti, jonka järjestystä voi muuttaa vetämällä. Näytteen napsauttaminen voi myös asettaa sivuston pääväriksi. Värit tulevat `--swatch-*`-CSS-muuttujista ja jos niitä ei ole, käytetään teeman `500`-sävyä.
 
 **Kentät**
 - `colors` (merkkijono[], valinnainen): värien nimet näyttöjärjestyksessä. Oletuksena blue, sky, indigo, violet, green, emerald, amber, orange ja rose.
-- `select` (totuusarvo, valinnainen): kun arvo on `true`, värinäytteen napsauttaminen asettaa arvon `ui.colors.primary`. Oletus on `true`.
-- `compact` (totuusarvo, valinnainen): piilottaa nimet ja käyttää pienempiä värinäytteitä. Oletus on `false`.
+- `select` (totuusarvo, valinnainen): kun `true`, näytteen napsauttaminen asettaa arvon `ui.colors.primary`. Oletus on `true`.
+- `compact` (totuusarvo, valinnainen): piilottaa nimet ja käyttää pienempiä näytteitä. Oletus on `false`.
 
-Värien on oltava teemassasi. Käytä Tailwindin oletusvärejä tai määritä oman värin sävyt 50-950 ensin.
+Värien on oltava olemassa teemassasi. Käytä Tailwindin oletusvärejä tai määritä oman värin sävyt 50-950 ensin.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::swatch-list
 ---
 select: true
-colors:
-  - blue
-  - sky
-  - indigo
-  - violet
-  - green
-  - emerald
-  - amber
-  - orange
-  - rose
+colors: [blue, sky, indigo, violet, green, emerald, amber, orange, rose]
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::swatch-list
 ---
 select: true
-colors:
-  - blue
-  - sky
-  - indigo
-  - violet
-  - green
-  - emerald
-  - amber
-  - orange
-  - rose
+colors: [blue, indigo, green]
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::swatch-list{:colors='["blue","sky","indigo","violet","green","emerald","amber","orange","rose"]'}
-::
-```
-:::
-
-::
 
 **Kompakti**
 
-Lisää `compact`, jos haluat pienen version ilman nimiä, joka mahtuu pieneen tilaan.
+Lisää `compact` saadaksesi pienen version ilman nimiä, joka mahtuu pieneen tilaan.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::swatch-list{compact}
 ::
-:::
 
-:::tabs-item{label="Koodi" icon="i-lucide-code"}
+#code
 ```mdc
 ::swatch-list{compact}
 ::
 ```
 :::
-
-::
 
 ## TableList
 
-`UTable`, jossa on vetosarake. Kunkin rivin kahvana voi olla avatar, kuvake tai oletuksena tarttumakuvake. Lajittelua, suodatusta ja sivutusta ei tueta, koska ne rikkovat vastaavuuden näytettyjen rivien ja datan välillä.
+`UTable`, jossa on vetosarake. Jokainen rivi voi näyttää kahvanaan avatarin, kuvakkeen tai oletuksena tarttumakahvan. Lajittelua, suodatusta ja sivutusta ei tueta, koska ne rikkovat näytettyjen rivien ja datan vastaavuuden.
 
 **Kentät**
-- `columns[].key` (merkkijono): rivin kenttä, joka näytetään.
+- `columns[].key` (merkkijono): näytettävä rivin kenttä.
 - `columns[].label` (merkkijono): sarakkeen otsikko.
-- `data[].id` (merkkijono | numero): rivin yksilöllinen tunniste.
+- `data[].id` (merkkijono | luku): rivin yksilöllinen tunniste.
 - `data[].avatar` (merkkijono, valinnainen): kuvan URL, jota käytetään kahvana.
-- `data[].icon` (merkkijono, valinnainen): Iconify-nimi, jota käytetään, jos avataria ei ole.
-- Muut rivin kentät ovat sarakkeiden käytettävissä niiden `key`-arvon kautta.
+- `data[].icon` (merkkijono, valinnainen): Iconify-nimi, jota käytetään, kun avataria ei ole.
+- Mikä tahansa muu rivin kenttä on sarakkeen käytettävissä sen `key`-arvolla.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::table-list
 ---
 columns:
@@ -578,56 +417,37 @@ data:
     role: Matemaatikko
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::table-list
 ---
 columns:
   - key: name
     label: Nimi
-  - key: role
-    label: Rooli
 data:
   - id: 1
     name: Ada Lovelace
-    role: Insinööri
     avatar: /catdark.webp
   - id: 2
     name: Grace Hopper
-    role: Amiraali
     icon: i-lucide-anchor
-  - id: 3
-    name: Alan Turing
-    role: Matemaatikko
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::table-list{:columns='[{"key":"name","label":"Nimi"},{"key":"role","label":"Rooli"}]' :data='[{"id":1,"name":"Ada Lovelace","role":"Insinööri","avatar":"/catdark.webp"},{"id":2,"name":"Grace Hopper","role":"Amiraali","icon":"i-lucide-anchor"},{"id":3,"name":"Alan Turing","role":"Matemaatikko"}]'}
-::
-```
-:::
-
-::
 
 ## TabsList
 
-`UTabs`, jossa järjestystä muutetaan vetämällä itse välilehtiä.
+`UTabs`, jossa välilehtiä itseään vedetään niiden järjestyksen muuttamiseksi.
 
 **Kentät**
 - `items[].label` (merkkijono): välilehden otsikko.
-- `items[].content` (merkkijono): aktiivisen välilehden sisältö.
+- `items[].content` (merkkijono): aktiivisen välilehden teksti.
 - `items[].icon` (merkkijono, valinnainen): Iconify-nimi.
-- `items[].value` (merkkijono, valinnainen): pysyvä tunniste. Aseta se, jotta aktiivinen välilehti pysyy oman kohteensa mukana.
+- `items[].value` (merkkijono, valinnainen): vakaa tunniste. Aseta se, jotta aktiivinen välilehti seuraa kohdettaan.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::tabs-list
 ---
 items:
@@ -645,9 +465,8 @@ items:
     value: team
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::tabs-list
 ---
@@ -657,86 +476,51 @@ items:
     content: Hallitse tilisi asetuksia.
     value: account
   - label: Laskutus
-    icon: i-lucide-credit-card
     content: Laskut ja maksutavat.
     value: billing
-  - label: Tiimi
-    icon: i-lucide-users
-    content: Kutsu ja hallitse jäseniä.
-    value: team
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::tabs-list{:items='[{"label":"Tili","icon":"i-lucide-user","content":"Hallitse tilisi asetuksia.","value":"account"},{"label":"Laskutus","icon":"i-lucide-credit-card","content":"Laskut ja maksutavat.","value":"billing"},{"label":"Tiimi","icon":"i-lucide-users","content":"Kutsu ja hallitse jäseniä.","value":"team"}]'}
-::
-```
-:::
-
-::
 
 ## TagsList
 
-`UInputTags`, jonka tunnisteiden järjestystä voi muuttaa vetämällä. Tunnisteita voi edelleen lisätä ja poistaa.
+`UInputTags`, jonka tunnisteita voi järjestää vetämällä. Tunnisteita voi edelleen lisätä ja poistaa.
 
 **Kentät**
-- `items` (merkkijono[], valinnainen): alkuperäiset tunnisteet.
-- `placeholder` (merkkijono, valinnainen): teksti, joka näkyy, kun kenttä on tyhjä.
+- `items` (merkkijono[], valinnainen): alkutunnisteet.
+- `placeholder` (merkkijono, valinnainen): teksti, joka näytetään kentän ollessa tyhjä.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::tags-list
 ---
 placeholder: Lisää tunniste...
 items:
-  - Suunnittelu
-  - Rakennus
-  - Julkaisu
+  - Suunnittele
+  - Rakenna
+  - Julkaise
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
-::tags-list
----
-placeholder: Lisää tunniste...
-items:
-  - Suunnittelu
-  - Rakennus
-  - Julkaisu
----
+::tags-list{placeholder="Lisää tunniste..." :items='["Suunnittele","Rakenna","Julkaise"]'}
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::tags-list{placeholder="Lisää tunniste..." :items='["Suunnittelu","Rakennus","Julkaisu"]'}
-::
-```
-:::
-
-::
 
 ## TimelineList
 
-`UTimeline`, jonka merkintöjen järjestystä voi muuttaa. Kuvake tai avatar toimii vetokahvana. Eteneminen seuraa merkinnän paikkaa, ei itse merkintää.
+`UTimeline`, jonka merkintöjä voi järjestää. Kuvake tai avatar toimii vetokahvana. Eteneminen seuraa sijaintia, ei merkintää.
 
 **Kentät**
 - `items[].title` (merkkijono): merkinnän otsikko.
 - `items[].description` (merkkijono, valinnainen): otsikon alla oleva teksti.
 - `items[].date` (merkkijono, valinnainen): otsikon yläpuolella näkyvä päivämäärä.
 - `items[].icon` (merkkijono, valinnainen): Iconify-nimi, jota käytetään kahvana.
-- `items[].avatar` (objekti, valinnainen): `src` ja valinnainen `alt`. Käytetään kahvana kuvakkeen sijaan.
+- `items[].avatar` (objekti, valinnainen): `src` ja valinnainen `alt`, joita käytetään kahvana kuvakkeen sijaan.
 
-::tabs
-
-:::tabs-item{label="Esikatselu" icon="i-lucide-eye"}
+:::code-preview
 ::timeline-list
 ---
 items:
@@ -746,45 +530,29 @@ items:
     icon: i-lucide-rocket
   - date: 22.3.2026
     title: Ensimmäinen prototyyppi
-    description: Ydinkulku valmis tarkistettavaksi.
+    description: Pääkulku valmiina tarkistettavaksi.
     icon: i-lucide-pen-tool
   - date: 2.4.2026
     title: Julkaisu
-    description: Julkaistu tuotantoon.
+    description: Vietiin tuotantoon.
     avatar:
       src: /catdark.webp
 ---
 ::
-:::
 
-:::tabs-item{label="YAML" icon="i-lucide-file-code"}
+#code
 ```mdc
 ::timeline-list
 ---
 items:
   - date: 15.3.2026
     title: Projektin aloitus
-    description: Laajuus ja tavoitteet sovittu.
     icon: i-lucide-rocket
-  - date: 22.3.2026
-    title: Ensimmäinen prototyyppi
-    description: Ydinkulku valmis tarkistettavaksi.
-    icon: i-lucide-pen-tool
   - date: 2.4.2026
     title: Julkaisu
-    description: Julkaistu tuotantoon.
     avatar:
       src: /catdark.webp
 ---
 ::
 ```
 :::
-
-:::tabs-item{label="Rivinsisäiset propsit" icon="i-lucide-code"}
-```mdc
-::timeline-list{:items='[{"date":"15.3.2026","title":"Projektin aloitus","description":"Laajuus ja tavoitteet sovittu.","icon":"i-lucide-rocket"},{"date":"22.3.2026","title":"Ensimmäinen prototyyppi","description":"Ydinkulku valmis tarkistettavaksi.","icon":"i-lucide-pen-tool"},{"date":"2.4.2026","title":"Julkaisu","description":"Julkaistu tuotantoon.","avatar":{"src":"/catdark.webp"}}]'}
-::
-```
-:::
-
-::

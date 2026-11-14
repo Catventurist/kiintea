@@ -334,3 +334,39 @@ surround: true
 - `stateKey`-prop. Järjestys säilyy `useState`:ssa, joten se pysyy sivunvaihdoissa.
 - `sortable`-prop (oletus `true`). Aseta `false`, jos taulun on tarkoitus olla vain luettavissa.
 - Riikohtainen `useSortable` yhteisellä ryhmällä. Rivin sisäiset siirrot hoitaa `useSortable` ja rivien väliset siirrot hoitaa vanhempi.
+
+## 14.11
+
+### Lisätty
+
+- `::reveal`-komponentti: sisältö animoituu näkyviin, kun se vierittyy näkyviin. Neljä muunnelmaa (`emerge`, `blur`, `scale`, `split`) sekä `delay`, `distance` ja `threshold`.
+- `::scroll-story`-komponentti: kiinnitetty kuva, joka häivytetään toiseen tekstin vierittäessä ohi, edistymispalkin kanssa.
+- `::scroll-chart`-komponentti: kiinnitetty kaavio, joka korostaa eri viivoja ja apuviivoja jokaisessa vaiheessa. Propsit: `data`, `x`, `series`, `steps`, `yLabel` ja `stepHeight`.
+- Animaatio-sivu, joka dokumentoi paljastuksen, animaatiotokenit, vähennetyn liikkeen ja animaation suhteen vetämiseen.
+- Väestökaaviot lukevat nyt kaikki tekstinsä, akselien otsikot ja sarjojen nimet kielitiedostoista.
+- Profiilit: [Vilu-kissa](/guides/team/cat) ja [Bruno-koira](/guides/team/dog), sekä [tiimin etusivu](/guides/team). Saatavilla suomeksi ja englanniksi.
+
+### Muutettu
+
+- Tools-, Charts-, Query- ja Sortable-sivut käyttävät nyt `code-preview`-komponenttia ja yhtä koodiesimerkkiä komponenttia kohden kolmen välilehden sijaan.
+- Suuret osiot (Playground, Troubleshooting, Scenario, SkillFinder) siirrettiin omille sivuilleen, mikä keventää `/guides/tools`-sivua selvästi.
+- Jokaisella sivulla on yleiskatsaustaulukko ja yksi yhteinen osio selittää, miten propsit annetaan inline-muodossa.
+- Vierityskomponentit jakavat yhden `useScrollyStory`-komposiitin. Eteneminen mitataan nyt vaiheiden sarakkeen yli ja saavuttaa 100 % tarinan lopussa.
+- Vierityskomponentit toimivat pienillä näytöillä: kuva tai kaavio pysyy kiinnitettynä tekstin yläpuolella ja sen korkeus seuraa näyttöä.
+
+### Korjattu
+
+- `progress-check`: inline-esimerkin `reset-label` sisälsi ylimääräisen kaksoispisteen ja sulkemattoman lainausmerkin.
+- ChartGrowth-esimerkki käytti suomenkielisiä kuukausien nimiä englanninkielisellä sivulla.
+- `reveal` piilotti sisältönsä uudelleen, kun se oli vierittynyt pois näkyvistä.
+- `scroll-story`: oletuksena olevan `dark`-kuvan polusta puuttui alkukauttaviiva ja `UProgress`-komponentille välitettiin `show-label`, jota sillä ei ole.
+- Vierityksen eteneminen ei huomioinut säiliön sisällä vierittämistä ja se saattoi hypätä mobiilissa selaimen osoitepalkin liikkuessa.
+- `scroll-chart`-kortti peitti tekstin kaksipalstaisessa asettelussa.
+- Tailwindin lint-varoitus tuntemattomasta luokasta.
+- `reveal`-komponentin sisältö pysyy piilossa ilman JavaScriptiä.
+- Käytä korkeintaan yhtä vieritettävää tarinaa tai kaaviota sivua kohden.
+
+### Huomioita
+
+- Suomenkieliset sivut noudattavat samaa rakennetta ja esikatseluissa on `-fi`-tilavaimet.
+

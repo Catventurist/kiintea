@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@source "../../../content/**/*";
+@source "../../../content/**/*.md";
 
 @theme static {
   --font-sans: 'Finlandica', sans-serif;
@@ -36,6 +36,10 @@
   --animate-stat-in: stat-in 0.5s ease-out both;
   --animate-quiz-shake: quiz-shake 0.4s ease-in-out;
   --animate-quiz-pop: quiz-pop 0.4s ease-out both;
+  --animate-emerge: emerge 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rv-delay, 0ms) both;
+  --animate-blur: blur-in 0.7s ease-out var(--rv-delay, 0ms) both;
+  --animate-scale: scale-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rv-delay, 0ms) both;
+  --animate-split: split-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--rv-delay, 0ms) both;
 
   --default-animation-duration: 0.6s;
   --default-animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -105,6 +109,51 @@
     }
     100% {
       transform: skew(0deg);
+    }
+  }
+
+  @keyframes emerge {
+    from {
+      opacity: 0;
+      transform: translateY(var(--rv-distance, 30px));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blur-in {
+    from {
+      opacity: 0;
+      filter: blur(12px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes split-in {
+    from {
+      opacity: 0;
+      transform: translateY(var(--rv-distance, 30px)) rotateX(15deg);
+      transform-origin: bottom;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
     }
   }
 }
@@ -194,4 +243,17 @@
 
 @media (min-width: 1024px) {
   h2[id], h3[id], h4[id] { scroll-margin-top: 2rem; }
+}
+
+.scrolly-steps > div > p + p,
+.scrolly-steps > p + p {
+  margin-top: 60vh;
+}
+
+html.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
 }

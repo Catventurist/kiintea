@@ -148,7 +148,7 @@ items:
     icon: i-lucide-bug
     id: issues
   - title: Keskustele
-    description: Kysy, jaa vinkkejä ja ehdota ideoita.
+    description: Kysya vinkkejä ja ehdota ideoita.
     to: https://t.me/harhaa
     target: _blank
     icon: i-social-telegram

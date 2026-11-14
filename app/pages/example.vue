@@ -49,6 +49,15 @@ useSeoMeta({
 
       <template #stats>
         <LazyStatsSource />
+        <UPageHeader
+          title="Suomi Finland"
+          class="text-center"
+        >
+          <template #description>
+            <UIcon name="i-social-finland" />
+          </template>
+        </UPageHeader>
+        <LazyFProjection />
       </template>
 
       <template #bookmarks>
